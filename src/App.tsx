@@ -2,6 +2,7 @@ import "./App.css";
 import Map from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { SlideshowControls } from "./components/slideshowControls/slideshowControls";
+import { GAZA_DEFAULT_ZOOM, GAZA_LATITUDE, GAZA_LONGITUDE } from "./constants";
 
 function App() {
   return (
@@ -9,9 +10,9 @@ function App() {
       <Map
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
         initialViewState={{
-          longitude: 34.37,
-          latitude: 31.41,
-          zoom: 10.5,
+          longitude: GAZA_LONGITUDE,
+          latitude: GAZA_LATITUDE,
+          zoom: GAZA_DEFAULT_ZOOM,
         }}
         style={{ width: "100vw", height: "100vh" }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
