@@ -3,10 +3,11 @@ import { displacementTimeline } from "./displacementTimeline/displacementTimelin
 import { healthcareTimeline } from "./healthcareTimeline/healthcareTimeline";
 import { GAZA_DEFAULT_ZOOM, GAZA_LATITUDE, GAZA_LONGITUDE } from "../constants";
 
-export interface IAnasEvent {
+export interface GazaEvent {
   flyTo?: EasingOptions;
+  layers?: any;
 }
-export type Timeline = IAnasEvent[];
+export type Timeline = GazaEvent[];
 
 export const timelines: Timeline = [
   {

@@ -9,7 +9,10 @@ function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div id="anas-map-container" className="h-screen w-screen relative">
+    <div
+      id="anas-map-container"
+      className="h-screen w-screen relative font-semibold"
+    >
       <MapProvider>
         <Map
           id="anasMap"
