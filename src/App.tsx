@@ -9,9 +9,9 @@ function App() {
       <Map
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
         initialViewState={{
-          longitude: -122.4,
-          latitude: 37.8,
-          zoom: 14,
+          longitude: 34.37,
+          latitude: 31.41,
+          zoom: 10.5,
         }}
         style={{ width: "100vw", height: "100vh" }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
@@ -21,4 +21,5 @@ function App() {
   );
 }
 
+// 4354913030504, 428771029447
 export default App;
