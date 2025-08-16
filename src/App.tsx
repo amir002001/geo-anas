@@ -1,6 +1,11 @@
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useState } from "react";
-import Map, { MapProvider, type MapEvent } from "react-map-gl/mapbox";
+import Map, {
+  Layer,
+  MapProvider,
+  Source,
+  type MapEvent,
+} from "react-map-gl/mapbox";
 import "./App.css";
 import { SlideshowControls } from "./components/slideshowControls/slideshowControls";
 import { GAZA_DEFAULT_ZOOM, GAZA_LATITUDE, GAZA_LONGITUDE } from "./constants";
@@ -41,7 +46,13 @@ function App() {
           mapStyle="mapbox://styles/mapbox/streets-v9"
           interactive={false}
         >
-          {timelines[currentSlide].layers}
+          {timelines[currentSlide].sources.map((source, sourceIndex) => (
+            <Source key={sourceIndex} {...source.props}>
+              {source.layers.map((layer, layerIndex) => (
+                <Layer key={layerIndex} {...layer} />
+              ))}
+            </Source>
+          ))}
         </Map>
         <SlideshowControls
           className="absolute bottom-8 right-8 z-10"

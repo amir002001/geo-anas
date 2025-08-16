@@ -41,13 +41,29 @@ export const SlideshowControls = ({
   };
 
   const slideTitle = timelines[currentSlide].title;
+  const isLastSlide = currentSlide === timelines.length - 1;
+  const isFirstSlide = currentSlide === 0;
 
-  const buttonClassName = clsx([
+  const commonButtonClassName = clsx([
     "bg-[#0A8048] border-green-600 border-t-2 border-r-2 text-white rounded-md px-4 py-3 ",
     "shadow-lg hover:shadow-xl transition-shadow duration-200",
     "active:translate-y-1 active:shadow-md",
-    isMapMoving ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
   ]);
+
+  const previousButtonClassName = clsx([
+    commonButtonClassName,
+    isMapMoving || isFirstSlide
+      ? "opacity-50 cursor-not-allowed"
+      : "cursor-pointer",
+  ]);
+
+  const nextButtonClassName = clsx([
+    commonButtonClassName,
+    isMapMoving || isLastSlide
+      ? "opacity-50 cursor-not-allowed"
+      : "cursor-pointer",
+  ]);
+
   return (
     <div className={clsx([className, "flex items-center gap-4"])}>
       <span
@@ -57,13 +73,15 @@ export const SlideshowControls = ({
         {slideTitle}
       </span>
       <button
-        className={buttonClassName}
+        className={previousButtonClassName}
+        disabled={isFirstSlide || isMapMoving}
         onClick={() => handleSlideChange("prev")}
       >
         Previous
       </button>
       <button
-        className={buttonClassName}
+        className={nextButtonClassName}
+        disabled={isLastSlide || isMapMoving}
         onClick={() => handleSlideChange("next")}
       >
         Next

@@ -8,5 +8,5 @@ export const slideHandler = (map: MapRef | undefined, currentSlide: number) => {
   }
 
   const flyTo = timelines[currentSlide].flyTo;
-  flyTo && map.flyTo(flyTo);
+  flyTo && map.flyTo({ ...flyTo, duration: 1000 });
 };
