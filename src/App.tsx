@@ -1,9 +1,10 @@
-import "./App.css";
-import Map, { MapProvider, type MapEvent } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { useState } from "react";
+import Map, { MapProvider, type MapEvent } from "react-map-gl/mapbox";
+import "./App.css";
 import { SlideshowControls } from "./components/slideshowControls/slideshowControls";
 import { GAZA_DEFAULT_ZOOM, GAZA_LATITUDE, GAZA_LONGITUDE } from "./constants";
-import { useState } from "react";
+import { timelines } from "./timelines/timelines";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -39,7 +40,9 @@ function App() {
           style={{ width: "100vw", height: "100vh" }}
           mapStyle="mapbox://styles/mapbox/streets-v9"
           interactive={false}
-        />
+        >
+          {timelines[currentSlide].layers}
+        </Map>
         <SlideshowControls
           className="absolute bottom-8 right-8 z-10"
           currentSlide={currentSlide}
