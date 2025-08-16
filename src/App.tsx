@@ -1,12 +1,29 @@
 import "./App.css";
-import Map, { MapProvider } from "react-map-gl/mapbox";
+import Map, {
+  MapProvider,
+  type MapEvent,
+  type MapRef,
+} from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { SlideshowControls } from "./components/slideshowControls/slideshowControls";
 import { GAZA_DEFAULT_ZOOM, GAZA_LATITUDE, GAZA_LONGITUDE } from "./constants";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMapMoving, setIsMapMoving] = useState(false);
+
+  const handleMapLoad = (e: MapEvent) => {
+    const map = e.target;
+
+    map.on("movestart", () => {
+      setIsMapMoving(true);
+    });
+
+    map.on("moveend", () => {
+      setIsMapMoving(false);
+    });
+  };
 
   return (
     <div
@@ -15,6 +32,7 @@ function App() {
     >
       <MapProvider>
         <Map
+          onLoad={handleMapLoad}
           id="anasMap"
           mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
           initialViewState={{
@@ -24,10 +42,12 @@ function App() {
           }}
           style={{ width: "100vw", height: "100vh" }}
           mapStyle="mapbox://styles/mapbox/streets-v9"
+          interactive={false}
         />
         <SlideshowControls
           className="absolute bottom-8 right-8 z-10"
           currentSlide={currentSlide}
+          isMapMoving={isMapMoving}
           setCurrentSlide={setCurrentSlide}
         />
       </MapProvider>

@@ -7,11 +7,6 @@ export const slideHandler = (map: MapRef | undefined, currentSlide: number) => {
     return;
   }
 
-  if (currentSlide < 0 || currentSlide >= timelines.length) {
-    console.warn("Current slide index is out of bounds");
-    return;
-  }
-
   const flyTo = timelines[currentSlide].flyTo;
   flyTo && map.flyTo(flyTo);
 };
