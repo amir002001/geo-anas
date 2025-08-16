@@ -49,22 +49,25 @@ export const SlideshowControls = ({
     isMapMoving ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
   ]);
   return (
-    <div className={clsx([className, "flex flex-col items-end gap-4"])}>
-      <span id="slide-title">{slideTitle}</span>
-      <div className="flex gap-4">
-        <button
-          className={buttonClassName}
-          onClick={() => handleSlideChange("prev")}
-        >
-          Previous
-        </button>
-        <button
-          className={buttonClassName}
-          onClick={() => handleSlideChange("next")}
-        >
-          Next
-        </button>
-      </div>
+    <div className={clsx([className, "flex items-center gap-4"])}>
+      <span
+        id="slide-title"
+        className="bg-[#0A8048]/20 rounded-md px-4 py-2 text-black"
+      >
+        {slideTitle}
+      </span>
+      <button
+        className={buttonClassName}
+        onClick={() => handleSlideChange("prev")}
+      >
+        Previous
+      </button>
+      <button
+        className={buttonClassName}
+        onClick={() => handleSlideChange("next")}
+      >
+        Next
+      </button>
     </div>
   );
 };
