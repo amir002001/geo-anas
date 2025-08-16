@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import { useEffect, useState } from "react";
-import { slideHandler } from "../../utils/slideHandler";
+import { useEffect } from "react";
 import { useMap } from "react-map-gl/mapbox";
 import { timelines } from "../../timelines/timelines";
+import { slideHandler } from "../../utils/slideHandler";
 interface ISlideshowControlsProps {
   className?: string;
   currentSlide: number;
@@ -43,7 +43,7 @@ export const SlideshowControls = ({
   const slideTitle = timelines[currentSlide].title;
 
   const buttonClassName = clsx([
-    "bg-[#0A8048] text-white rounded-md px-4 py-3 ",
+    "bg-[#0A8048] border-green-600 border-t-2 border-r-2 text-white rounded-md px-4 py-3 ",
     "shadow-lg hover:shadow-xl transition-shadow duration-200",
     "active:translate-y-1 active:shadow-md",
     isMapMoving ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
