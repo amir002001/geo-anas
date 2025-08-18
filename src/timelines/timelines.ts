@@ -6,7 +6,7 @@ import {
   type LayerId,
 } from "../constants";
 import { healthcareTimeline } from "./healthcareTimeline/healthcareTimeline";
-import { preOctSeven } from "./preOctSeven/preOctSeven";
+import { preOctSeven } from "./preOctSeven";
 
 export interface ILayerOpacity {
   id: LayerId;

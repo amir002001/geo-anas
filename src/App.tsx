@@ -1,15 +1,36 @@
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useRef, useState } from "react";
-import Map, { MapProvider, type MapEvent } from "react-map-gl/mapbox";
 import "./App.css";
+
+import type { MapEvent } from "mapbox-gl";
+import mapboxgl from "mapbox-gl";
+import { useEffect, useRef, useState } from "react";
+import { AnasMapContext } from "./AnasMapContext";
 import { SlideshowControls } from "./components/slideshowControls/slideshowControls";
-import { Sources } from "./components/Sources";
 import { GAZA_DEFAULT_ZOOM, GAZA_LATITUDE, GAZA_LONGITUDE } from "./constants";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMapIdle, setIsMapIdle] = useState(false);
   const idleRef = useRef(true);
+  const mapRef = useRef<mapboxgl.Map>(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
+    mapRef.current = new mapboxgl.Map({
+      container: mapContainerRef.current!,
+      center: [GAZA_LONGITUDE, GAZA_LATITUDE],
+      zoom: GAZA_DEFAULT_ZOOM,
+      interactive: false,
+      style: "mapbox://styles/mapbox/streets-v9",
+    });
+
+    mapRef.current.on("load", handleMapLoad);
+
+    return () => {
+      mapRef.current?.remove();
+    };
+  }, []);
 
   const handleMapLoad = (e: MapEvent) => {
     const map = e.target;
@@ -36,29 +57,22 @@ function App() {
       id="anas-map-container"
       className="h-screen w-screen relative font-semibold"
     >
-      <MapProvider>
-        <Map
-          onLoad={handleMapLoad}
-          id="anasMap"
-          mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
-          initialViewState={{
-            longitude: GAZA_LONGITUDE,
-            latitude: GAZA_LATITUDE,
-            zoom: GAZA_DEFAULT_ZOOM,
-          }}
-          style={{ width: "100vw", height: "100vh" }}
-          mapStyle="mapbox://styles/mapbox/streets-v9"
-          interactive={false}
-        >
-          <Sources />
-        </Map>
-        <SlideshowControls
-          className="absolute bottom-8 right-8 z-10"
-          currentSlide={currentSlide}
-          isMapIdle={isMapIdle}
-          setCurrentSlide={setCurrentSlide}
-        />
-      </MapProvider>
+      <div
+        id="map-container"
+        ref={mapContainerRef}
+        className="h-screen w-screen"
+      />
+
+      {mapRef.current !== null && (
+        <AnasMapContext.Provider value={{ anasMap: mapRef.current }}>
+          <SlideshowControls
+            className="absolute bottom-8 right-8 z-10"
+            currentSlide={currentSlide}
+            isMapIdle={isMapIdle}
+            setCurrentSlide={setCurrentSlide}
+          />
+        </AnasMapContext.Provider>
+      )}
     </div>
   );
 }

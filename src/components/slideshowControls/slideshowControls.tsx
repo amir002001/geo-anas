@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useEffect } from "react";
-import { useMap } from "react-map-gl/mapbox";
+import { useAnasMapContext } from "../../hooks/useAnasMapContext";
 import { timelines } from "../../timelines/timelines";
 import { slideHandler } from "../../utils/slideHandler";
 interface ISlideshowControlsProps {
@@ -16,7 +16,7 @@ export const SlideshowControls = ({
   setCurrentSlide,
   isMapIdle,
 }: ISlideshowControlsProps) => {
-  const { anasMap } = useMap();
+  const { anasMap } = useAnasMapContext();
 
   useEffect(() => {
     slideHandler(anasMap, currentSlide);
