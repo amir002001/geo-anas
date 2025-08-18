@@ -3,8 +3,8 @@ import type { IGazaEvent } from "../timelines";
 export const eighteenYearBlockade: IGazaEvent = {
   fitBounds: {
     bounds: [
-      [33.94733301660154, 31.242486542006084],
-      [34.60317050605896, 31.90209009722733],
+      [33.944667, 31.219972015],
+      [34.568023765, 31.78],
     ],
     options: {},
   },

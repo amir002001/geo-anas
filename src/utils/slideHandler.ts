@@ -13,7 +13,12 @@ export const slideHandler = (map: mapboxgl.Map, currentSlide: number) => {
   LAYERS.forEach((layer) => handleLayer(map, layer, nextLayerIds));
 
   const fitBounds = timelines[currentSlide].fitBounds;
-  fitBounds && map.fitBounds(fitBounds.bounds, fitBounds.options);
+  fitBounds &&
+    map.fitBounds(fitBounds.bounds, {
+      padding: { bottom: 10, top: 10, right: 10, left: 10 },
+      duration: 1000,
+      ...fitBounds.options,
+    });
 };
 
 const handleLayer = (
