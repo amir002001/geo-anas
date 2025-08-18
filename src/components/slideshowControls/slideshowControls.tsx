@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { useEffect } from "react";
 import { useAnasMapContext } from "../../hooks/useAnasMapContext";
 import { timelines } from "../../timelines/timelines";
+import { handleSlideChange } from "../../utils/controlsHandlers";
 import { slideHandler } from "../../utils/slideHandler";
 interface ISlideshowControlsProps {
   className?: string;
@@ -21,24 +22,6 @@ export const SlideshowControls = ({
   useEffect(() => {
     slideHandler(anasMap, currentSlide);
   }, [currentSlide]);
-
-  const handleSlideChange = (direction: "next" | "prev") => {
-    if (!anasMap) {
-      console.warn("Map is not initialized");
-      return;
-    }
-
-    if (!anasMap.idle()) {
-      console.warn("Map is currently changing, cannot change slide");
-      return;
-    }
-
-    if (direction === "next") {
-      setCurrentSlide((prev) => Math.min(prev + 1, timelines.length - 1));
-    } else {
-      setCurrentSlide((prev) => Math.max(prev - 1, 0));
-    }
-  };
 
   const slideTitle = timelines[currentSlide].title;
   const isLastSlide = currentSlide === timelines.length - 1;
@@ -75,14 +58,18 @@ export const SlideshowControls = ({
       <button
         className={previousButtonClassName}
         disabled={isFirstSlide || !isMapIdle}
-        onClick={() => handleSlideChange("prev")}
+        onClick={() =>
+          handleSlideChange("prev", anasMap, setCurrentSlide, timelines.length)
+        }
       >
         Previous
       </button>
       <button
         className={nextButtonClassName}
         disabled={isLastSlide || !isMapIdle}
-        onClick={() => handleSlideChange("next")}
+        onClick={() =>
+          handleSlideChange("next", anasMap, setCurrentSlide, timelines.length)
+        }
       >
         Next
       </button>

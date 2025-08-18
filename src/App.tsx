@@ -6,11 +6,15 @@ import mapboxgl from "mapbox-gl";
 import { useEffect, useRef, useState } from "react";
 import { AnasMapContext } from "./AnasMapContext";
 import { SlideshowControls } from "./components/slideshowControls/slideshowControls";
+import { Visual } from "./components/visual/visual";
+import { timelines } from "./timelines/timelines";
+import { handleSlideChange } from "./utils/controlsHandlers";
 import { loadAllLayers } from "./utils/loadAllLayers";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMapIdle, setIsMapIdle] = useState(false);
+  const [isVisualVisible, setIsVisualVisible] = useState(true);
   const idleRef = useRef(true);
   const mapRef = useRef<mapboxgl.Map>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -49,6 +53,16 @@ function App() {
       setIsMapIdle(false);
     });
 
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        handleSlideChange("next", map, setCurrentSlide, timelines.length);
+      } else if (e.key === "ArrowLeft") {
+        handleSlideChange("prev", map, setCurrentSlide, timelines.length);
+      } else if (e.key === " ") {
+        setIsVisualVisible((prev) => !prev);
+      }
+    });
+
     loadAllLayers(map);
   };
 
@@ -62,6 +76,12 @@ function App() {
         ref={mapContainerRef}
         className="h-screen w-screen"
       />
+      {
+        <Visual
+          className="absolute top-3 left-3"
+          isVisualVisible={isVisualVisible}
+        />
+      }
 
       {mapRef.current !== null && (
         <AnasMapContext.Provider value={{ anasMap: mapRef.current }}>
