@@ -1,8 +1,7 @@
-import type { MapRef } from "react-map-gl/mapbox";
 import { LAYER_IDS } from "../constants";
 import { timelines } from "../timelines/timelines";
 
-export const slideHandler = (map: MapRef | undefined, currentSlide: number) => {
+export const slideHandler = (map: mapboxgl.Map, currentSlide: number) => {
   if (!map) {
     console.warn("Map is not initialized");
     return;
@@ -12,12 +11,22 @@ export const slideHandler = (map: MapRef | undefined, currentSlide: number) => {
   );
 
   Object.values(LAYER_IDS).forEach((layerId) => {
-    debugger;
     const layer = map.getLayer(layerId);
     if (!layer) {
       return;
     }
-    const layerType = layer.type;
+
+    if (nextLayerIds.has(layerId)) {
+      // set the opacity of layers that are in the next slide
+      map.setPaintProperty(
+        layerId,
+        "fill-opacity",
+        nextLayerIds.get(layerId)?.opacity || 1
+      );
+    } else {
+      // hide all layers that aren't in the next slide
+      map.setPaintProperty(layerId, "fill-opacity", 0);
+    }
   });
 
   const flyTo = timelines[currentSlide].flyTo;

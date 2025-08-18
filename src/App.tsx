@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnasMapContext } from "./AnasMapContext";
 import { SlideshowControls } from "./components/slideshowControls/slideshowControls";
 import { GAZA_DEFAULT_ZOOM, GAZA_LATITUDE, GAZA_LONGITUDE } from "./constants";
+import { loadAllLayers } from "./utils/loadAllLayers";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -50,6 +51,8 @@ function App() {
       idleRef.current = false;
       setIsMapIdle(false);
     });
+
+    loadAllLayers(map);
   };
 
   return (
