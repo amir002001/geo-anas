@@ -7,14 +7,14 @@ interface ISlideshowControlsProps {
   className?: string;
   currentSlide: number;
   setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
-  isMapMoving: boolean;
+  isMapIdle: boolean;
 }
 
 export const SlideshowControls = ({
   className,
   currentSlide,
   setCurrentSlide,
-  isMapMoving,
+  isMapIdle,
 }: ISlideshowControlsProps) => {
   const { anasMap } = useMap();
 
@@ -28,8 +28,8 @@ export const SlideshowControls = ({
       return;
     }
 
-    if (anasMap.isMoving()) {
-      console.warn("Map is currently moving, cannot change slide");
+    if (!anasMap.idle()) {
+      console.warn("Map is currently changing, cannot change slide");
       return;
     }
 
@@ -52,14 +52,14 @@ export const SlideshowControls = ({
 
   const previousButtonClassName = clsx([
     commonButtonClassName,
-    isMapMoving || isFirstSlide
+    !isMapIdle || isFirstSlide
       ? "opacity-50 cursor-not-allowed"
       : "cursor-pointer",
   ]);
 
   const nextButtonClassName = clsx([
     commonButtonClassName,
-    isMapMoving || isLastSlide
+    !isMapIdle || isLastSlide
       ? "opacity-50 cursor-not-allowed"
       : "cursor-pointer",
   ]);
@@ -74,14 +74,14 @@ export const SlideshowControls = ({
       </span>
       <button
         className={previousButtonClassName}
-        disabled={isFirstSlide || isMapMoving}
+        disabled={isFirstSlide || !isMapIdle}
         onClick={() => handleSlideChange("prev")}
       >
         Previous
       </button>
       <button
         className={nextButtonClassName}
-        disabled={isLastSlide || isMapMoving}
+        disabled={isLastSlide || !isMapIdle}
         onClick={() => handleSlideChange("next")}
       >
         Next

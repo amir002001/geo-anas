@@ -1,29 +1,33 @@
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useState } from "react";
-import Map, {
-  Layer,
-  MapProvider,
-  Source,
-  type MapEvent,
-} from "react-map-gl/mapbox";
+import { useRef, useState } from "react";
+import Map, { MapProvider, type MapEvent } from "react-map-gl/mapbox";
 import "./App.css";
 import { SlideshowControls } from "./components/slideshowControls/slideshowControls";
+import { Sources } from "./components/Sources";
 import { GAZA_DEFAULT_ZOOM, GAZA_LATITUDE, GAZA_LONGITUDE } from "./constants";
-import { timelines } from "./timelines/timelines";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMapMoving, setIsMapMoving] = useState(false);
+  const [isMapIdle, setIsMapIdle] = useState(false);
+  const idleRef = useRef(true);
 
   const handleMapLoad = (e: MapEvent) => {
     const map = e.target;
 
-    map.on("movestart", () => {
-      setIsMapMoving(true);
+    map.on("idle", () => {
+      if (idleRef.current) {
+        return;
+      }
+      idleRef.current = true;
+      setIsMapIdle(true);
     });
 
-    map.on("moveend", () => {
-      setIsMapMoving(false);
+    map.on("render", () => {
+      if (!idleRef.current) {
+        return;
+      }
+      idleRef.current = false;
+      setIsMapIdle(false);
     });
   };
 
@@ -46,18 +50,12 @@ function App() {
           mapStyle="mapbox://styles/mapbox/streets-v9"
           interactive={false}
         >
-          {timelines[currentSlide].sources.map((source, sourceIndex) => (
-            <Source key={sourceIndex} {...source.props}>
-              {source.layers.map((layer, layerIndex) => (
-                <Layer key={layerIndex} {...layer} />
-              ))}
-            </Source>
-          ))}
+          <Sources />
         </Map>
         <SlideshowControls
           className="absolute bottom-8 right-8 z-10"
           currentSlide={currentSlide}
-          isMapMoving={isMapMoving}
+          isMapIdle={isMapIdle}
           setCurrentSlide={setCurrentSlide}
         />
       </MapProvider>
