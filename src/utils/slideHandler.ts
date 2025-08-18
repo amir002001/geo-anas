@@ -1,5 +1,5 @@
-import { LAYER_IDS } from "../constants";
-import { timelines } from "../timelines/timelines";
+import { LAYERS } from "../constants/layers";
+import { timelines, type ILayerOverride } from "../timelines/timelines";
 
 export const slideHandler = (map: mapboxgl.Map, currentSlide: number) => {
   if (!map) {
@@ -7,28 +7,33 @@ export const slideHandler = (map: mapboxgl.Map, currentSlide: number) => {
     return;
   }
   const nextLayerIds = new Map(
-    timelines[currentSlide].layerIds.map((layer) => [layer.id, layer])
+    timelines[currentSlide].layerOverrides.map((layer) => [layer.id, layer])
   );
 
-  Object.values(LAYER_IDS).forEach((layerId) => {
-    const layer = map.getLayer(layerId);
-    if (!layer) {
-      return;
-    }
-
-    if (nextLayerIds.has(layerId)) {
-      // set the opacity of layers that are in the next slide
-      map.setPaintProperty(
-        layerId,
-        "fill-opacity",
-        nextLayerIds.get(layerId)?.opacity || 1
-      );
-    } else {
-      // hide all layers that aren't in the next slide
-      map.setPaintProperty(layerId, "fill-opacity", 0);
-    }
-  });
+  LAYERS.forEach((layer) => handleLayer(map, layer, nextLayerIds));
 
   const fitBounds = timelines[currentSlide].fitBounds;
   fitBounds && map.fitBounds(fitBounds.bounds, fitBounds.options);
+};
+
+const handleLayer = (
+  map: mapboxgl.Map,
+  layer: mapboxgl.Layer,
+  nextLayerIds: Map<string, ILayerOverride>
+) => {
+  const layerId = layer.id;
+  const nextLayer = nextLayerIds.get(layerId);
+
+  if (nextLayer) {
+    // Apply paint overrides for the current slide
+    Object.entries(nextLayer.paintOverrides).forEach(([property, value]) => {
+      map.setPaintProperty(layerId, property as any, value);
+    });
+  } else {
+    if (layer.paint) {
+      Object.entries(layer.paint).forEach(([property, value]) => {
+        map.setPaintProperty(layerId, property as any, value);
+      });
+    }
+  }
 };

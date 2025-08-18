@@ -9,8 +9,8 @@ export const eighteenYearBlockade: IGazaEvent = {
     options: {},
   },
   title: "18-Year Blockade",
-  layerIds: [
-    { id: "GAZA_BLOCKADE_RED", opacity: 0.5 },
-    { id: "GAZA_SEA_BLOCKADE_RED", opacity: 0.5 },
+  layerOverrides: [
+    { id: "GAZA_LAND_BLOCKADE_FILL", paintOverrides: { "fill-opacity": 0.5 } },
+    { id: "GAZA_SEA_BLOCKADE_FILL", paintOverrides: { "fill-opacity": 0.5 } },
   ],
 };

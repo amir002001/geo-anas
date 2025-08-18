@@ -1,18 +1,22 @@
 import { bbox } from "@turf/turf";
-import type { EasingOptions, LngLatBoundsLike } from "mapbox-gl";
-import { type LayerId } from "../constants";
+import type {
+  EasingOptions,
+  LngLatBoundsLike,
+  PaintSpecification,
+} from "mapbox-gl";
+import type { LayerId } from "../constants/layers";
 import gazaBoundary from "../data/gaza-strip-boundary.json";
 import { healthcareTimeline } from "./healthcareTimeline/healthcareTimeline";
 import { preOctSeven } from "./preOctSeven";
 
-export interface ILayerOpacity {
+export interface ILayerOverride {
   id: LayerId;
-  opacity: number;
+  paintOverrides: Partial<PaintSpecification>;
 }
 
 export interface IGazaEvent {
   fitBounds: { bounds: LngLatBoundsLike; options: EasingOptions };
-  layerIds: ILayerOpacity[];
+  layerOverrides: ILayerOverride[];
   title: string;
 }
 export type Timeline = IGazaEvent[];
@@ -27,7 +31,7 @@ export const timelines: Timeline = [
       options: {},
     },
     title: "People's Conference for Palestine",
-    layerIds: [],
+    layerOverrides: [],
   },
   ...preOctSeven,
   ...healthcareTimeline,
