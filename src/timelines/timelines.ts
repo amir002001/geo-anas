@@ -1,10 +1,7 @@
-import type { EasingOptions } from "mapbox-gl";
-import {
-  GAZA_DEFAULT_ZOOM,
-  GAZA_LATITUDE,
-  GAZA_LONGITUDE,
-  type LayerId,
-} from "../constants";
+import { bbox } from "@turf/turf";
+import type { EasingOptions, LngLatBoundsLike } from "mapbox-gl";
+import { type LayerId } from "../constants";
+import gazaBoundary from "../data/gaza-strip-boundary.json";
 import { healthcareTimeline } from "./healthcareTimeline/healthcareTimeline";
 import { preOctSeven } from "./preOctSeven";
 
@@ -14,15 +11,21 @@ export interface ILayerOpacity {
 }
 
 export interface IGazaEvent {
-  flyTo: EasingOptions;
+  fitBounds: { bounds: LngLatBoundsLike; options: EasingOptions };
   layerIds: ILayerOpacity[];
   title: string;
 }
 export type Timeline = IGazaEvent[];
+const boundsArray = bbox(gazaBoundary as any); // [minX, minY, maxX, maxY]
+const sw: [number, number] = [boundsArray[0], boundsArray[1]];
+const ne: [number, number] = [boundsArray[2], boundsArray[3]];
 
 export const timelines: Timeline = [
   {
-    flyTo: { zoom: GAZA_DEFAULT_ZOOM, center: [GAZA_LONGITUDE, GAZA_LATITUDE] },
+    fitBounds: {
+      bounds: [sw, ne],
+      options: {},
+    },
     title: "People's Conference for Palestine",
     layerIds: [],
   },

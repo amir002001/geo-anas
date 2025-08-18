@@ -29,6 +29,6 @@ export const slideHandler = (map: mapboxgl.Map, currentSlide: number) => {
     }
   });
 
-  const flyTo = timelines[currentSlide].flyTo;
-  flyTo && map.flyTo({ ...flyTo, duration: 1000 });
+  const fitBounds = timelines[currentSlide].fitBounds;
+  fitBounds && map.fitBounds(fitBounds.bounds, fitBounds.options);
 };

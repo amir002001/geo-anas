@@ -1,0 +1,38 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Gaza Naval Blockade Area (NOTMAR 1/2009)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            34.491000,
+                            31.595167
+                        ],
+                        [
+                            34.166833,
+                            31.780000
+                        ],
+                        [
+                            33.944667,
+                            31.562167
+                        ],
+                        [
+                            34.218500,
+                            31.323167
+                        ],
+                        [
+                            34.491000,
+                            31.595167
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}

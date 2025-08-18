@@ -4,10 +4,12 @@ export const GAZA_DEFAULT_ZOOM = 10.5;
 
 export const SOURCE_IDS = {
   GAZA_BOUNDARY: "GAZA_BOUNDARY",
-};
+  GAZA_SEA_BLOCK: "GAZA_SEA_BLOCK",
+} as const;
 
 export const LAYER_IDS = {
   GAZA_BLOCKADE_RED: "GAZA_BLOCKADE_RED",
+  GAZA_SEA_BLOCKADE_RED: "GAZA_SEA_BLOCKADE_RED",
 } as const;
 
 export type LayerId = keyof typeof LAYER_IDS;

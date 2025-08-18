@@ -6,7 +6,6 @@ import mapboxgl from "mapbox-gl";
 import { useEffect, useRef, useState } from "react";
 import { AnasMapContext } from "./AnasMapContext";
 import { SlideshowControls } from "./components/slideshowControls/slideshowControls";
-import { GAZA_DEFAULT_ZOOM, GAZA_LATITUDE, GAZA_LONGITUDE } from "./constants";
 import { loadAllLayers } from "./utils/loadAllLayers";
 
 function App() {
@@ -20,8 +19,6 @@ function App() {
     mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current!,
-      center: [GAZA_LONGITUDE, GAZA_LATITUDE],
-      zoom: GAZA_DEFAULT_ZOOM,
       interactive: false,
       style: "mapbox://styles/mapbox/streets-v9",
     });
