@@ -2,10 +2,6 @@ import { LAYERS } from "../constants/layers";
 import { timelines, type ILayerOverride } from "../timelines/timelines";
 
 export const slideHandler = (map: mapboxgl.Map, currentSlide: number) => {
-  if (!map) {
-    console.warn("Map is not initialized");
-    return;
-  }
   const nextLayerIds = new Map(
     timelines[currentSlide].layerOverrides.map((layer) => [layer.id, layer])
   );
