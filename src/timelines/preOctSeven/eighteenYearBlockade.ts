@@ -30,7 +30,26 @@ const eighteenYearBlockadeSea: GazaEvent = {
   imgSrc: "/images/gaza-sea-blockade.png",
 };
 
+const GAZA_AIPORT_BBOX: LngLatBoundsLike = [
+  [34.267694721, 31.22767785],
+  [34.280416019, 31.253835171],
+];
+
+const eighteenYearBlockadeAir: GazaEvent = {
+  fitBounds: { bounds: GAZA_AIPORT_BBOX, options: {} },
+  title: "18-Year Blockade - Air",
+  layerOverrides: [
+    {
+      id: "GAZA_AIRPORT_BOUNDARY_FILL",
+      paintOverrides: { "fill-opacity": 0.5 },
+    },
+  ],
+  kind: "image",
+  imgSrc: "/images/gaza-blockade-air.jpg",
+};
+
 export const eighteenYearBlockade = [
   eighteenYearBlockadeLand,
   eighteenYearBlockadeSea,
+  eighteenYearBlockadeAir,
 ];

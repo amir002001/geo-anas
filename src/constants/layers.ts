@@ -4,7 +4,8 @@ import { SOURCE_MAP } from "./sources";
 export type LayerId =
   | "GAZA_LAND_BLOCKADE_FILL"
   | "GAZA_SEA_BLOCKADE_FILL"
-  | "GAZA_FENCE_OUTLINE";
+  | "GAZA_FENCE_OUTLINE"
+  | "GAZA_AIRPORT_BOUNDARY_FILL";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
 
@@ -40,6 +41,16 @@ export const LAYERS: LayerType[] = [
       "line-opacity-transition": { duration: 500 },
     },
     layout: {},
+  },
+  {
+    id: "GAZA_AIRPORT_BOUNDARY_FILL",
+    source: SOURCE_MAP.get("GAZA_AIRPORT_BOUNDARY")!.id,
+    type: "fill",
+    paint: {
+      "fill-color": "#FF0000",
+      "fill-opacity": 0,
+      "fill-opacity-transition": { duration: 500 },
+    },
   },
 ] as const;
 

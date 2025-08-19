@@ -33,7 +33,7 @@ export const Visual = ({ className, isVisualVisible, event }: IVisualProps) => {
           controls
           className="max-w-full max-h-full object-contain"
         />
-      ) : null}{" "}
+      ) : null}
     </div>
   );
 };
