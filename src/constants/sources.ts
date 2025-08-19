@@ -1,11 +1,13 @@
 import type { SourceSpecification } from "mapbox-gl";
 import gazaAirportBoundary from "../data/gaza-airport-boundary.json";
+import gazaBuffer from "../data/gaza-buffer.json";
 import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 
 export type SourceId =
   | "GAZA_BOUNDARY"
   | "GAZA_SEA_BLOCKADE"
+  | "GAZA_BUFFER"
   | "GAZA_AIRPORT_BOUNDARY";
 
 export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
@@ -22,6 +24,13 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: gazaAirportBoundary as any,
+    },
+  },
+  {
+    id: "GAZA_BUFFER",
+    source: {
+      type: "geojson",
+      data: gazaBuffer as any,
     },
   },
 ] as const;
