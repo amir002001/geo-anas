@@ -24,7 +24,7 @@ function App() {
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current!,
       interactive: false,
-      style: "mapbox://styles/mapbox/streets-v9",
+      style: "mapbox://styles/itsamir2001/cmehruhk5000001s2hrde4gvb",
     });
 
     mapRef.current.on("load", handleMapLoad);

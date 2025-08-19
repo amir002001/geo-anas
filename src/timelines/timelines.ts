@@ -1,11 +1,10 @@
-import { bbox } from "@turf/turf";
 import type {
   EasingOptions,
   LngLatBoundsLike,
   PaintSpecification,
 } from "mapbox-gl";
+import { GAZA_BBOX } from "../constants/constants";
 import type { LayerId } from "../constants/layers";
-import gazaBoundary from "../data/gaza-strip-boundary.json";
 import { healthcareTimeline } from "./healthcareTimeline/healthcareTimeline";
 import { preOctSeven } from "./preOctSeven";
 
@@ -20,14 +19,11 @@ export interface IGazaEvent {
   title: string;
 }
 export type Timeline = IGazaEvent[];
-const boundsArray = bbox(gazaBoundary as any); // [minX, minY, maxX, maxY]
-const sw: [number, number] = [boundsArray[0], boundsArray[1]];
-const ne: [number, number] = [boundsArray[2], boundsArray[3]];
 
 export const timelines: Timeline = [
   {
     fitBounds: {
-      bounds: [sw, ne],
+      bounds: GAZA_BBOX,
       options: {},
     },
     title: "People's Conference for Palestine",

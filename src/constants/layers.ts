@@ -1,7 +1,10 @@
 import type { LayerSpecification } from "mapbox-gl";
 import { SOURCE_MAP } from "./sources";
 
-export type LayerId = "GAZA_LAND_BLOCKADE_FILL" | "GAZA_SEA_BLOCKADE_FILL";
+export type LayerId =
+  | "GAZA_LAND_BLOCKADE_FILL"
+  | "GAZA_SEA_BLOCKADE_FILL"
+  | "GAZA_FENCE_OUTLINE";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
 
@@ -25,6 +28,18 @@ export const LAYERS: LayerType[] = [
       "fill-opacity": 0,
       "fill-opacity-transition": { duration: 500 },
     },
+  },
+  {
+    id: "GAZA_FENCE_OUTLINE",
+    source: SOURCE_MAP.get("GAZA_BOUNDARY")!.id,
+    type: "line",
+    paint: {
+      "line-color": "#FF0000",
+      "line-width": 4,
+      "line-opacity": 0,
+      "line-opacity-transition": { duration: 500 },
+    },
+    layout: {},
   },
 ] as const;
 
