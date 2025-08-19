@@ -83,6 +83,7 @@ function App() {
         <Visual
           className="absolute top-3 left-3"
           isVisualVisible={isVisualVisible}
+          event={timelines[currentSlide]}
         />
       }
 

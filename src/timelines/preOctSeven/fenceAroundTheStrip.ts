@@ -1,7 +1,7 @@
 import { GAZA_BBOX } from "../../constants/constants";
-import type { IGazaEvent } from "../timelines";
+import type { ImageEvent } from "../timelines";
 
-export const ironFenceAroundStrip: IGazaEvent = {
+export const ironFenceAroundStrip: ImageEvent = {
   fitBounds: {
     bounds: GAZA_BBOX,
     options: {},
@@ -10,4 +10,6 @@ export const ironFenceAroundStrip: IGazaEvent = {
   layerOverrides: [
     { id: "GAZA_FENCE_OUTLINE", paintOverrides: { "line-opacity": 0.5 } },
   ],
+  kind: "image",
+  imgSrc: "",
 };

@@ -13,12 +13,29 @@ export interface ILayerOverride {
   paintOverrides: Partial<PaintSpecification>;
 }
 
-export interface IGazaEvent {
+export interface IEventBase {
   fitBounds: { bounds: LngLatBoundsLike; options: EasingOptions };
   layerOverrides: ILayerOverride[];
   title: string;
 }
-export type Timeline = IGazaEvent[];
+
+export type BasicEvent = IEventBase & {
+  kind: "basic";
+};
+
+export type VideoEvent = IEventBase & {
+  kind: "video";
+  videoSrc: string;
+};
+
+export type ImageEvent = IEventBase & {
+  kind: "image";
+  imgSrc: string;
+};
+
+export type GazaEvent = BasicEvent | VideoEvent | ImageEvent;
+
+export type Timeline = GazaEvent[];
 
 export const timelines: Timeline = [
   {
@@ -28,6 +45,7 @@ export const timelines: Timeline = [
     },
     title: "People's Conference for Palestine",
     layerOverrides: [],
+    kind: "basic",
   },
   ...preOctSeven,
   ...healthcareTimeline,

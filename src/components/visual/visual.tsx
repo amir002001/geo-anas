@@ -1,20 +1,39 @@
 import clsx from "clsx";
+import type { GazaEvent } from "../../timelines/timelines";
 
 export interface IVisualProps {
   className?: string;
   isVisualVisible: boolean;
+  event: GazaEvent;
 }
 
-export const Visual = ({ className, isVisualVisible }: IVisualProps) => {
+export const Visual = ({ className, isVisualVisible, event }: IVisualProps) => {
+  if (event.kind === "basic") {
+    return null;
+  }
+
   return (
     <div
       className={clsx([
         className,
-        "bg-blue-500 rounded-md w-1/4 h-1/4 transition-opacity duration-300 ease-in-out",
+        "bg-[#0A8048]/30 rounded-md w-[640px] h-[360px] max-w-4/5 max-h-2/3 transition-opacity duration-300 ease-in-out flex items-center justify-center overflow-hidden",
         isVisualVisible ? "opacity-100" : "opacity-0",
       ])}
     >
-      Visual Component
+      {event.kind === "image" ? (
+        <img
+          src={event.imgSrc}
+          alt="Visual"
+          className="max-w-full max-h-full object-contain"
+        />
+      ) : null}
+      {event.kind === "video" ? (
+        <video
+          src={event.videoSrc}
+          controls
+          className="max-w-full max-h-full object-contain"
+        />
+      ) : null}{" "}
     </div>
   );
 };
