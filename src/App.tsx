@@ -9,6 +9,7 @@ import { SlideshowControls } from "./components/slideshowControls/slideshowContr
 import { Visual } from "./components/visual/visual";
 import { timelines } from "./timelines/timelines";
 import { handleSlideChange } from "./utils/controlsHandlers";
+import { loadAllImages } from "./utils/loadAllImages";
 import { loadAllLayers } from "./utils/loadAllLayers";
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
     });
 
     loadAllLayers(map);
+    loadAllImages(map);
   };
 
   return (

@@ -1,8 +1,8 @@
 import type { Timeline } from "../timelines";
-import { eighteenYearBlockade } from "./01-18YearBlockade";
-import { ironFenceAroundStrip } from "./02-FenceAroundTheStrip";
+import { eighteenYearBlockade } from "./eighteenYearBlockade";
+import { ironFenceAroundStrip } from "./fenceAroundTheStrip";
 
 export const preOctSeven: Timeline = [
-  eighteenYearBlockade,
+  ...eighteenYearBlockade,
   ironFenceAroundStrip,
 ];
