@@ -3,12 +3,14 @@ import gazaAirportBoundary from "../data/gaza-airport-boundary.json";
 import gazaBuffer from "../data/gaza-buffer.json";
 import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
+import hiribyaBoundary from "../data/hiribaya.json";
 
 export type SourceId =
   | "GAZA_BOUNDARY"
   | "GAZA_SEA_BLOCKADE"
   | "GAZA_BUFFER"
-  | "GAZA_AIRPORT_BOUNDARY";
+  | "GAZA_AIRPORT_BOUNDARY"
+  | "HIRIBAYA_BOUNDARY";
 
 export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
   {
@@ -31,6 +33,13 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: gazaBuffer as any,
+    },
+  },
+  {
+    id: "HIRIBAYA_BOUNDARY",
+    source: {
+      type: "geojson",
+      data: hiribyaBoundary as any,
     },
   },
 ] as const;
