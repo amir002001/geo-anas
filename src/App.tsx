@@ -54,6 +54,7 @@ function App() {
     });
 
     document.addEventListener("keydown", (e) => {
+      console.log(e.key);
       if (e.key === "ArrowRight") {
         handleSlideChange("next", map, setCurrentSlide, timelines.length);
       } else if (e.key === "ArrowLeft") {
