@@ -6,7 +6,8 @@ export type LayerId =
   | "GAZA_SEA_BLOCKADE_FILL"
   | "GAZA_BUFFER_FILL"
   | "GAZA_AIRPORT_BOUNDARY_FILL"
-  | "HIRIBAYA_BOUNDARY_FILL";
+  | "HIRIBAYA_BOUNDARY_FILL"
+  | "CROSSINGS_SYMBOL";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
 
@@ -60,6 +61,24 @@ export const LAYERS: LayerType[] = [
       "fill-color": "#519AC7",
       "fill-opacity": 0,
       "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "CROSSINGS_SYMBOL",
+    source: SOURCE_MAP.get("CROSSINGS_POINTS")!.id,
+    type: "symbol",
+    paint: {
+      "text-opacity": 0,
+      "icon-opacity": 0,
+    },
+    layout: {
+      "icon-image": "cross",
+      "icon-size": 2,
+      "icon-allow-overlap": true,
+      "text-field": ["get", "name"],
+      "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
+      "text-size": 16,
+      "text-offset": [0, 2],
     },
   },
 ] as const;

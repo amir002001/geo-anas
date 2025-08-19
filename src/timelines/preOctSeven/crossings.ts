@@ -12,7 +12,12 @@ const erezCrossing: GazaEvent = {
     options: { duration: 3000 },
   },
   title: "Erez Crossing",
-  layerOverrides: [],
+  layerOverrides: [
+    {
+      id: "CROSSINGS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1, "text-opacity": 1 },
+    },
+  ],
   kind: "image",
   imgSrc: "/images/crossings/erez.jpg",
 };
@@ -28,7 +33,12 @@ const RafahCrossing: GazaEvent = {
     options: { duration: 3000 },
   },
   title: "Rafah Crossing",
-  layerOverrides: [],
+  layerOverrides: [
+    {
+      id: "CROSSINGS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1, "text-opacity": 1 },
+    },
+  ],
   kind: "image",
   imgSrc: "/images/crossings/rafah.jpg",
 };
@@ -44,7 +54,12 @@ const keremCrossing: GazaEvent = {
     options: { duration: 3000, maxZoom: 15 },
   },
   title: "Kerem Crossing",
-  layerOverrides: [],
+  layerOverrides: [
+    {
+      id: "CROSSINGS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1, "text-opacity": 1 },
+    },
+  ],
   kind: "image",
   imgSrc: "/images/crossings/kerem.jpg",
 };
