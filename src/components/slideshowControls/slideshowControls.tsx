@@ -2,7 +2,10 @@ import clsx from "clsx";
 import { useEffect } from "react";
 import { useAnasMapContext } from "../../hooks/useAnasMapContext";
 import { timelines } from "../../timelines/timelines";
-import { handleSlideChange } from "../../utils/controlsHandlers";
+import {
+  handleSlideChange,
+  handleSlideChangeByIndex,
+} from "../../utils/controlsHandlers";
 import { slideHandler } from "../../utils/slideHandler";
 interface ISlideshowControlsProps {
   className?: string;
@@ -55,6 +58,22 @@ export const SlideshowControls = ({
       >
         {slideTitle}
       </span>
+      <div>
+        <input
+          className="field-sizing-content"
+          type="text"
+          onBlur={(e) =>
+            handleSlideChangeByIndex(
+              parseInt(e.target.value) - 1,
+              anasMap,
+              setCurrentSlide,
+              timelines.length
+            )
+          }
+          disabled={!isMapIdle}
+        />
+        <span> / {timelines.length}</span>
+      </div>
       <button
         className={previousButtonClassName}
         disabled={isFirstSlide || !isMapIdle}

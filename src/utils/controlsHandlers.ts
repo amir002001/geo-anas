@@ -17,3 +17,22 @@ export const handleSlideChange = (
     setCurrentSlide((prev) => Math.max(prev - 1, 0));
   }
 };
+
+export const handleSlideChangeByIndex = (
+  index: number,
+  map: mapboxgl.Map,
+  setCurrentSlide: React.Dispatch<React.SetStateAction<number>>,
+  maxSlides: number
+) => {
+  if (!map.idle()) {
+    console.warn("Map is currently changing, cannot change slide");
+    return;
+  }
+
+  if (index < 0 || index >= maxSlides) {
+    console.warn("Index out of bounds for slides");
+    return;
+  }
+
+  setCurrentSlide(index);
+};
