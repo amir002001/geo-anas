@@ -1,16 +1,20 @@
+import { GAZA_BBOX } from "../../constants/constants";
 import type { GazaEvent } from "../timelines";
 
 export const universities: GazaEvent = {
   fitBounds: {
-    bounds: [
-      [34.466, 31.5],
-      [34.6, 31.6],
-    ],
+    bounds: GAZA_BBOX,
     options: {},
   },
-  layerOverrides: [],
+  layerOverrides: [
+    {
+      id: "GAZA_UNIVERSITIES_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+    },
+  ],
   title: "Education",
-  kind: "basic",
+  kind: "image",
+  imgSrc: "/images/al-isra-university.jpg",
 };
 
 export const education = [universities];

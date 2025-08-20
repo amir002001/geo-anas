@@ -6,6 +6,7 @@ import gazaHospitalsStatus from "../data/gaza-hospital-status.json";
 import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
+import gazaUniversities from "../data/universities.json";
 
 export type SourceId =
   | "GAZA_BOUNDARY"
@@ -14,7 +15,8 @@ export type SourceId =
   | "GAZA_AIRPORT_BOUNDARY"
   | "HIRIBAYA_BOUNDARY"
   | "CROSSINGS_POINTS"
-  | "GAZA_HOSPITALS_STATUS";
+  | "GAZA_HOSPITALS_STATUS"
+  | "GAZA_UNIVERSITIES";
 export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
   {
     id: "GAZA_BOUNDARY",
@@ -58,6 +60,13 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: gazaHospitalsStatus as any,
+    },
+  },
+  {
+    id: "GAZA_UNIVERSITIES",
+    source: {
+      type: "geojson",
+      data: gazaUniversities as any,
     },
   },
 ] as const;
