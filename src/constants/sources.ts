@@ -2,6 +2,7 @@ import type { SourceSpecification } from "mapbox-gl";
 import crossings from "../data/crossings.json";
 import gazaAirportBoundary from "../data/gaza-airport-boundary.json";
 import gazaBuffer from "../data/gaza-buffer.json";
+import gazaHospitalsStatus from "../data/gaza-hospital-status.json";
 import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
@@ -12,8 +13,8 @@ export type SourceId =
   | "GAZA_BUFFER"
   | "GAZA_AIRPORT_BOUNDARY"
   | "HIRIBAYA_BOUNDARY"
-  | "CROSSINGS_POINTS";
-
+  | "CROSSINGS_POINTS"
+  | "GAZA_HOSPITALS_STATUS";
 export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
   {
     id: "GAZA_BOUNDARY",
@@ -49,6 +50,14 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: crossings as any,
+    },
+  },
+  {
+    id: "GAZA_HOSPITALS_STATUS",
+
+    source: {
+      type: "geojson",
+      data: gazaHospitalsStatus as any,
     },
   },
 ] as const;

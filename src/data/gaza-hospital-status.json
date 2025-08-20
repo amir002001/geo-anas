@@ -1,0 +1,1595 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4431513343082,
+          31.5242793470932
+        ]
+      },
+      "properties": {
+        "name": "Al-Shifa Medical Complex",
+        "official_name": "Al-Shifa Medical Complex",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-09",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-09",
+            "end": "2023-11-12",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-12",
+            "end": "2023-11-28",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2023-11-28",
+            "end": "2024-03-18",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-03-18",
+            "end": "2024-05-30",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-05-30",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2923534655626,
+          31.346889038669
+        ]
+      },
+      "properties": {
+        "name": "Nasser Medical Complex",
+        "official_name": "Nasser Medical Complex",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-13",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-13",
+            "end": "2024-02-15",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-02-15",
+            "end": "2024-05-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-05-01",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.5066535873232,
+          31.5339897829912
+        ]
+      },
+      "properties": {
+        "name": "Al-Awda Hospital - Jabalia",
+        "official_name": "Al-Awda Hospital - Jabalia",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-21",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-21",
+            "end": "2023-11-09",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-09",
+            "end": "2023-11-10",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2023-11-10",
+            "end": "2023-12-16",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-12-16",
+            "end": "2023-12-26",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2023-12-26",
+            "end": "2024-01-30",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-01-30",
+            "end": "2024-02-11",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-02-11",
+            "end": "2024-05-23",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-05-23",
+            "end": "2024-05-31",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-05-31",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.3894719658898,
+          31.4484968140086
+        ]
+      },
+      "properties": {
+        "name": "Al-Awda Hospital - Nuseirat",
+        "official_name": "Al-Awda Hospital - Nuseirat",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-12-02",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-12-02",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4161822,
+          31.4779123
+        ]
+      },
+      "properties": {
+        "name": "Turkish-Palestinian Friendship Hospital",
+        "official_name": "Turkish-Palestinian Friendship Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-17",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-17",
+            "end": "2023-11-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-01",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.5093535915469,
+          31.5349897895014
+        ]
+      },
+      "properties": {
+        "name": "Indonesian Hospital",
+        "official_name": "Indonesian Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-16",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-16",
+            "end": "2024-06-14",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-06-14",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2024-10-26",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-10-26",
+            "end": "2024-10-29",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-10-29",
+            "end": "2024-12-24",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-12-24",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.5012854400996,
+          31.5384211723648
+        ]
+      },
+      "properties": {
+        "name": "Kamal Adwan Hospital",
+        "official_name": "Kamal Adwan Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-03",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-03",
+            "end": "2023-12-05",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-12-05",
+            "end": "2024-01-19",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-01-19",
+            "end": "2024-05-19",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-05-19",
+            "end": "2024-07-07",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-07-07",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2024-12-27",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-12-27",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2978534683495,
+          31.351889058805
+        ]
+      },
+      "properties": {
+        "name": "Al-Amal Hospital ",
+        "official_name": "Al-Amal Hospital ",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2024-01-22",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2024-01-22",
+            "end": "2024-03-26",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-03-26",
+            "end": "2024-04-15",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-04-15",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4304534710371,
+          31.5059896096624
+        ]
+      },
+      "properties": {
+        "name": "Al-Quds Hospital",
+        "official_name": "Al-Quds Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-02",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-02",
+            "end": "2023-11-12",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-12",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.3599534790993,
+          31.4198893086273
+        ]
+      },
+      "properties": {
+        "name": "Al-Aqsa Martyrs Hospital",
+        "official_name": "Al-Aqsa Martyrs Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-06",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-06",
+            "end": "2024-01-06",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-01-06",
+            "end": "2024-01-08",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-01-08",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2497534825037,
+          31.2884888392556
+        ]
+      },
+      "properties": {
+        "name": "Kuwait Specialized Hospital",
+        "official_name": "Kuwait Specialized Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-16",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-16",
+            "end": "2024-05-28",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-05-28",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.3208560465975,
+          31.3034388435269
+        ]
+      },
+      "properties": {
+        "name": "Gaza European Hospital",
+        "official_name": "Gaza European Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-17",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-17",
+            "end": "2024-07-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-07-01",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2024-08-25",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-25",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4616623040226,
+          31.5048378463969
+        ]
+      },
+      "properties": {
+        "name": "Al-Ahli Arab Hospital",
+        "official_name": "Al-Ahli Arab Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-17",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-17",
+            "end": "2023-11-22",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-22",
+            "end": "2023-11-24",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2023-11-24",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.46045348679,
+          31.532989715314
+        ]
+      },
+      "properties": {
+        "name": "Al-Rantisi Specialized Hospital",
+        "official_name": "Al-Rantisi Specialized Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-06",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-06",
+            "end": "2023-11-09",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-09",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4586534827263,
+          31.5327897131354
+        ]
+      },
+      "properties": {
+        "name": "Al-Nasr Paediatric Hospital",
+        "official_name": "Al-Nasr Paediatric Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-04",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-04",
+            "end": "2023-11-09",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-09",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-07",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2025-01-07",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4598534843144,
+          31.533389714538
+        ]
+      },
+      "properties": {
+        "name": "Gaza Psychiatric Hospital ",
+        "official_name": "Gaza Psychiatric Hospital ",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-05",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-05",
+            "end": "2023-11-09",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-09",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2730535651564,
+          31.2731888359031
+        ]
+      },
+      "properties": {
+        "name": "Muhammad Youssef al-Najjar Hospital",
+        "official_name": "Muhammad Youssef al-Najjar Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2024-05-07",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2024-05-07",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.53745365,
+          31.53938984
+        ]
+      },
+      "properties": {
+        "name": "Beit Hanoun Hospital",
+        "official_name": "Beit Hanoun Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-09",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-09",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4575717677477,
+          31.5473510147975
+        ]
+      },
+      "properties": {
+        "name": "Sheikh Hamad Hospital for Rehabilitation and Prosthetics Hospital",
+        "official_name": "Sheikh Hamad Hospital for Rehabilitation and Prosthetics Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-15",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-15",
+            "end": "2023-11-07",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-07",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4805535675483,
+          31.5143897000453
+        ]
+      },
+      "properties": {
+        "name": "Muhammad al-Durrah Children's Hospital ",
+        "official_name": "Muhammad al-Durrah Children's Hospital ",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-13",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-13",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.3469536299486,
+          31.3265890689721
+        ]
+      },
+      "properties": {
+        "name": "Algerian Hospital ",
+        "official_name": "Algerian Hospital ",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2024-03-05",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2024-03-05",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.452807859961,
+          31.5135332115643
+        ]
+      },
+      "properties": {
+        "name": "Wafaa Medical Rehabilitation and Specialized Surgery Hospital",
+        "official_name": "Wafaa Medical Rehabilitation and Specialized Surgery Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-08",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-08",
+            "end": "2023-11-18",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-18",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2024-12-06",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-12-06",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4314051669262,
+          31.5079018988424
+        ]
+      },
+      "properties": {
+        "name": "International Ophthalmic Hospital",
+        "official_name": "International Ophthalmic Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-09",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-09",
+            "end": "2024-05-02",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-05-02",
+            "end": "2024-06-14",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-06-14",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4526657803148,
+          31.5297512635764
+        ]
+      },
+      "properties": {
+        "name": "Al-Hayat Specialized Hospital",
+        "official_name": "Al-Hayat Specialized Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-02",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-02",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2460534385619,
+          31.3068888778951
+        ]
+      },
+      "properties": {
+        "name": "Al-Helal al-Emarati Hospital",
+        "official_name": "Al-Helal al-Emarati Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2024-05-08",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2024-05-08",
+            "end": "2024-05-30",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-05-30",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.3210535223302,
+          31.3516890916305
+        ]
+      },
+      "properties": {
+        "name": "Dar Essalam Hospital",
+        "official_name": "Dar Essalam Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-01",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-01",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.459389,
+          31.533889
+        ]
+      },
+      "properties": {
+        "name": "Ophthalmic Hospital",
+        "official_name": "Ophthalmic Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-08",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-08",
+            "end": "2023-11-09",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-09",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2024-12-31",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-12-31",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2811256201986,
+          31.3544927614723
+        ]
+      },
+      "properties": {
+        "name": "Al-Khair Hospital",
+        "official_name": "Al-Khair Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2024-01-22",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2024-01-22",
+            "end": "2024-06-06",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-06-06",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4454534831473,
+          31.5175896586961
+        ]
+      },
+      "properties": {
+        "name": "Patient’s Friends Society Hospital",
+        "official_name": "Patient’s Friends Society Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-02",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-02",
+            "end": "2024-04-14",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-04-14",
+            "end": "2024-06-26",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-06-26",
+            "end": "2024-07-12",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2024-07-12",
+            "end": "2024-07-14",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-07-14",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4705534895871,
+          31.5427897523383
+        ]
+      },
+      "properties": {
+        "name": "Al-Karama Specialized Hospital",
+        "official_name": "Al-Karama Specialized Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-10-17",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-10-17",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4602535153445,
+          31.5176896797551
+        ]
+      },
+      "properties": {
+        "name": "Assahaba Medical Complex",
+        "official_name": "Assahaba Medical Complex",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-12",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-12",
+            "end": "2023-12-21",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-12-21",
+            "end": "2023-12-23",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2023-12-23",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4724155237178,
+          31.5075943112793
+        ]
+      },
+      "properties": {
+        "name": "Haifa Charity Hospital",
+        "official_name": "Haifa Charity Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-01",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-01",
+            "end": "2024-04-17",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-04-17",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4474935331253,
+          31.5252705176558
+        ]
+      },
+      "properties": {
+        "name": "Al-Helou International Hospital",
+        "official_name": "Al-Helou International Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-01",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-01",
+            "end": "2023-11-16",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-16",
+            "end": "2023-12-30",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2023-12-30",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.3451054188813,
+          31.4181356997839
+        ]
+      },
+      "properties": {
+        "name": "Yaffa Hospital",
+        "official_name": "Yaffa Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-12-08",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-12-08",
+            "end": "2024-06-26",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-06-26",
+            "end": "2024-08-01",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4543535170058,
+          31.5099896531971
+        ]
+      },
+      "properties": {
+        "name": "Public Aid - Cardiovascular Hospital",
+        "official_name": "Public Aid - Cardiovascular Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2023-11-13",
+            "value": "Hospital",
+            "slug": "hospital"
+          },
+          {
+            "start": "2023-11-13",
+            "end": "2023-11-16",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          },
+          {
+            "start": "2023-11-16",
+            "end": "2024-07-11",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-07-11",
+            "end": "2025-01-20",
+            "value": "Hospital Reduced Functioning",
+            "slug": "hospital_reduced_functioning"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4520535150825,
+          31.5084896473087
+        ]
+      },
+      "properties": {
+        "name": "St. John  Eye Hospital",
+        "official_name": "St. John  Eye Hospital",
+        "type": "Hospital",
+        "statuses": [
+          {
+            "start": "2023-10-07",
+            "end": "2024-08-01",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          },
+          {
+            "start": "2024-08-01",
+            "end": "2025-01-20",
+            "value": "Hospital Out of Service",
+            "slug": "hospital_out_of_service"
+          }
+        ]
+      }
+    }
+  ]
+}

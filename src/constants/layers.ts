@@ -7,7 +7,8 @@ export type LayerId =
   | "GAZA_BUFFER_FILL"
   | "GAZA_AIRPORT_BOUNDARY_FILL"
   | "HIRIBAYA_BOUNDARY_FILL"
-  | "CROSSINGS_SYMBOL";
+  | "CROSSINGS_SYMBOL"
+  | "GAZA_HOSPITALS_STATUS_SYMBOL";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
 
@@ -69,7 +70,9 @@ export const LAYERS: LayerType[] = [
     type: "symbol",
     paint: {
       "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
       "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 500 },
     },
     layout: {
       "icon-image": "cross",
@@ -79,6 +82,20 @@ export const LAYERS: LayerType[] = [
       "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
       "text-size": 16,
       "text-offset": [0, 2],
+    },
+  },
+  {
+    id: "GAZA_HOSPITALS_STATUS_SYMBOL",
+    source: SOURCE_MAP.get("GAZA_HOSPITALS_STATUS")!.id,
+    type: "symbol",
+    paint: {
+      "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "icon-allow-overlap": true,
+      "text-allow-overlap": true,
+      "icon-image": "building",
     },
   },
 ] as const;
