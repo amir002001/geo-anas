@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "merokot-pipes",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 34.365709700355929, 31.355434835404321 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 34.414797402403181, 31.417500949080292 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 34.496017139692476, 31.488254225378697 ] } }
+]
+}

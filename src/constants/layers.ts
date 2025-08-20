@@ -10,7 +10,11 @@ export type LayerId =
   | "CROSSINGS_SYMBOL"
   | "GAZA_HOSPITALS_STATUS_SYMBOL"
   | "GAZA_UNIVERSITIES_SYMBOL"
-  | "GAZA_DESALINATION_PLANTS_SYMBOL";
+  | "MEKOROT_PIPES_SYMBOL"
+  | "WWTP_FILL"
+  | "REFUGEE_CAMPS_SYMBOL"
+  | "GAZA_DESALINATION_PLANTS_SYMBOL"
+  | "WATER_WELLS_SYMBOL";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
 
@@ -124,6 +128,55 @@ export const LAYERS: LayerType[] = [
     layout: {
       "icon-allow-overlap": true,
       "icon-image": "building",
+    },
+  },
+  {
+    id: "MEKOROT_PIPES_SYMBOL",
+    source: SOURCE_MAP.get("MEKOROT_PIPES")!.id,
+    type: "symbol",
+    paint: {
+      "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "icon-allow-overlap": true,
+      "icon-image": "star",
+      "icon-size": 2,
+    },
+  },
+  {
+    id: "WWTP_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("WWTPS")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-opacity-transition": { duration: 500 },
+      "fill-color": "#626EF1",
+      "fill-outline-color": "#2231FF",
+    },
+  },
+  {
+    id: "WATER_WELLS_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("WATERWELLS")!.id,
+    paint: {
+      "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "icon-image": "cafe",
+    },
+  },
+  {
+    id: "REFUGEE_CAMPS_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("REFUGEE_CAMPS")!.id,
+    paint: {
+      "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "icon-image": "bicycle",
     },
   },
 ] as const;

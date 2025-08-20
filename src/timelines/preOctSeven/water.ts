@@ -19,4 +19,53 @@ const desalinationPlants: GazaEvent = {
   imgSrc: "/images/desalination-plant.jpg",
 };
 
-export const water = [desalinationPlants];
+const mekorotPipes: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image",
+  title: "Mekorot Pipes",
+  imgSrc: "/images/mekorot.jpg",
+  layerOverrides: [
+    {
+      id: "MEKOROT_PIPES_SYMBOL",
+      paintOverrides: {
+        "icon-opacity": 1,
+      },
+    },
+  ],
+};
+
+const waterWells: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image",
+  title: "Waterwells",
+  imgSrc: "/images/aquifer.png",
+  layerOverrides: [
+    { id: "WATER_WELLS_SYMBOL", paintOverrides: { "icon-opacity": 1 } },
+  ],
+};
+
+const wwtp: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image",
+  title: "Wastewater Treatment Plants",
+  imgSrc: "/images/wwtp.jpg",
+  layerOverrides: [
+    {
+      id: "WWTP_FILL",
+      paintOverrides: {
+        "fill-opacity": 1,
+      },
+    },
+  ],
+};
+
+export const water = [desalinationPlants, mekorotPipes, waterWells, wwtp];

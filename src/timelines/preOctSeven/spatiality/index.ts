@@ -1,1 +1,3 @@
-export const spatiality = [];
+import { refugeeCamps } from "./refugeeCamps";
+
+export const spatiality = [refugeeCamps];

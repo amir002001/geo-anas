@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "refugee-camps",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "RAFAH", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 34.2532, 31.2830194, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "JABALIA", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 34.4993417, 31.5391139, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "KHAN YOUNIS", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 34.2883333, 31.3508333, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "AL-SHATI", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 34.4453944, 31.5321972, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "NUSEIRAT", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 34.392875, 31.4476556, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUREIJ", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 34.4029389, 31.4395306, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "MAGHAZI", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 34.385375, 31.4213583, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "DEIR AL-BALAH", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 34.3405556, 31.4258333, 0.0 ] } }
+]
+}

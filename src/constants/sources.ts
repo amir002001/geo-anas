@@ -7,7 +7,11 @@ import gazaHospitalsStatus from "../data/gaza-hospital-status.json";
 import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
+import mekorotPipes from "../data/mekorot-pipes.json";
+import refugeeCamps from "../data/refugee-camps.json";
 import gazaUniversities from "../data/universities.json";
+import waterwells from "../data/water-wells.json";
+import wwtp from "../data/wwtp.json";
 
 export type SourceId =
   | "GAZA_BOUNDARY"
@@ -17,7 +21,11 @@ export type SourceId =
   | "GAZA_AIRPORT_BOUNDARY"
   | "HIRIBAYA_BOUNDARY"
   | "CROSSINGS_POINTS"
+  | "MEKOROT_PIPES"
   | "GAZA_HOSPITALS_STATUS"
+  | "WWTPS"
+  | "WATERWELLS"
+  | "REFUGEE_CAMPS"
   | "GAZA_UNIVERSITIES";
 export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
   {
@@ -76,6 +84,34 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: gazaDesalinationPlants as any,
+    },
+  },
+  {
+    id: "MEKOROT_PIPES",
+    source: {
+      type: "geojson",
+      data: mekorotPipes as any, // Placeholder for Mekorot pipes
+    },
+  },
+  {
+    id: "WWTPS",
+    source: {
+      type: "geojson",
+      data: wwtp as any,
+    },
+  },
+  {
+    id: "WATERWELLS",
+    source: {
+      type: "geojson",
+      data: waterwells as any,
+    },
+  },
+  {
+    id: "REFUGEE_CAMPS",
+    source: {
+      type: "geojson",
+      data: refugeeCamps as any,
     },
   },
 ] as const;
