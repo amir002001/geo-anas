@@ -27,6 +27,7 @@ export type SourceId =
   | "NAKBA"
   | "WATERWELLS"
   | "REFUGEE_CAMPS"
+  | "KHAN_YOUNIS_FARM_IMG"
   | "GAZA_UNIVERSITIES";
 export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
   {
@@ -125,6 +126,20 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [37.098231468098355, 33.677590056266517], // TR
         [37.098283800403294, 29.096406997472034], // BR
         [32.916723305317753, 29.09635466516708], // BL
+      ],
+    },
+  },
+  {
+    id: "KHAN_YOUNIS_FARM_IMG",
+    source: {
+      type: "image",
+      url: "/images/khan-younis-farms.png",
+
+      coordinates: [
+        [34.246700387470071, 31.36872213373891],
+        [34.288209363058691, 31.365754022611231],
+        [34.284607406275384, 31.315381029733061],
+        [34.243098408354257, 31.318349201546965],
       ],
     },
   },

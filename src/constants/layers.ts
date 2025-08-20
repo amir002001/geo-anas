@@ -15,7 +15,8 @@ export type LayerId =
   | "REFUGEE_CAMPS_SYMBOL"
   | "GAZA_DESALINATION_PLANTS_SYMBOL"
   | "WATER_WELLS_SYMBOL"
-  | "NAKBA_RASTER";
+  | "NAKBA_RASTER"
+  | "KHAN_YOUNIS_FARMS_COORDINATES";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
 
@@ -184,6 +185,15 @@ export const LAYERS: LayerType[] = [
     id: "NAKBA_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("NAKBA")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "KHAN_YOUNIS_FARMS_COORDINATES",
+    type: "raster",
+    source: SOURCE_MAP.get("KHAN_YOUNIS_FARM_IMG")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },
