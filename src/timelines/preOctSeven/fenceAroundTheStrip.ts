@@ -1,7 +1,7 @@
 import { GAZA_BBOX } from "../../constants/constants";
 import type { ImageEvent } from "../timelines";
 
-export const ironFenceAroundStrip: ImageEvent = {
+const ironFenceEvent: ImageEvent = {
   fitBounds: {
     bounds: GAZA_BBOX,
     options: {},
@@ -13,3 +13,5 @@ export const ironFenceAroundStrip: ImageEvent = {
   kind: "image",
   imgSrc: "/images/iron-wall.jpg",
 };
+
+export const ironFenceAroundStrip = [ironFenceEvent];

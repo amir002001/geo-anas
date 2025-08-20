@@ -1,1 +1,3 @@
-export const loadAllImages = (map: mapboxgl.Map) => {};
+export const loadAllImages = (map: mapboxgl.Map) => {
+  console.log(map);
+};
