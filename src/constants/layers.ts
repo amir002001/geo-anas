@@ -9,7 +9,8 @@ export type LayerId =
   | "HIRIBAYA_BOUNDARY_FILL"
   | "CROSSINGS_SYMBOL"
   | "GAZA_HOSPITALS_STATUS_SYMBOL"
-  | "GAZA_UNIVERSITIES_SYMBOL";
+  | "GAZA_UNIVERSITIES_SYMBOL"
+  | "GAZA_DESALINATION_PLANTS_SYMBOL";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
 
@@ -107,6 +108,19 @@ export const LAYERS: LayerType[] = [
       "icon-opacity-transition": { duration: 500 },
     },
 
+    layout: {
+      "icon-allow-overlap": true,
+      "icon-image": "building",
+    },
+  },
+  {
+    id: "GAZA_DESALINATION_PLANTS_SYMBOL",
+    source: SOURCE_MAP.get("GAZA_DESALINATION_PLANTS")!.id,
+    type: "symbol",
+    paint: {
+      "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 500 },
+    },
     layout: {
       "icon-allow-overlap": true,
       "icon-image": "building",
