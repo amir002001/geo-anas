@@ -14,7 +14,8 @@ export type LayerId =
   | "WWTP_FILL"
   | "REFUGEE_CAMPS_SYMBOL"
   | "GAZA_DESALINATION_PLANTS_SYMBOL"
-  | "WATER_WELLS_SYMBOL";
+  | "WATER_WELLS_SYMBOL"
+  | "NAKBA_RASTER";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
 
@@ -177,6 +178,15 @@ export const LAYERS: LayerType[] = [
     },
     layout: {
       "icon-image": "bicycle",
+    },
+  },
+  {
+    id: "NAKBA_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("NAKBA")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
     },
   },
 ] as const;

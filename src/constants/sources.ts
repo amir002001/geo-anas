@@ -24,6 +24,7 @@ export type SourceId =
   | "MEKOROT_PIPES"
   | "GAZA_HOSPITALS_STATUS"
   | "WWTPS"
+  | "NAKBA"
   | "WATERWELLS"
   | "REFUGEE_CAMPS"
   | "GAZA_UNIVERSITIES";
@@ -112,6 +113,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: refugeeCamps as any,
+    },
+  },
+  {
+    id: "NAKBA",
+    source: {
+      type: "image",
+      url: "/images/nakba.png",
+      coordinates: [
+        [32.918083945246565, 33.676268665566397], // TL
+        [37.098231468098355, 33.677590056266517], // TR
+        [37.098283800403294, 29.096406997472034], // BR
+        [32.916723305317753, 29.09635466516708], // BL
+      ],
     },
   },
 ] as const;

@@ -8,3 +8,8 @@ const sw: [number, number] = [boundsArray[0], boundsArray[1]];
 const ne: [number, number] = [boundsArray[2], boundsArray[3]];
 
 export const GAZA_BBOX = [sw, ne] as LngLatBoundsLike;
+
+export const PALESTINE_BBOX: LngLatBoundsLike = [
+  [32.91672330531775, 29.09635466516708],
+  [37.098283800403294, 33.67759005626652],
+];
