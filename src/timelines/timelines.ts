@@ -6,6 +6,7 @@ import type {
 import { GAZA_BBOX } from "../constants/constants";
 import type { LayerId } from "../constants/layers";
 import { healthcareTimeline } from "./healthcareTimeline/healthcareTimeline";
+import { postOctSeven } from "./postOctSeven";
 import { preOctSeven } from "./preOctSeven";
 
 export interface ILayerOverride {
@@ -48,5 +49,6 @@ export const timelines: Timeline = [
     kind: "basic",
   },
   ...preOctSeven,
+  ...postOctSeven,
   ...healthcareTimeline,
 ];

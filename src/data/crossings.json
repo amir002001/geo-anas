@@ -1,10 +1,51 @@
 {
-"type": "FeatureCollection",
-"name": "crossings",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "name": "Kerem Crossing" }, "geometry": { "type": "Point", "coordinates": [ 34.270029083788529, 31.220943933429133 ] } },
-{ "type": "Feature", "properties": { "name": "Rafah Crossing" }, "geometry": { "type": "Point", "coordinates": [ 34.258377400331391, 31.248732841060825 ] } },
-{ "type": "Feature", "properties": { "name": "Erez Crossing" }, "geometry": { "type": "Point", "coordinates": [ 34.544580810587618, 31.558498743093512 ] } }
-]
+    "type": "FeatureCollection",
+    "name": "crossings",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Kerem Crossing"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.270029083788529,
+                    31.220943933429133
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Rafah Crossing"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.259455750592146,
+                    31.248424846843463
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Erez Crossing"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.544580810587618,
+                    31.558498743093512
+                ]
+            }
+        }
+    ]
 }
