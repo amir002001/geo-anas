@@ -121,7 +121,8 @@ export const LAYERS: LayerType[] = [
     },
     layout: {
       "icon-allow-overlap": true,
-      "icon-image": "building",
+      "icon-image": "hospital",
+      "icon-size": 0.4,
     },
   },
   {
@@ -135,7 +136,8 @@ export const LAYERS: LayerType[] = [
 
     layout: {
       "icon-allow-overlap": true,
-      "icon-image": "building",
+      "icon-image": "school",
+      "icon-size": 0.5,
     },
   },
   {
