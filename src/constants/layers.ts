@@ -162,7 +162,7 @@ export const LAYERS: LayerType[] = [
     layout: {
       "icon-allow-overlap": true,
       "icon-image": IMAGE_MAP.get("pipe"),
-      "icon-size": 1,
+      "icon-size": 0.5,
     },
   },
   {
