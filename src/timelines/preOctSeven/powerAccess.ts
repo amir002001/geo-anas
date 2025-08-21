@@ -1,10 +1,5 @@
-import type { LngLatBoundsLike } from "mapbox-gl";
+import { GAZA_PPLANT_BOUNDS } from "../../constants/constants";
 import type { GazaEvent } from "../timelines";
-
-const GAZA_PPLANT_BOUNDS: LngLatBoundsLike = [
-  [34.39867080760257, 31.451685942978582], // Southwest corner
-  [34.40544712745469, 31.458462518018624], // Northeast corner
-];
 
 const gazaPowerPlant: GazaEvent = {
   fitBounds: {
@@ -14,7 +9,15 @@ const gazaPowerPlant: GazaEvent = {
   title: "Power Access Overview",
   imgSrc: "/images/gaza-powerplant.jpg",
   kind: "image",
-  layerOverrides: [],
+  layerOverrides: [
+    {
+      id: "GAZA_POWER_SYMBOL",
+      paintOverrides: {
+        "icon-opacity": 1,
+        "text-opacity": 1,
+      },
+    },
+  ],
 };
 
 export const powerAccess = [gazaPowerPlant];

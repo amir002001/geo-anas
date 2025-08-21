@@ -24,6 +24,7 @@ export type SourceId =
   | "GAZA_BUFFER"
   | "GAZA_DESALINATION_PLANTS"
   | "GAZA_AIRPORT_BOUNDARY"
+  | "GAZA_POWER"
   | "HIRIBAYA_BOUNDARY"
   | "CROSSINGS_POINTS"
   | "MEKOROT_PIPES"
@@ -121,6 +122,21 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
       data: refugeeCamps as any,
     },
   },
+  {
+    id: "GAZA_POWER",
+    source: {
+      type: "geojson",
+      data: {
+        type: "Feature",
+        properties: {},
+        geometry: {
+          coordinates: [34.400238922538904, 31.455255737321906],
+          type: "Point",
+        },
+      },
+    },
+  },
+
   {
     id: "NAKBA",
     source: {

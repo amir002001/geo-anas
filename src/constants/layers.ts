@@ -16,6 +16,7 @@ export type LayerId =
   | "REFUGEE_CAMPS_SYMBOL"
   | "GAZA_DESALINATION_PLANTS_SYMBOL"
   | "WATER_WELLS_SYMBOL"
+  | "GAZA_POWER_SYMBOL"
   | "NAKBA_RASTER"
   | "KHAN_YOUNIS_FARMS_COORDINATES";
 
@@ -50,6 +51,23 @@ export const LAYERS: LayerType[] = [
       "fill-color": "#FF0000",
       "fill-opacity": 0,
       "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "GAZA_POWER_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("GAZA_POWER")!.id,
+    paint: {
+      "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 500 },
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "icon-image": IMAGE_MAP.get("power"),
+      "text-field": "Gaza Power Plant GPGC",
+      "text-font": ["Open Sans Bold"],
+      "text-offset": [0, 3],
     },
   },
   {
