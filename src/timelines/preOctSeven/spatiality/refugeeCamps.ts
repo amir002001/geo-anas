@@ -9,6 +9,9 @@ export const refugeeCamps: GazaEvent = {
   },
   kind: "basic",
   layerOverrides: [
-    { id: "REFUGEE_CAMPS_SYMBOL", paintOverrides: { "icon-opacity": 1 } },
+    {
+      id: "REFUGEE_CAMPS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1, "text-opacity": 1 },
+    },
   ],
 };

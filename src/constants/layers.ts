@@ -102,8 +102,8 @@ export const LAYERS: LayerType[] = [
       "icon-opacity-transition": { duration: 500 },
     },
     layout: {
-      "icon-image": "cross",
-      "icon-size": 2,
+      "icon-image": IMAGE_MAP.get("crossing"),
+      "icon-size": 0.5,
       "icon-allow-overlap": true,
       "text-field": ["get", "name"],
       "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
@@ -150,7 +150,8 @@ export const LAYERS: LayerType[] = [
     },
     layout: {
       "icon-allow-overlap": true,
-      "icon-image": "building",
+      "icon-image": IMAGE_MAP.get("desalination"),
+      "icon-size": 0.5,
     },
   },
   {
@@ -202,10 +203,18 @@ export const LAYERS: LayerType[] = [
     paint: {
       "icon-opacity": 0,
       "icon-opacity-transition": { duration: 500 },
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
     },
     layout: {
-      "icon-image": "bicycle",
+      "icon-image": "camp",
       "icon-allow-overlap": true,
+      "text-allow-overlap": true,
+      "icon-size": 0.33,
+      "text-field": ["get", "Name"],
+      "text-offset": [-1.5, 0],
+      "text-anchor": "right",
+      "text-size": 12,
     },
   },
   {
