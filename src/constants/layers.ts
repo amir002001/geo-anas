@@ -1,4 +1,5 @@
 import type { LayerSpecification } from "mapbox-gl";
+import { IMAGE_MAP } from "./images";
 import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
@@ -11,7 +12,7 @@ export type LayerId =
   | "GAZA_HOSPITALS_STATUS_SYMBOL"
   | "GAZA_UNIVERSITIES_SYMBOL"
   | "MEKOROT_PIPES_SYMBOL"
-  | "WWTP_FILL"
+  | "WWTP_SYMBOL"
   | "REFUGEE_CAMPS_SYMBOL"
   | "GAZA_DESALINATION_PLANTS_SYMBOL"
   | "WATER_WELLS_SYMBOL"
@@ -142,19 +143,22 @@ export const LAYERS: LayerType[] = [
     },
     layout: {
       "icon-allow-overlap": true,
-      "icon-image": "star",
-      "icon-size": 2,
+      "icon-image": IMAGE_MAP.get("pipe"),
+      "icon-size": 1,
     },
   },
   {
-    id: "WWTP_FILL",
-    type: "fill",
+    id: "WWTP_SYMBOL",
+    type: "symbol",
     source: SOURCE_MAP.get("WWTPS")!.id,
     paint: {
-      "fill-opacity": 0,
-      "fill-opacity-transition": { duration: 500 },
-      "fill-color": "#626EF1",
-      "fill-outline-color": "#2231FF",
+      "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "icon-allow-overlap": true,
+      "icon-image": IMAGE_MAP.get("wwts"),
+      "icon-size": 1,
     },
   },
   {
@@ -166,8 +170,9 @@ export const LAYERS: LayerType[] = [
       "icon-opacity-transition": { duration: 500 },
     },
     layout: {
-      "icon-image": "cafe",
+      "icon-image": IMAGE_MAP.get("well"),
       "icon-allow-overlap": true,
+      "icon-size": 0.3,
     },
   },
   {

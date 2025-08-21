@@ -13,16 +13,16 @@ import { spatiality } from "./spatiality";
 import { water } from "./water";
 
 export const preOctSeven: Timeline = [
-  ...eighteenYearBlockade, // ✅
-  ...ironFenceAroundStrip, // ✅
-  ...balfour, // TODO
-  ...hiribya, // ✅
-  ...crossings, // ✅
-  ...spatiality, // TODO
-  ...foodAccessAndAgriculture, // TODO
-  ...water, // TODO
-  ...powerAccess, // TODO
-  ...healthcare, // TODO
-  ...economy, // TODO
-  ...education, // TODO
+  ...eighteenYearBlockade,
+  ...ironFenceAroundStrip,
+  ...balfour,
+  ...hiribya,
+  ...crossings,
+  ...spatiality,
+  ...foodAccessAndAgriculture,
+  ...water,
+  ...powerAccess,
+  ...healthcare,
+  ...economy,
+  ...education,
 ];

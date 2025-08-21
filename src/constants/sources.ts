@@ -1,3 +1,4 @@
+import { centroid, featureCollection } from "@turf/turf";
 import type { SourceSpecification } from "mapbox-gl";
 import crossings from "../data/crossings.json";
 import gazaDesalinationPlants from "../data/desalination-plants.json";
@@ -12,6 +13,10 @@ import refugeeCamps from "../data/refugee-camps.json";
 import gazaUniversities from "../data/universities.json";
 import waterwells from "../data/water-wells.json";
 import wwtp from "../data/wwtp.json";
+
+const wwtpCentroids = wwtp.features.map((feature) => centroid(feature as any));
+
+const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "GAZA_BOUNDARY"
@@ -99,7 +104,7 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     id: "WWTPS",
     source: {
       type: "geojson",
-      data: wwtp as any,
+      data: wwtpPointFeatureCollection as any,
     },
   },
   {

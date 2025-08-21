@@ -60,9 +60,9 @@ const wwtp: GazaEvent = {
   imgSrc: "/images/wwtp.jpg",
   layerOverrides: [
     {
-      id: "WWTP_FILL",
+      id: "WWTP_SYMBOL",
       paintOverrides: {
-        "fill-opacity": 1,
+        "icon-opacity": 1,
       },
     },
   ],
