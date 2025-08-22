@@ -53,7 +53,7 @@ const waterWells: GazaEvent = {
     {
       id: "WATER_WELLS_CIRCLE",
       paintOverrides: {
-        "circle-opacity": 0.8,
+        "circle-opacity": 0.5,
       },
     },
   ],
