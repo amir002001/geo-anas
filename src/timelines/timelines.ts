@@ -3,7 +3,6 @@ import type {
   LngLatBoundsLike,
   PaintSpecification,
 } from "mapbox-gl";
-import { GAZA_BBOX } from "../constants/constants";
 import type { LayerId } from "../constants/layers";
 import { healthcareTimeline } from "./healthcareTimeline/healthcareTimeline";
 import { postOctSeven } from "./postOctSeven";
@@ -39,15 +38,6 @@ export type GazaEvent = BasicEvent | VideoEvent | ImageEvent;
 export type Timeline = GazaEvent[];
 
 export const timelines: Timeline = [
-  {
-    fitBounds: {
-      bounds: GAZA_BBOX,
-      options: {},
-    },
-    title: "People's Conference for Palestine",
-    layerOverrides: [],
-    kind: "basic",
-  },
   ...preOctSeven,
   ...postOctSeven,
   ...healthcareTimeline,

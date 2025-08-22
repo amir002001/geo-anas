@@ -15,12 +15,15 @@ import salahAlDin from "../data/salah-al-din.json";
 import schoolsAndKindergartens from "../data/schools-and-kindergartens.json";
 import waterwells from "../data/water-wells.json";
 import wwtp from "../data/wwtp.json";
+import { WHOLE_WORLD, WORLD_CENTER } from "./constants";
 
 const wwtpCentroids = wwtp.features.map((feature) => centroid(feature as any));
 
 const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
+  | "WORLD_CENTER"
+  | "WHOLE_WORLD"
   | "GAZA_BOUNDARY"
   | "GAZA_GOVERNATE_BOUNDARIES"
   | "GAZA_SEA_BLOCKADE"
@@ -196,6 +199,20 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     id: "GAZA_GOVERNATE_BOUNDARIES",
     source: {
       data: gazaGovernates as any,
+      type: "geojson",
+    },
+  },
+  {
+    id: "WHOLE_WORLD",
+    source: {
+      data: WHOLE_WORLD as any,
+      type: "geojson",
+    },
+  },
+  {
+    id: "WORLD_CENTER",
+    source: {
+      data: WORLD_CENTER as any,
       type: "geojson",
     },
   },

@@ -1,4 +1,4 @@
-import type { Timeline } from "../timelines";
+import type { GazaEvent, Timeline } from "../timelines";
 import { balfour } from "./balfour";
 import { crossings } from "./crossings";
 import { economy } from "./economy";
@@ -12,7 +12,24 @@ import { powerAccess } from "./powerAccess";
 import { spatiality } from "./spatiality";
 import { water } from "./water";
 
+const intro: GazaEvent = {
+  kind: "basic",
+  layerOverrides: [
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+    { id: "WORLD_CENTER_SYMBOL", paintOverrides: { "text-opacity": 1 } },
+  ],
+  title: "Pre-October 7",
+  fitBounds: {
+    bounds: [
+      [0, 0],
+      [0, 0],
+    ],
+    options: { maxZoom: 10 },
+  },
+};
+
 export const preOctSeven: Timeline = [
+  intro,
   ...eighteenYearBlockade,
   ...ironFenceAroundStrip,
   ...balfour,

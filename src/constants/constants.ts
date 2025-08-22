@@ -9,6 +9,44 @@ const ne: [number, number] = [boundsArray[2], boundsArray[3]];
 
 export const GAZA_BBOX = [sw, ne] as LngLatBoundsLike;
 
+export const WHOLE_WORLD = {
+  type: "FeatureCollection",
+  features: [
+    {
+      type: "Feature",
+      properties: {},
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-180.0, -85.0511],
+            [180.0, -85.0511],
+            [180.0, 85.0511],
+            [-180.0, 85.0511],
+            [-180.0, -85.0511],
+          ],
+        ],
+      },
+    },
+  ],
+};
+
+export const WORLD_CENTER = {
+  type: "FeatureCollection",
+  features: [
+    {
+      type: "Feature",
+      properties: {
+        name: "Center of the World",
+      },
+      geometry: {
+        type: "Point",
+        coordinates: [0.0, 0.0],
+      },
+    },
+  ],
+};
+
 export const PALESTINE_BBOX: LngLatBoundsLike = [
   [32.91672330531775, 30.09635466516708],
   [37.098283800403294, 33.67759005626652],

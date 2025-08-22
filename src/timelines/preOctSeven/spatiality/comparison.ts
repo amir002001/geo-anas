@@ -11,7 +11,7 @@ const newYork: GazaEvent = {
     ],
     options: { duration: 3000 },
   },
-  imgSrc: "/images/nyc.webp",
+  imgSrc: "/images/nyc.jpg",
 };
 const detroit: GazaEvent = {
   kind: "image",
@@ -24,7 +24,7 @@ const detroit: GazaEvent = {
     ],
     options: { duration: 3000 },
   },
-  imgSrc: "/images/detroit.webp",
+  imgSrc: "/images/detroit.jpg",
 };
 const toronto: GazaEvent = {
   kind: "image",
