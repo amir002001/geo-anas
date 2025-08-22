@@ -10,7 +10,8 @@ export type LayerId =
   | "HIRIBAYA_BOUNDARY_FILL"
   | "CROSSINGS_SYMBOL"
   | "GAZA_HOSPITALS_STATUS_SYMBOL"
-  | "GAZA_UNIVERSITIES_SYMBOL"
+  | "GAZA_SCH_KIND_CIRCLE_CLUSTER"
+  | "GAZA_SCH_KIND_SYMBOL_CLUSTER"
   | "MEKOROT_PIPES_SYMBOL"
   | "WWTP_SYMBOL"
   | "REFUGEE_CAMPS_SYMBOL"
@@ -125,21 +126,49 @@ export const LAYERS: LayerType[] = [
       "icon-size": 0.4,
     },
   },
+  //   SCHOOLS AND UNI BEGIN
   {
-    id: "GAZA_UNIVERSITIES_SYMBOL",
-    source: SOURCE_MAP.get("GAZA_UNIVERSITIES")!.id,
+    id: "GAZA_SCH_KIND_CIRCLE_CLUSTER",
+    source: SOURCE_MAP.get("SCHOOLS_AND_KINDERGARTENS")!.id,
+    type: "circle",
+    paint: {
+      "circle-opacity": 0,
+      "circle-color": "#0A8048",
+      "circle-opacity-transition": { duration: 500 },
+      "circle-radius": [
+        "step",
+        ["get", "point_count"],
+        40,
+        50,
+        50,
+        100,
+        60,
+        200,
+        70,
+      ],
+    },
+  },
+  {
+    id: "GAZA_SCH_KIND_SYMBOL_CLUSTER",
+    source: SOURCE_MAP.get("SCHOOLS_AND_KINDERGARTENS")!.id,
     type: "symbol",
     paint: {
       "icon-opacity": 0,
       "icon-opacity-transition": { duration: 500 },
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
+      "text-color": "#FFFFFF",
     },
-
     layout: {
       "icon-allow-overlap": true,
+      "text-allow-overlap": true,
+      "text-field": ["get", "point_count"],
+      "text-offset": [0, 1.5],
       "icon-image": "school",
       "icon-size": 0.5,
     },
   },
+  //   SCHOOLS AND UNI END
   {
     id: "GAZA_DESALINATION_PLANTS_SYMBOL",
     source: SOURCE_MAP.get("GAZA_DESALINATION_PLANTS")!.id,

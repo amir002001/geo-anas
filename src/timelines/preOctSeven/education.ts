@@ -8,8 +8,12 @@ export const universities: GazaEvent = {
   },
   layerOverrides: [
     {
-      id: "GAZA_UNIVERSITIES_SYMBOL",
-      paintOverrides: { "icon-opacity": 1 },
+      id: "GAZA_SCH_KIND_CIRCLE_CLUSTER",
+      paintOverrides: { "circle-opacity": 0.6 },
+    },
+    {
+      id: "GAZA_SCH_KIND_SYMBOL_CLUSTER",
+      paintOverrides: { "icon-opacity": 1, "text-opacity": 1 },
     },
   ],
   title: "Education",

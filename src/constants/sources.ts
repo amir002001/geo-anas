@@ -10,7 +10,7 @@ import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
 import mekorotPipes from "../data/mekorot-pipes.json";
 import refugeeCamps from "../data/refugee-camps.json";
-import gazaUniversities from "../data/universities.json";
+import schoolsAndKindergartens from "../data/schools-and-kindergartens.json";
 import waterwells from "../data/water-wells.json";
 import wwtp from "../data/wwtp.json";
 
@@ -34,7 +34,7 @@ export type SourceId =
   | "WATERWELLS"
   | "REFUGEE_CAMPS"
   | "KHAN_YOUNIS_FARM_IMG"
-  | "GAZA_UNIVERSITIES";
+  | "SCHOOLS_AND_KINDERGARTENS";
 export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
   {
     id: "GAZA_BOUNDARY",
@@ -81,10 +81,12 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     },
   },
   {
-    id: "GAZA_UNIVERSITIES",
+    id: "SCHOOLS_AND_KINDERGARTENS",
     source: {
       type: "geojson",
-      data: gazaUniversities as any,
+      data: schoolsAndKindergartens as any,
+      cluster: true,
+      clusterMinPoints: 1,
     },
   },
   {
