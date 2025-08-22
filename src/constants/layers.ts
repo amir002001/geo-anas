@@ -21,6 +21,9 @@ export type LayerId =
   | "NAKBA_RASTER"
   | "NAKBA_1949_RASTER"
   | "SALAH_AL_DIN_LINE"
+  | "GAZA_GOVERNATES_POPULATION_FILL"
+  | "GAZA_GOVERNATES_POPULATION_SYMBOL"
+  | "GAZA_GOVERNATES_NAME_SYMBOL"
   | "KHAN_YOUNIS_FARMS_COORDINATES";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
@@ -283,6 +286,43 @@ export const LAYERS: LayerType[] = [
       "line-opacity": 0,
       "line-opacity-transition": { duration: 500 },
       "line-width": 3,
+    },
+  },
+  {
+    id: "GAZA_GOVERNATES_POPULATION_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("GAZA_GOVERNATE_BOUNDARIES")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "GAZA_GOVERNATES_POPULATION_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("GAZA_GOVERNATE_BOUNDARIES")!.id,
+    paint: {
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "text-field": ["get", "population"],
+      "text-offset": [0, 1],
+    },
+  },
+  {
+    id: "GAZA_GOVERNATES_NAME_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("GAZA_GOVERNATE_BOUNDARIES")!.id,
+    paint: {
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "text-field": ["get", "name"],
+      "text-font": ["Open Sans Bold"],
+      "text-size": 20,
+      "text-offset": [0, -1],
     },
   },
 ] as const;

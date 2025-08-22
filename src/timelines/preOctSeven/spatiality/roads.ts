@@ -4,7 +4,7 @@ import type { GazaEvent } from "../../timelines";
 export const salahAlDin: GazaEvent = {
   fitBounds: {
     bounds: GAZA_BBOX,
-    options: {},
+    options: { duration: 2000 },
   },
   title: "Salah Al-Din Road",
   kind: "image",

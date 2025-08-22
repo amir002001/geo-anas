@@ -5,6 +5,7 @@ import gazaDesalinationPlants from "../data/desalination-plants.json";
 import gazaAirportBoundary from "../data/gaza-airport-boundary.json";
 import gazaBuffer from "../data/gaza-buffer.json";
 import gazaHospitalsStatus from "../data/gaza-hospital-status.json";
+import gazaGovernates from "../data/gaza-state-boundaries.json";
 import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
@@ -21,6 +22,7 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "GAZA_BOUNDARY"
+  | "GAZA_GOVERNATE_BOUNDARIES"
   | "GAZA_SEA_BLOCKADE"
   | "GAZA_BUFFER"
   | "GAZA_DESALINATION_PLANTS"
@@ -185,6 +187,13 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     id: "SALAH_AL_DIN",
     source: {
       data: salahAlDin as any,
+      type: "geojson",
+    },
+  },
+  {
+    id: "GAZA_GOVERNATE_BOUNDARIES",
+    source: {
+      data: gazaGovernates as any,
       type: "geojson",
     },
   },

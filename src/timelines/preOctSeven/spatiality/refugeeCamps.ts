@@ -7,7 +7,8 @@ export const refugeeCamps: GazaEvent = {
     bounds: GAZA_BBOX,
     options: {},
   },
-  kind: "basic",
+  kind: "image",
+  imgSrc: "/images/jabaliya-refugee-camp.jpg",
   layerOverrides: [
     {
       id: "REFUGEE_CAMPS_SYMBOL",
