@@ -46,7 +46,16 @@ const waterWells: GazaEvent = {
   title: "Waterwells",
   imgSrc: "/images/aquifer.png",
   layerOverrides: [
-    { id: "WATER_WELLS_SYMBOL", paintOverrides: { "icon-opacity": 1 } },
+    {
+      id: "WATER_WELLS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1, "text-opacity": 1 },
+    },
+    {
+      id: "WATER_WELLS_CIRCLE",
+      paintOverrides: {
+        "circle-opacity": 0.8,
+      },
+    },
   ],
 };
 

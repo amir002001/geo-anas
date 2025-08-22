@@ -16,6 +16,7 @@ export type LayerId =
   | "WWTP_SYMBOL"
   | "REFUGEE_CAMPS_SYMBOL"
   | "GAZA_DESALINATION_PLANTS_SYMBOL"
+  | "WATER_WELLS_CIRCLE"
   | "WATER_WELLS_SYMBOL"
   | "GAZA_POWER_SYMBOL"
   | "NAKBA_RASTER"
@@ -217,17 +218,48 @@ export const LAYERS: LayerType[] = [
     },
   },
   {
+    id: "WATER_WELLS_CIRCLE",
+    type: "circle",
+    source: SOURCE_MAP.get("WATERWELLS")!.id,
+    paint: {
+      "circle-opacity": 0,
+      "circle-color": "#0A8048",
+      "circle-opacity-transition": { duration: 500 },
+      "circle-radius": [
+        "step",
+        ["get", "point_count"],
+        35,
+        40,
+        40,
+        50,
+        50,
+        100,
+        60,
+        200,
+        70,
+      ],
+    },
+    layout: {},
+  },
+  {
     id: "WATER_WELLS_SYMBOL",
     type: "symbol",
     source: SOURCE_MAP.get("WATERWELLS")!.id,
     paint: {
       "icon-opacity": 0,
+      "text-opacity": 0,
+      "text-color": "#FFFFFF",
+      "text-opacity-transition": { duration: 500 },
       "icon-opacity-transition": { duration: 500 },
     },
     layout: {
       "icon-image": IMAGE_MAP.get("well"),
       "icon-allow-overlap": true,
+      "text-allow-overlap": true,
       "icon-size": 0.3,
+      "icon-offset": [0, -1.5],
+      "text-field": ["get", "point_count"],
+      "text-offset": [0, 1],
     },
   },
   {

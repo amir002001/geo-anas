@@ -120,6 +120,8 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: waterwells as any,
+      cluster: true,
+      clusterMinPoints: 1,
     },
   },
   {
