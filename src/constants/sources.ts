@@ -31,6 +31,7 @@ export type SourceId =
   | "GAZA_HOSPITALS_STATUS"
   | "WWTPS"
   | "NAKBA"
+  | "NAKBA_MAP"
   | "WATERWELLS"
   | "REFUGEE_CAMPS"
   | "KHAN_YOUNIS_FARM_IMG"
@@ -138,7 +139,6 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
       },
     },
   },
-
   {
     id: "NAKBA",
     source: {
@@ -149,6 +149,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [37.098231468098355, 33.677590056266517], // TR
         [37.098283800403294, 29.096406997472034], // BR
         [32.916723305317753, 29.09635466516708], // BL
+      ],
+    },
+  },
+  {
+    id: "NAKBA_MAP",
+    source: {
+      type: "image",
+      url: "/images/1949-lines.png",
+      coordinates: [
+        [34.069832374369945, 33.507320647140247],
+        [35.786641369820288, 33.507320962391766],
+        [35.786641351276074, 30.504430759572813],
+        [34.069831614057399, 30.504430833749623],
       ],
     },
   },

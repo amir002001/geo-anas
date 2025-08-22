@@ -15,6 +15,12 @@ const nakba: GazaEvent = {
         "raster-opacity": 1,
       },
     },
+    {
+      id: "NAKBA_1949_RASTER",
+      paintOverrides: {
+        "raster-opacity": 1,
+      },
+    },
   ],
 };
 

@@ -16,7 +16,7 @@ export const universities: GazaEvent = {
       paintOverrides: { "icon-opacity": 1, "text-opacity": 1 },
     },
   ],
-  title: "Education",
+  title: "Education - Schools and Kindergartens",
   kind: "image",
   imgSrc: "/images/al-isra-university.jpg",
 };

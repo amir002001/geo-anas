@@ -19,6 +19,7 @@ export type LayerId =
   | "WATER_WELLS_SYMBOL"
   | "GAZA_POWER_SYMBOL"
   | "NAKBA_RASTER"
+  | "NAKBA_1949_RASTER"
   | "KHAN_YOUNIS_FARMS_COORDINATES";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
@@ -244,6 +245,15 @@ export const LAYERS: LayerType[] = [
       "text-offset": [-1.5, 0],
       "text-anchor": "right",
       "text-size": 12,
+    },
+  },
+  {
+    id: "NAKBA_1949_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("NAKBA_MAP")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
     },
   },
   {
