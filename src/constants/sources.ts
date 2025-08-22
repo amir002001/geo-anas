@@ -10,6 +10,7 @@ import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
 import mekorotPipes from "../data/mekorot-pipes.json";
 import refugeeCamps from "../data/refugee-camps.json";
+import salahAlDin from "../data/salah-al-din.json";
 import schoolsAndKindergartens from "../data/schools-and-kindergartens.json";
 import waterwells from "../data/water-wells.json";
 import wwtp from "../data/wwtp.json";
@@ -35,6 +36,7 @@ export type SourceId =
   | "WATERWELLS"
   | "REFUGEE_CAMPS"
   | "KHAN_YOUNIS_FARM_IMG"
+  | "SALAH_AL_DIN"
   | "SCHOOLS_AND_KINDERGARTENS";
 export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
   {
@@ -177,6 +179,13 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [34.284607406275384, 31.315381029733061],
         [34.243098408354257, 31.318349201546965],
       ],
+    },
+  },
+  {
+    id: "SALAH_AL_DIN",
+    source: {
+      data: salahAlDin as any,
+      type: "geojson",
     },
   },
 ] as const;

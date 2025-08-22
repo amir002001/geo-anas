@@ -15,7 +15,8 @@ const hiribyaBefore: GazaEvent = {
       paintOverrides: { "fill-opacity": 0.5 },
     },
   ],
-  kind: "basic",
+  kind: "image",
+  imgSrc: "/images/hiribya.png",
 };
 
 const hiribyaAfter: GazaEvent = {

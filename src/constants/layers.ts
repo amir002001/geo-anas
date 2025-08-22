@@ -20,6 +20,7 @@ export type LayerId =
   | "GAZA_POWER_SYMBOL"
   | "NAKBA_RASTER"
   | "NAKBA_1949_RASTER"
+  | "SALAH_AL_DIN_LINE"
   | "KHAN_YOUNIS_FARMS_COORDINATES";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
@@ -272,6 +273,16 @@ export const LAYERS: LayerType[] = [
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "SALAH_AL_DIN_LINE",
+    type: "line",
+    source: SOURCE_MAP.get("SALAH_AL_DIN")!.id,
+    paint: {
+      "line-opacity": 0,
+      "line-opacity-transition": { duration: 500 },
+      "line-width": 3,
     },
   },
 ] as const;

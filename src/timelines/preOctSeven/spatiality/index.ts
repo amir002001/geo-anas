@@ -1,6 +1,7 @@
 import { GAZA_BBOX } from "../../../constants/constants";
 import type { GazaEvent } from "../../timelines";
 import { refugeeCamps } from "./refugeeCamps";
+import { salahAlDin } from "./roads";
 
 const population: GazaEvent = {
   fitBounds: {
@@ -12,4 +13,4 @@ const population: GazaEvent = {
   layerOverrides: [],
 };
 
-export const spatiality = [population, refugeeCamps];
+export const spatiality = [population, salahAlDin, refugeeCamps];

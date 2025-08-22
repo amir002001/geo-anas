@@ -18,7 +18,7 @@ export const universities: GazaEvent = {
   ],
   title: "Education - Schools and Kindergartens",
   kind: "image",
-  imgSrc: "/images/al-isra-university.jpg",
+  imgSrc: "/images/gaza-unrwa-school.jpg",
 };
 
 export const education = [universities];

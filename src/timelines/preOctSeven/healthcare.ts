@@ -16,7 +16,7 @@ const hospitalOverview: GazaEvent = {
   ],
   title: "Healthcare Overview",
   kind: "image",
-  imgSrc: "/images/shifa-before.webp",
+  imgSrc: "/images/shifa-before.jpg",
 };
 
 export const healthcare = [hospitalOverview];
