@@ -5,7 +5,7 @@ import type {
   PaintSpecification,
 } from "mapbox-gl";
 import type { LayerId } from "../constants/layers";
-import { healthcareTimeline } from "./healthcareTimeline/healthcareTimeline";
+import { displacementTimeline } from "./displacementTimeline";
 import { postOctSeven } from "./postOctSeven";
 import { preOctSeven } from "./preOctSeven";
 
@@ -46,5 +46,5 @@ export type Timeline = GazaEvent[];
 export const timelines: Timeline = [
   ...preOctSeven,
   ...postOctSeven,
-  ...healthcareTimeline,
+  ...displacementTimeline,
 ];

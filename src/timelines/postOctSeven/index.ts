@@ -1,5 +1,6 @@
 import { GAZA_BBOX } from "../../constants/constants";
 import type { GazaEvent, Timeline } from "../timelines";
+import { logicOfZionism } from "./logicOfZionism";
 
 const postOctSevenTitle: GazaEvent = {
   kind: "basic",
@@ -47,4 +48,5 @@ export const postOctSeven: Timeline = [
   postOctSevenTitle,
   fourtyEight,
   gazaDisplacement,
+  ...logicOfZionism,
 ];
