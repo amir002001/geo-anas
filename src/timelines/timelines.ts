@@ -1,5 +1,6 @@
 import type {
   EasingOptions,
+  LayoutSpecification,
   LngLatBoundsLike,
   PaintSpecification,
 } from "mapbox-gl";
@@ -11,6 +12,7 @@ import { preOctSeven } from "./preOctSeven";
 export interface ILayerOverride {
   id: LayerId;
   paintOverrides: Partial<PaintSpecification>;
+  layoutOverrides?: Partial<LayoutSpecification>;
 }
 
 export interface IEventBase {
@@ -21,6 +23,10 @@ export interface IEventBase {
 
 export type BasicEvent = IEventBase & {
   kind: "basic";
+};
+export type ImageOnlyEvent = IEventBase & {
+  kind: "image-only";
+  imgSrc: string;
 };
 
 export type VideoEvent = IEventBase & {
@@ -33,7 +39,7 @@ export type ImageEvent = IEventBase & {
   imgSrc: string;
 };
 
-export type GazaEvent = BasicEvent | VideoEvent | ImageEvent;
+export type GazaEvent = BasicEvent | VideoEvent | ImageEvent | ImageOnlyEvent;
 
 export type Timeline = GazaEvent[];
 

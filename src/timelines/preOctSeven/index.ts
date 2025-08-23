@@ -16,7 +16,11 @@ const intro: GazaEvent = {
   kind: "basic",
   layerOverrides: [
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
-    { id: "WORLD_CENTER_SYMBOL", paintOverrides: { "text-opacity": 1 } },
+    {
+      id: "WORLD_CENTER_SYMBOL",
+      paintOverrides: { "text-opacity": 1 },
+      layoutOverrides: { "text-field": "Pre-October 7" },
+    },
   ],
   title: "Pre-October 7",
   fitBounds: {

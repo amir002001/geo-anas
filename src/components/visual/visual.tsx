@@ -16,12 +16,15 @@ export const Visual = ({ className, isVisualVisible, event }: IVisualProps) => {
     <div
       className={clsx([
         className,
-        "bg-[#0A8048]/30 rounded-md w-[832px] h-[468px] max-w-4/5 max-h-2/3 transition-opacity duration-300 ease-in-out flex items-center justify-center overflow-hidden",
+        "aspect-video  bg-[#0A8048]/30 rounded-md transition-opacity duration-300 ease-in-out flex items-center justify-center overflow-hidden",
+        event.kind === "image"
+          ? "w-[832px] max-w-4/5 max-h-2/3"
+          : "w-3/5 max-h-full",
         "shadow-2xl shadow-black/40 border border-black/10",
         isVisualVisible ? "opacity-100" : "opacity-0",
       ])}
     >
-      {event.kind === "image" ? (
+      {event.kind === "image" || event.kind === "image-only" ? (
         <img
           src={event.imgSrc}
           alt="Visual"

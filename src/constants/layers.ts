@@ -378,7 +378,7 @@ export const LAYERS: LayerType[] = [
       "text-opacity-transition": { duration: 500 },
     },
     layout: {
-      "text-field": "Pre-October 7",
+      "text-field": "",
       "text-font": ["League Spartan Bold"],
       "text-size": 32,
     },

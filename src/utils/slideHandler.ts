@@ -30,10 +30,19 @@ const handleLayer = (
     Object.entries(nextLayer.paintOverrides).forEach(([property, value]) => {
       map.setPaintProperty(layerId, property as any, value);
     });
+    nextLayer.layoutOverrides &&
+      Object.entries(nextLayer.layoutOverrides).forEach(([property, value]) => {
+        map.setLayoutProperty(layerId, property as any, value);
+      });
   } else {
     if (layer.paint) {
       Object.entries(layer.paint).forEach(([property, value]) => {
         map.setPaintProperty(layerId, property as any, value);
+      });
+    }
+    if (layer.layout) {
+      Object.entries(layer.layout).forEach(([property, value]) => {
+        map.setLayoutProperty(layerId, property as any, value);
       });
     }
   }
