@@ -1,5 +1,6 @@
 const IMAGE_IDS = [
   "school",
+  "red-chevron",
   "hospital",
   "wwts",
   "pipe",
@@ -29,6 +30,7 @@ export const MAPBOX_IMAGES: IImage[] = [
   { id: "camp", url: "/mapbox-icons/camp.png" },
   { id: "desalination", url: "/mapbox-icons/desalination.png" },
   { id: "crossing", url: "/mapbox-icons/crossing.png" },
+  { id: "red-chevron", url: "/mapbox-icons/red-chevron.png" },
 ];
 
 export const IMAGE_MAP = new Map(IMAGE_IDS.map((id) => [id, id]));

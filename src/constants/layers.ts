@@ -3,6 +3,7 @@ import { IMAGE_MAP } from "./images";
 import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
+  | "SALAH_AL_DIN_SYMBOL"
   | "WORLD_CENTER_SYMBOL"
   | "WHOLE_WORLD_FILL"
   | "GAZA_LAND_BLOCKADE_FILL"
@@ -381,6 +382,24 @@ export const LAYERS: LayerType[] = [
       "text-field": "",
       "text-font": ["League Spartan Bold"],
       "text-size": 32,
+    },
+  },
+  {
+    id: "SALAH_AL_DIN_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("SALAH_AL_DIN")!.id,
+    paint: {
+      "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 500, delay: 200 },
+    },
+    layout: {
+      "symbol-placement": "line",
+      "symbol-spacing": 60,
+      "icon-image": "red-chevron",
+      "icon-size": 0.25,
+      "icon-rotate": 180,
+      "icon-allow-overlap": true,
+      "icon-rotation-alignment": "map",
     },
   },
 ] as const;
