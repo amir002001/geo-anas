@@ -34,7 +34,68 @@ const northToSouthEvac: GazaEvent = {
       },
     },
   ],
-  title: "North to South Evacuation",
+  title: "Oct 7th → Nov 24th: North to South Evacuation",
 };
 
-export const phaseOne: Timeline = [northToSouthEvac];
+const attackOnConvoy: GazaEvent = structuredClone(northToSouthEvac);
+
+attackOnConvoy.title = "Attack on Convoy";
+Object.assign(attackOnConvoy, {
+  kind: "video",
+  videoSrc: "/videos/attack-on-convoy.mp4",
+});
+
+attackOnConvoy.fitBounds = {
+  bounds: [
+    [34.449669, 31.487589],
+    [34.449669, 31.487589],
+  ],
+  options: { maxZoom: 14 },
+};
+
+const oneKmBuffer: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  title: "1KM TODO",
+  kind: "basic", // TODO
+  layerOverrides: [
+    {
+      id: "ONE_KM_BUFFER_FILL",
+      paintOverrides: {
+        "fill-opacity": 0.7,
+      },
+    },
+  ],
+};
+
+const netzaremCorridorCheckpoint1: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  title: "Netzarem 1 TODO",
+  kind: "image",
+  imgSrc: "/images/netzarem-one.jpg",
+  layerOverrides: [],
+};
+
+const netzaremCorridorCheckpoint2: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  title: "Netzarem 2 TODO",
+  kind: "video",
+  videoSrc: "/videos/netzarem-two.mp4",
+  layerOverrides: [],
+};
+
+export const phaseOne: Timeline = [
+  northToSouthEvac,
+  attackOnConvoy,
+  oneKmBuffer,
+  netzaremCorridorCheckpoint1,
+  netzaremCorridorCheckpoint2,
+];

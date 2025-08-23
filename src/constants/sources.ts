@@ -10,6 +10,7 @@ import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
 import mekorotPipes from "../data/mekorot-pipes.json";
+import oneKmBuffer from "../data/one-km-buffer.json";
 import refugeeCamps from "../data/refugee-camps.json";
 import salahAlDin from "../data/salah-al-din.json";
 import schoolsAndKindergartens from "../data/schools-and-kindergartens.json";
@@ -22,6 +23,7 @@ const wwtpCentroids = wwtp.features.map((feature) => centroid(feature as any));
 const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
+  | "ONE_KM_BUFFER"
   | "WORLD_CENTER"
   | "WHOLE_WORLD"
   | "GAZA_BOUNDARY"
@@ -213,6 +215,13 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     id: "WORLD_CENTER",
     source: {
       data: WORLD_CENTER as any,
+      type: "geojson",
+    },
+  },
+  {
+    id: "ONE_KM_BUFFER",
+    source: {
+      data: oneKmBuffer as any,
       type: "geojson",
     },
   },

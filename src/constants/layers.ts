@@ -3,6 +3,7 @@ import { IMAGE_MAP } from "./images";
 import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
+  | "ONE_KM_BUFFER_FILL"
   | "SALAH_AL_DIN_SYMBOL"
   | "WORLD_CENTER_SYMBOL"
   | "WHOLE_WORLD_FILL"
@@ -400,6 +401,16 @@ export const LAYERS: LayerType[] = [
       "icon-rotate": 180,
       "icon-allow-overlap": true,
       "icon-rotation-alignment": "map",
+    },
+  },
+  {
+    id: "ONE_KM_BUFFER_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("ONE_KM_BUFFER")!.id,
+    paint: {
+      "fill-color": "#890000",
+      "fill-opacity": 0,
+      "fill-opacity-transition": { duration: 500 },
     },
   },
 ] as const;

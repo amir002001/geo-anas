@@ -17,7 +17,7 @@ export const Visual = ({ className, isVisualVisible, event }: IVisualProps) => {
       className={clsx([
         className,
         "aspect-video  bg-[#0A8048]/30 rounded-md transition-opacity duration-300 ease-in-out flex items-center justify-center overflow-hidden",
-        event.kind === "image"
+        event.kind === "image" || event.kind === "video"
           ? "w-[832px] max-w-4/5 max-h-2/3"
           : "w-3/5 max-h-full",
         "shadow-2xl shadow-black/40 border border-black/10",
@@ -34,7 +34,7 @@ export const Visual = ({ className, isVisualVisible, event }: IVisualProps) => {
       {event.kind === "video" ? (
         <video
           src={event.videoSrc}
-          controls
+          autoPlay
           className="max-w-full max-h-full object-contain"
         />
       ) : null}
