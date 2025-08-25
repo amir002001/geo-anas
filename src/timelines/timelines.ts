@@ -24,9 +24,15 @@ export interface IEventBase {
 export type BasicEvent = IEventBase & {
   kind: "basic";
 };
+
 export type ImageOnlyEvent = IEventBase & {
   kind: "image-only";
   imgSrc: string;
+};
+
+export type VideoOnlyEvent = IEventBase & {
+  kind: "video-only";
+  videoSrc: string;
 };
 
 export type VideoEvent = IEventBase & {
@@ -39,11 +45,40 @@ export type ImageEvent = IEventBase & {
   imgSrc: string;
 };
 
-export type GazaEvent = BasicEvent | VideoEvent | ImageEvent | ImageOnlyEvent;
+export type GazaEvent =
+  | BasicEvent
+  | VideoEvent
+  | ImageEvent
+  | ImageOnlyEvent
+  | VideoOnlyEvent;
 
 export type Timeline = GazaEvent[];
 
+const intro: GazaEvent = {
+  kind: "basic",
+  layerOverrides: [
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+    {
+      id: "WORLD_CENTER_SYMBOL",
+      paintOverrides: { "text-opacity": 1 },
+      layoutOverrides: {
+        "text-field": "Architecture of Genocide",
+        "text-max-width": 1000,
+      },
+    },
+  ],
+  title: "Architecture of Genocide",
+  fitBounds: {
+    bounds: [
+      [0, 0],
+      [0, 0],
+    ],
+    options: { maxZoom: 10 },
+  },
+};
+
 export const timelines: Timeline = [
+  intro,
   ...preOctSeven,
   ...postOctSeven,
   ...displacementTimeline,

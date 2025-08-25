@@ -15,7 +15,7 @@ const gazaTakeover: GazaEvent = {
 const realEstateSales: GazaEvent = {
   kind: "image-only",
   title: "Real Estate Sales",
-  imgSrc: "/images/TODO.jpg",
+  imgSrc: "/images/israel-sales.png",
   fitBounds: {
     bounds: GAZA_BBOX,
     options: {},

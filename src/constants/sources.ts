@@ -11,6 +11,7 @@ import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
 import mekorotPipes from "../data/mekorot-pipes.json";
 import oneKmBuffer from "../data/one-km-buffer.json";
+import populationGrid from "../data/population-blocks.json";
 import refugeeCamps from "../data/refugee-camps.json";
 import salahAlDin from "../data/salah-al-din.json";
 import schoolsAndKindergartens from "../data/schools-and-kindergartens.json";
@@ -23,6 +24,8 @@ const wwtpCentroids = wwtp.features.map((feature) => centroid(feature as any));
 const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
+  | "FIRST_GRID_ARROWS"
+  | "POPULATION_GRIDS"
   | "ONE_KM_BUFFER"
   | "WORLD_CENTER"
   | "WHOLE_WORLD"
@@ -39,6 +42,7 @@ export type SourceId =
   | "GAZA_HOSPITALS_STATUS"
   | "WWTPS"
   | "NAKBA"
+  | "NETZARIM"
   | "NAKBA_MAP"
   | "WATERWELLS"
   | "REFUGEE_CAMPS"
@@ -223,6 +227,40 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       data: oneKmBuffer as any,
       type: "geojson",
+    },
+  },
+  {
+    id: "NETZARIM",
+    source: {
+      type: "image",
+      url: "/images/netzarim.png",
+      coordinates: [
+        [34.395989126888701, 31.49887545124438],
+        [34.462121251323602, 31.49887545124438],
+        [34.462121238255058, 31.447406535957434],
+        [34.395989123458449, 31.447406535828691],
+      ],
+    },
+  },
+  {
+    id: "POPULATION_GRIDS",
+    source: {
+      type: "geojson",
+      data: populationGrid as any,
+    },
+  },
+  {
+    id: "FIRST_GRID_ARROWS",
+
+    source: {
+      type: "image",
+      coordinates: [
+        [34.22520188063578, 31.576863973888155],
+        [34.589468036819881, 31.567109139962881],
+        [34.581188505433673, 31.25793769958948],
+        [34.216922365044901, 31.26769265754367],
+      ],
+      url: "/images/first-grid-arrows.png",
     },
   },
 ] as const;

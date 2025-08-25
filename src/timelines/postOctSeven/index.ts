@@ -12,7 +12,7 @@ const postOctSevenTitle: GazaEvent = {
       layoutOverrides: { "text-field": "Post-October 7" },
     },
   ],
-  title: "Pre-October 7",
+  title: "Post-October 7",
   fitBounds: {
     bounds: [
       [0, 0],

@@ -11,7 +11,7 @@
         {
             "type": "Feature",
             "properties": {
-                "population": 652597,
+                "population": 700000,
                 "name": "Gaza"
             },
             "geometry": {
@@ -3043,7 +3043,7 @@
         {
             "type": "Feature",
             "properties": {
-                "population": 310820,
+                "population": 300000,
                 "name": "Deir al-Balah"
             },
             "geometry": {
@@ -5555,7 +5555,7 @@
         {
             "type": "Feature",
             "properties": {
-                "population": 270979,
+                "population": 400000,
                 "name": "Khan Yunis"
             },
             "geometry": {
@@ -7087,7 +7087,7 @@
         {
             "type": "Feature",
             "properties": {
-                "population": 270245,
+                "population": 400000,
                 "name": "North Gaza"
             },
             "geometry": {
@@ -8295,7 +8295,7 @@
         {
             "type": "Feature",
             "properties": {
-                "population": 233878,
+                "population": 250000,
                 "name": "Rafah"
             },
             "geometry": {

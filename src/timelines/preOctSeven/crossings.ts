@@ -53,7 +53,7 @@ const keremCrossing: GazaEvent = {
     bounds: KEREM_CROSSING_BBOX,
     options: { duration: 3000, maxZoom: 15 },
   },
-  title: "Kerem Crossing",
+  title: "Kerem Shalom Crossing",
   layerOverrides: [
     {
       id: "CROSSINGS_SYMBOL",

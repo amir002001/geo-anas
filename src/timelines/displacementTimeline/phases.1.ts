@@ -1,6 +1,28 @@
 import { GAZA_BBOX } from "../../constants/constants";
 import type { GazaEvent, Timeline } from "../timelines";
 
+const init: GazaEvent = {
+  kind: "basic",
+  fitBounds: {
+    bounds: [
+      [0, 0],
+      [0, 0],
+    ],
+    options: { maxZoom: 10 },
+  },
+  layerOverrides: [
+    {
+      id: "WORLD_CENTER_SYMBOL",
+      paintOverrides: {
+        "text-opacity": 1,
+      },
+      layoutOverrides: { "text-field": "October 7th to November 24th" },
+    },
+  ],
+
+  title: "North to South Evacuation",
+};
+
 const northToSouthEvac: GazaEvent = {
   kind: "basic",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
@@ -9,7 +31,6 @@ const northToSouthEvac: GazaEvent = {
       id: "GAZA_GOVERNATES_POPULATION_FILL",
       paintOverrides: {
         "fill-opacity": 0.5,
-
         "fill-color": [
           "match",
           ["get", "name"],
@@ -34,14 +55,14 @@ const northToSouthEvac: GazaEvent = {
       },
     },
   ],
-  title: "Oct 7th → Nov 24th: North to South Evacuation",
+  title: "North to South Evacuation",
 };
 
 const attackOnConvoy: GazaEvent = structuredClone(northToSouthEvac);
 
 attackOnConvoy.title = "Attack on Convoy";
 Object.assign(attackOnConvoy, {
-  kind: "video",
+  kind: "video-only",
   videoSrc: "/videos/attack-on-convoy.mp4",
 });
 
@@ -58,8 +79,8 @@ const oneKmBuffer: GazaEvent = {
     bounds: GAZA_BBOX,
     options: {},
   },
-  title: "1KM TODO",
-  kind: "basic", // TODO
+  title: "1KM Buffer",
+  kind: "basic",
   layerOverrides: [
     {
       id: "ONE_KM_BUFFER_FILL",
@@ -70,32 +91,118 @@ const oneKmBuffer: GazaEvent = {
   ],
 };
 
-const netzaremCorridorCheckpoint1: GazaEvent = {
+const khanYounisBuffer: GazaEvent = {
   fitBounds: {
-    bounds: GAZA_BBOX,
-    options: {},
+    bounds: [
+      [34.36498, 31.306504],
+      [34.36498, 31.306504],
+    ],
+    options: { maxZoom: 13 },
   },
-  title: "Netzarem 1 TODO",
+  title: "1KM Buffer - Khan Younis",
   kind: "image",
-  imgSrc: "/images/netzarem-one.jpg",
-  layerOverrides: [],
+  imgSrc: "/images/khan-younis-buffer.png",
+  layerOverrides: [
+    {
+      id: "ONE_KM_BUFFER_FILL",
+      paintOverrides: {
+        "fill-opacity": 0.7,
+      },
+    },
+  ],
 };
 
-const netzaremCorridorCheckpoint2: GazaEvent = {
+const netzarimCorridor: GazaEvent = {
   fitBounds: {
-    bounds: GAZA_BBOX,
+    bounds: [
+      [34.39598912345845, 31.44740653582869],
+      [34.4621212513236, 31.49887545124438],
+    ],
     options: {},
   },
-  title: "Netzarem 2 TODO",
-  kind: "video",
-  videoSrc: "/videos/netzarem-two.mp4",
-  layerOverrides: [],
+  title: "Netzarim Corridor",
+  kind: "basic",
+  layerOverrides: [
+    {
+      id: "NETZARIM_RASTER",
+      paintOverrides: {
+        "raster-opacity": 1,
+      },
+    },
+  ],
+};
+
+const netzarimCorridorCheckpoint1: GazaEvent = {
+  fitBounds: {
+    bounds: [
+      [34.436188, 31.474071],
+      [34.436188, 31.474071],
+    ],
+    options: { maxZoom: 14 },
+  },
+  title: "Netzarim - Checkpoint",
+  kind: "image",
+  imgSrc: "/images/netzarim-one.jpg",
+  layerOverrides: [
+    {
+      id: "NETZARIM_RASTER",
+      paintOverrides: {
+        "raster-opacity": 1,
+      },
+    },
+  ],
+};
+
+const netzarimCorridorCheckpoint2: GazaEvent = {
+  fitBounds: {
+    bounds: [
+      [34.436188, 31.474071],
+      [34.436188, 31.474071],
+    ],
+    options: { maxZoom: 14 },
+  },
+  title: "Netzarim - Checkpoint",
+  kind: "video-only",
+  videoSrc: "/videos/netzarim-two.mp4",
+  layerOverrides: [
+    {
+      id: "NETZARIM_RASTER",
+      paintOverrides: {
+        "raster-opacity": 1,
+      },
+    },
+  ],
+};
+
+const netzarimFacialId: GazaEvent = {
+  fitBounds: {
+    bounds: [
+      [34.436188, 31.474071],
+      [34.436188, 31.474071],
+    ],
+    options: { maxZoom: 14 },
+  },
+  title: "Netzarim - Facial ID",
+  kind: "image-only",
+  imgSrc: "/images/facial-id.png",
+  layerOverrides: [
+    {
+      id: "NETZARIM_RASTER",
+      paintOverrides: {
+        "raster-opacity": 1,
+      },
+    },
+  ],
 };
 
 export const phaseOne: Timeline = [
+  init,
   northToSouthEvac,
   attackOnConvoy,
   oneKmBuffer,
-  netzaremCorridorCheckpoint1,
-  netzaremCorridorCheckpoint2,
+  khanYounisBuffer,
+  netzarimCorridor,
+  netzarimCorridorCheckpoint1,
+  netzarimCorridorCheckpoint2,
+  netzarimFacialId,
 ];

@@ -3,6 +3,8 @@ import { IMAGE_MAP } from "./images";
 import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
+  | "FIRST_GRID_ARROWS_RASTER"
+  | "POPULATION_BLOCKS_LINE"
   | "ONE_KM_BUFFER_FILL"
   | "SALAH_AL_DIN_SYMBOL"
   | "WORLD_CENTER_SYMBOL"
@@ -24,6 +26,7 @@ export type LayerId =
   | "WATER_WELLS_SYMBOL"
   | "GAZA_POWER_SYMBOL"
   | "NAKBA_RASTER"
+  | "NETZARIM_RASTER"
   | "NAKBA_1949_RASTER"
   | "SALAH_AL_DIN_LINE"
   | "GAZA_GOVERNATES_POPULATION_FILL"
@@ -343,6 +346,7 @@ export const LAYERS: LayerType[] = [
     },
     layout: {
       "text-field": ["get", "population"],
+      "text-allow-overlap": true,
       "text-offset": [0, 1],
     },
   },
@@ -356,6 +360,7 @@ export const LAYERS: LayerType[] = [
     },
     layout: {
       "text-field": ["get", "name"],
+      "text-allow-overlap": true,
       "text-font": ["Open Sans Bold"],
       "text-size": 20,
       "text-offset": [0, -1],
@@ -377,12 +382,13 @@ export const LAYERS: LayerType[] = [
     type: "symbol",
     paint: {
       "text-opacity": 0,
+
       "text-opacity-transition": { duration: 500 },
     },
     layout: {
       "text-field": "",
       "text-font": ["League Spartan Bold"],
-      "text-size": 32,
+      "text-size": 36,
     },
   },
   {
@@ -411,6 +417,32 @@ export const LAYERS: LayerType[] = [
       "fill-color": "#890000",
       "fill-opacity": 0,
       "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "NETZARIM_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("NETZARIM")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "POPULATION_BLOCKS_LINE",
+    type: "line",
+    source: SOURCE_MAP.get("POPULATION_GRIDS")!.id,
+    paint: {
+      "line-opacity": 0,
+    },
+  },
+  {
+    id: "FIRST_GRID_ARROWS_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("FIRST_GRID_ARROWS")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-color": "#FF0000" as any,
     },
   },
 ] as const;

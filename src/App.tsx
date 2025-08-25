@@ -72,7 +72,7 @@ function App() {
   return (
     <div
       id="anas-map-container"
-      className="h-screen w-screen relative font-semibold"
+      className="relative h-screen w-screen font-semibold"
     >
       <div
         id="map-container"
@@ -81,7 +81,7 @@ function App() {
       />
       {
         <Visual
-          className="absolute top-3 left-3"
+          className="absolute"
           isVisualVisible={isVisualVisible}
           event={timelines[currentSlide]}
         />
@@ -90,10 +90,13 @@ function App() {
       {mapRef.current !== null && (
         <AnasMapContext.Provider value={{ anasMap: mapRef.current }}>
           <SlideshowControls
-            className="absolute bottom-8 right-8 z-10"
+            className="absolute right-8 bottom-8 z-10"
             currentSlide={currentSlide}
             isMapIdle={isMapIdle}
             setCurrentSlide={setCurrentSlide}
+            opaqueTitle={["video-only", "image-only"].includes(
+              timelines[currentSlide].kind,
+            )}
           />
         </AnasMapContext.Provider>
       )}

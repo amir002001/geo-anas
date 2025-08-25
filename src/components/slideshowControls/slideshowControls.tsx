@@ -12,6 +12,7 @@ interface ISlideshowControlsProps {
   currentSlide: number;
   setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
   isMapIdle: boolean;
+  opaqueTitle: boolean;
 }
 
 export const SlideshowControls = ({
@@ -19,6 +20,7 @@ export const SlideshowControls = ({
   currentSlide,
   setCurrentSlide,
   isMapIdle,
+  opaqueTitle,
 }: ISlideshowControlsProps) => {
   const { anasMap } = useAnasMapContext();
 
@@ -32,7 +34,7 @@ export const SlideshowControls = ({
 
   // Controlled input for slide number
   const [inputValue, setInputValue] = useState<string>(
-    String(currentSlide + 1)
+    String(currentSlide + 1),
   );
 
   // Keep input in sync with currentSlide
@@ -64,7 +66,13 @@ export const SlideshowControls = ({
     <div className={clsx([className, "flex items-center gap-4"])}>
       <span
         id="slide-title"
-        className="bg-[#0A8048]/20 rounded-md px-4 py-2 text-black"
+        className={clsx([
+          "rounded-md px-4 py-2",
+
+          opaqueTitle
+            ? "bg-[#0A8048] text-white"
+            : "bg-[#0A8048]/20 text-black",
+        ])}
       >
         {slideTitle}
       </span>
@@ -82,7 +90,7 @@ export const SlideshowControls = ({
                 val - 1,
                 anasMap,
                 setCurrentSlide,
-                timelines.length
+                timelines.length,
               );
             } else {
               setInputValue(String(currentSlide + 1)); // reset to current if invalid
