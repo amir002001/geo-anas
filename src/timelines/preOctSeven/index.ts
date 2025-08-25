@@ -14,6 +14,7 @@ import { water } from "./water";
 
 const intro: GazaEvent = {
   kind: "basic",
+  audioOverrideSrc: "/audio/internalize.wav",
   layerOverrides: [
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
     {

@@ -10,6 +10,7 @@ const init: GazaEvent = {
     ],
     options: { maxZoom: 10 },
   },
+  audioOverrideSrc: "/audio/internalize.wav",
   layerOverrides: [
     {
       id: "WORLD_CENTER_SYMBOL",

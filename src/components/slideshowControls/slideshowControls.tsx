@@ -26,6 +26,7 @@ export const SlideshowControls = ({
 
   useEffect(() => {
     slideHandler(anasMap, currentSlide);
+    setInputValue(String(currentSlide + 1));
   }, [currentSlide]);
 
   const slideTitle = timelines[currentSlide].title;
@@ -36,11 +37,6 @@ export const SlideshowControls = ({
   const [inputValue, setInputValue] = useState<string>(
     String(currentSlide + 1),
   );
-
-  // Keep input in sync with currentSlide
-  useEffect(() => {
-    setInputValue(String(currentSlide + 1));
-  }, [currentSlide]);
 
   const commonButtonClassName = clsx([
     "bg-[#0A8048] border-green-600 border-t-2 border-r-2 text-white rounded-md px-4 py-3 ",

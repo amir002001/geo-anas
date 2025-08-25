@@ -434,6 +434,7 @@ export const LAYERS: LayerType[] = [
     source: SOURCE_MAP.get("POPULATION_GRIDS")!.id,
     paint: {
       "line-opacity": 0,
+      "line-opacity-transition": { duration: 500 },
     },
   },
   {
@@ -442,6 +443,7 @@ export const LAYERS: LayerType[] = [
     source: SOURCE_MAP.get("FIRST_GRID_ARROWS")!.id,
     paint: {
       "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
       "raster-color": "#FF0000" as any,
     },
   },

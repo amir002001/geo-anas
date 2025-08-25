@@ -19,6 +19,7 @@ export interface IEventBase {
   fitBounds: { bounds: LngLatBoundsLike; options: EasingOptions };
   layerOverrides: ILayerOverride[];
   title: string;
+  audioOverrideSrc?: string;
 }
 
 export type BasicEvent = IEventBase & {

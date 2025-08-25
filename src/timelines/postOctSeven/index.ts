@@ -4,6 +4,7 @@ import { logicOfZionism } from "./logicOfZionism";
 
 const postOctSevenTitle: GazaEvent = {
   kind: "basic",
+  audioOverrideSrc: "/audio/internalize.wav",
   layerOverrides: [
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
     {

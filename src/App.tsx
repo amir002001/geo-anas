@@ -16,6 +16,7 @@ function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMapIdle, setIsMapIdle] = useState(false);
   const [isVisualVisible, setIsVisualVisible] = useState(true);
+  const slideChangeRef = useRef(new Audio("/audio/slide.wav"));
   const idleRef = useRef(true);
   const mapRef = useRef<mapboxgl.Map>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -34,6 +35,16 @@ function App() {
       mapRef.current?.remove();
     };
   }, []);
+
+  useEffect(() => {
+    const audioSrc = timelines[currentSlide].audioOverrideSrc;
+    if (audioSrc) {
+      const audio = new Audio(audioSrc);
+      audio.play();
+    } else {
+      slideChangeRef.current.play();
+    }
+  }, [currentSlide]);
 
   const handleMapLoad = (e: MapEvent) => {
     const map = e.target;
