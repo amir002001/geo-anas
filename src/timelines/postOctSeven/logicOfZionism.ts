@@ -23,4 +23,20 @@ const realEstateSales: GazaEvent = {
   layerOverrides: [],
 };
 
-export const logicOfZionism: Timeline = [gazaTakeover, realEstateSales];
+const gallantSpeech: GazaEvent = {
+  kind: "video-only",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  videoSrc: "/videos/yoav-gallant.mp4",
+  layerOverrides: [],
+
+  title: "Yoav Gallant - October 9th",
+};
+
+export const logicOfZionism: Timeline = [
+  gazaTakeover,
+  realEstateSales,
+  gallantSpeech,
+];

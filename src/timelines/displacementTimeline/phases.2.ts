@@ -18,6 +18,7 @@ const init: GazaEvent = {
       },
       layoutOverrides: { "text-field": "December 1st to May 6th" },
     },
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
   ],
 
   title: "Grid Evacuation",
