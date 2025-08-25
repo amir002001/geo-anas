@@ -3,7 +3,7 @@ import { timelines, type ILayerOverride } from "../timelines/timelines";
 
 export const slideHandler = (map: mapboxgl.Map, currentSlide: number) => {
   const nextLayerIds = new Map(
-    timelines[currentSlide].layerOverrides.map((layer) => [layer.id, layer])
+    timelines[currentSlide].layerOverrides.map((layer) => [layer.id, layer]),
   );
 
   LAYERS.forEach((layer) => handleLayer(map, layer, nextLayerIds));
@@ -20,7 +20,7 @@ export const slideHandler = (map: mapboxgl.Map, currentSlide: number) => {
 const handleLayer = (
   map: mapboxgl.Map,
   layer: mapboxgl.Layer,
-  nextLayerIds: Map<string, ILayerOverride>
+  nextLayerIds: Map<string, ILayerOverride>,
 ) => {
   const layerId = layer.id;
   const nextLayer = nextLayerIds.get(layerId);
@@ -34,6 +34,9 @@ const handleLayer = (
       Object.entries(nextLayer.layoutOverrides).forEach(([property, value]) => {
         map.setLayoutProperty(layerId, property as any, value);
       });
+
+    nextLayer.filterOverrides &&
+      map.setFilter(layerId, nextLayer.filterOverrides);
   } else {
     if (layer.paint) {
       Object.entries(layer.paint).forEach(([property, value]) => {
@@ -44,6 +47,9 @@ const handleLayer = (
       Object.entries(layer.layout).forEach(([property, value]) => {
         map.setLayoutProperty(layerId, property as any, value);
       });
+    }
+    if (layer.filter) {
+      map.setFilter(layerId, layer.filter);
     }
   }
 };

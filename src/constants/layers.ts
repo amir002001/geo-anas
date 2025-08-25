@@ -3,7 +3,11 @@ import { IMAGE_MAP } from "./images";
 import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
+  | "PHILADELPHI_FILL"
+  | "INCIDENTS_SYMBOL"
+  | "EVACUATION_ARROWS_FILL"
   | "FIRST_GRID_ARROWS_RASTER"
+  | "INITIAL_HUMANITARIAN_FILL"
   | "POPULATION_BLOCKS_LINE"
   | "ONE_KM_BUFFER_FILL"
   | "SALAH_AL_DIN_SYMBOL"
@@ -438,13 +442,47 @@ export const LAYERS: LayerType[] = [
     },
   },
   {
-    id: "FIRST_GRID_ARROWS_RASTER",
-    type: "raster",
-    source: SOURCE_MAP.get("FIRST_GRID_ARROWS")!.id,
+    id: "INITIAL_HUMANITARIAN_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("INITIAL_HUMANITARIAN")!.id,
     paint: {
-      "raster-opacity": 0,
-      "raster-opacity-transition": { duration: 500 },
-      "raster-color": "#FF0000" as any,
+      "fill-opacity": 0,
+      "fill-color": "#86B5F8",
+      "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "EVACUATION_ARROWS_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("EVACUATION_ARROWS")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-color": "#FF0000",
+      "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "INCIDENTS_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("INCIDENTS")!.id,
+    paint: {
+      "icon-opacity": 0,
+      "icon-opacity-transition": { duration: 1500 },
+    },
+    layout: {
+      "icon-image": "cross",
+      "icon-size": 0.5,
+      "icon-allow-overlap": true,
+    },
+  },
+  {
+    id: "PHILADELPHI_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("PHILADELPHI")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-color": "#FF0000",
+      "fill-opacity-transition": { duration: 500 },
     },
   },
 ] as const;

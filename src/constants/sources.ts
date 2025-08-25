@@ -2,6 +2,7 @@ import { centroid, featureCollection } from "@turf/turf";
 import type { SourceSpecification } from "mapbox-gl";
 import crossings from "../data/crossings.json";
 import gazaDesalinationPlants from "../data/desalination-plants.json";
+import evacuationArrows from "../data/evac-arrows.json";
 import gazaAirportBoundary from "../data/gaza-airport-boundary.json";
 import gazaBuffer from "../data/gaza-buffer.json";
 import gazaHospitalsStatus from "../data/gaza-hospital-status.json";
@@ -9,8 +10,11 @@ import gazaGovernates from "../data/gaza-state-boundaries.json";
 import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
+import incidents from "../data/incidents.json";
+import initialHumanitarian from "../data/may-6-humanitarian.json";
 import mekorotPipes from "../data/mekorot-pipes.json";
 import oneKmBuffer from "../data/one-km-buffer.json";
+import philadelphi from "../data/philadelphi.json";
 import populationGrid from "../data/population-blocks.json";
 import refugeeCamps from "../data/refugee-camps.json";
 import salahAlDin from "../data/salah-al-din.json";
@@ -18,13 +22,14 @@ import schoolsAndKindergartens from "../data/schools-and-kindergartens.json";
 import waterwells from "../data/water-wells.json";
 import wwtp from "../data/wwtp.json";
 import { WHOLE_WORLD, WORLD_CENTER } from "./constants";
-
 const wwtpCentroids = wwtp.features.map((feature) => centroid(feature as any));
 
 const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
-  | "FIRST_GRID_ARROWS"
+  | "PHILADELPHI"
+  | "EVACUATION_ARROWS"
+  | "INITIAL_HUMANITARIAN"
   | "POPULATION_GRIDS"
   | "ONE_KM_BUFFER"
   | "WORLD_CENTER"
@@ -32,6 +37,7 @@ export type SourceId =
   | "GAZA_BOUNDARY"
   | "GAZA_GOVERNATE_BOUNDARIES"
   | "GAZA_SEA_BLOCKADE"
+  | "INCIDENTS"
   | "GAZA_BUFFER"
   | "GAZA_DESALINATION_PLANTS"
   | "GAZA_AIRPORT_BOUNDARY"
@@ -250,17 +256,31 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     },
   },
   {
-    id: "FIRST_GRID_ARROWS",
-
+    id: "INITIAL_HUMANITARIAN",
     source: {
-      type: "image",
-      coordinates: [
-        [34.22520188063578, 31.576863973888155],
-        [34.589468036819881, 31.567109139962881],
-        [34.581188505433673, 31.25793769958948],
-        [34.216922365044901, 31.26769265754367],
-      ],
-      url: "/images/first-grid-arrows.png",
+      type: "geojson",
+      data: initialHumanitarian as any,
+    },
+  },
+  {
+    id: "EVACUATION_ARROWS",
+    source: {
+      type: "geojson",
+      data: evacuationArrows as any,
+    },
+  },
+  {
+    id: "INCIDENTS",
+    source: {
+      type: "geojson",
+      data: incidents as any,
+    },
+  },
+  {
+    id: "PHILADELPHI",
+    source: {
+      type: "geojson",
+      data: philadelphi as any,
     },
   },
 ] as const;

@@ -1,5 +1,6 @@
 import type {
   EasingOptions,
+  FilterSpecification,
   LayoutSpecification,
   LngLatBoundsLike,
   PaintSpecification,
@@ -13,6 +14,7 @@ export interface ILayerOverride {
   id: LayerId;
   paintOverrides: Partial<PaintSpecification>;
   layoutOverrides?: Partial<LayoutSpecification>;
+  filterOverrides?: FilterSpecification;
 }
 
 export interface IEventBase {
