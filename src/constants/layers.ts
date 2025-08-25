@@ -3,6 +3,8 @@ import { IMAGE_MAP } from "./images";
 import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
+  | "MEFALISM_SYMBOL"
+  | "MEFALSIM_LINE"
   | "PHILADELPHI_FILL"
   | "INCIDENTS_SYMBOL"
   | "EVACUATION_ARROWS_FILL"
@@ -135,10 +137,14 @@ export const LAYERS: LayerType[] = [
     type: "symbol",
     paint: {
       "icon-opacity": 0,
+      "text-opacity": 0,
       "icon-opacity-transition": { duration: 500 },
     },
     layout: {
       "icon-allow-overlap": true,
+      "text-allow-overlap": true,
+      "text-field": ["get", "name"],
+      "text-offset": [0, 1],
       "icon-image": "hospital",
       "icon-size": 0.4,
     },
@@ -483,6 +489,33 @@ export const LAYERS: LayerType[] = [
       "fill-opacity": 0,
       "fill-color": "#FF0000",
       "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "MEFALSIM_LINE",
+    type: "line",
+    source: SOURCE_MAP.get("MEFALSIM")!.id,
+    paint: {
+      "line-opacity": 0,
+      "line-opacity-transition": { duration: 500 },
+      "line-width": 4,
+      "line-dasharray": [1.5, 1.5],
+    },
+  },
+  {
+    id: "MEFALISM_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("MEFALSIM")!.id,
+    paint: {
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "text-allow-overlap": true,
+      "icon-allow-overlap": true,
+      "text-field": "Mefalism",
+      "text-size": 24,
+      "text-offset": [0, 1],
     },
   },
 ] as const;

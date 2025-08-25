@@ -12,6 +12,7 @@ import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
 import incidents from "../data/incidents.json";
 import initialHumanitarian from "../data/may-6-humanitarian.json";
+import mefalsim from "../data/mefalsim.json";
 import mekorotPipes from "../data/mekorot-pipes.json";
 import oneKmBuffer from "../data/one-km-buffer.json";
 import philadelphi from "../data/philadelphi.json";
@@ -28,6 +29,7 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "PHILADELPHI"
+  | "MEFALSIM"
   | "EVACUATION_ARROWS"
   | "INITIAL_HUMANITARIAN"
   | "POPULATION_GRIDS"
@@ -281,6 +283,13 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: philadelphi as any,
+    },
+  },
+  {
+    id: "MEFALSIM",
+    source: {
+      type: "geojson",
+      data: mefalsim as any,
     },
   },
 ] as const;
