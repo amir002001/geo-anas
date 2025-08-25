@@ -12,7 +12,6 @@ interface ISlideshowControlsProps {
   currentSlide: number;
   setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
   isMapIdle: boolean;
-  opaqueTitle: boolean;
 }
 
 export const SlideshowControls = ({
@@ -20,7 +19,6 @@ export const SlideshowControls = ({
   currentSlide,
   setCurrentSlide,
   isMapIdle,
-  opaqueTitle,
 }: ISlideshowControlsProps) => {
   const { anasMap } = useAnasMapContext();
 
@@ -39,7 +37,7 @@ export const SlideshowControls = ({
   );
 
   const commonButtonClassName = clsx([
-    "bg-[#0A8048] border-green-600 border-t-2 border-r-2 text-white rounded-md px-4 py-3 ",
+    "bg-[#3a3a3a]  text-white h-full px-3",
     "shadow-lg hover:shadow-xl transition-shadow duration-200",
     "active:translate-y-1 active:shadow-md",
   ]);
@@ -59,20 +57,10 @@ export const SlideshowControls = ({
   ]);
 
   return (
-    <div className={clsx([className, "flex items-center gap-4"])}>
-      <span
-        id="slide-title"
-        className={clsx([
-          "rounded-md px-4 py-2",
-
-          opaqueTitle
-            ? "bg-[#0A8048] text-white"
-            : "bg-[#0A8048]/20 text-black",
-        ])}
-      >
-        {slideTitle}
-      </span>
-      <div>
+    <div
+      className={clsx([className, "flex items-center gap-4 drop-shadow-2xl"])}
+    >
+      <div id="counter-container">
         <input
           className="field-sizing-content"
           type="text"
@@ -96,24 +84,50 @@ export const SlideshowControls = ({
         />
         <span> / {timelines.length}</span>
       </div>
-      <button
-        className={previousButtonClassName}
-        disabled={isFirstSlide || !isMapIdle}
-        onClick={() =>
-          handleSlideChange("prev", anasMap, setCurrentSlide, timelines.length)
-        }
+      <div
+        id="buttons-container"
+        className="flex h-12 items-center overflow-hidden rounded-lg"
       >
-        Previous
-      </button>
-      <button
-        className={nextButtonClassName}
-        disabled={isLastSlide || !isMapIdle}
-        onClick={() =>
-          handleSlideChange("next", anasMap, setCurrentSlide, timelines.length)
-        }
-      >
-        Next
-      </button>
+        <button
+          className={previousButtonClassName}
+          disabled={isFirstSlide || !isMapIdle}
+          onClick={() =>
+            handleSlideChange(
+              "prev",
+              anasMap,
+              setCurrentSlide,
+              timelines.length,
+            )
+          }
+        >
+          <img
+            src="/mapbox-icons/red-chevron.png"
+            className="size-6 rotate-180 brightness-0 invert"
+          ></img>
+        </button>
+        <div className="flex h-full items-center bg-gray-400/30 px-3">
+          <span id="slide-title" className={clsx(["text-center text-black"])}>
+            {slideTitle}
+          </span>
+        </div>
+        <button
+          className={nextButtonClassName}
+          disabled={isLastSlide || !isMapIdle}
+          onClick={() =>
+            handleSlideChange(
+              "next",
+              anasMap,
+              setCurrentSlide,
+              timelines.length,
+            )
+          }
+        >
+          <img
+            src="/mapbox-icons/red-chevron.png"
+            className="size-6 brightness-0 invert"
+          ></img>
+        </button>
+      </div>
     </div>
   );
 };
