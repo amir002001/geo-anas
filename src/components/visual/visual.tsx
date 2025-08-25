@@ -16,7 +16,7 @@ export const Visual = ({ className, isVisualVisible, event }: IVisualProps) => {
     <div
       className={clsx([
         className,
-        "flex aspect-video items-center justify-center overflow-hidden rounded-md bg-[#0A8048]/30 transition-all duration-700 ease-in-out",
+        "flex aspect-video items-center justify-center overflow-hidden rounded-md bg-[#3a3a3a]/30 transition-all duration-700 ease-in-out",
         event.kind === "image" || event.kind === "video"
           ? "top-3 left-3 max-h-2/3 w-[832px] max-w-4/5"
           : "top-1/2 left-1/2 w-4/5 -translate-x-1/2 -translate-y-1/2",
