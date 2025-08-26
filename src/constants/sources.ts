@@ -12,6 +12,7 @@ import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
 import incidents from "../data/incidents.json";
+import magenOz from "../data/magen-oz.json";
 import initialHumanitarian from "../data/may-6-humanitarian.json";
 import mefalsim from "../data/mefalsim.json";
 import mekorotPipes from "../data/mekorot-pipes.json";
@@ -32,6 +33,8 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "MORAG"
+  | "MAGEN_OZ"
+  | "GHF_IMG"
   | "NOT_GRID_EVAC_ORDERS"
   | "GAZA_FRAGMENTATION"
   | "PHILADELPHI"
@@ -323,6 +326,26 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: notGridEvacOrders as any,
+    },
+  },
+  {
+    id: "MAGEN_OZ",
+    source: {
+      type: "geojson",
+      data: magenOz as any,
+    },
+  },
+  {
+    id: "GHF_IMG",
+    source: {
+      type: "image",
+      url: "/images/ghf-raster.png",
+      coordinates: [
+        [34.213989599599117, 31.604974442788741],
+        [34.633446230415046, 31.59973396775332],
+        [34.628490584291583, 31.203230683557873],
+        [34.209033070016254, 31.20847277827793],
+      ],
     },
   },
 ] as const;

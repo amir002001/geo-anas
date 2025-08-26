@@ -44,4 +44,40 @@ const moragIntro: GazaEvent = {
   title: "Introduction of the Morag Corridor",
 };
 
-export const phaseFive: Timeline = [init, gazaFragmentationPlan, moragIntro];
+const magenOzIntro: GazaEvent = {
+  kind: "basic",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  layerOverrides: [
+    { id: "MORAG_LINE", paintOverrides: { "line-opacity": 1 } },
+    { id: "MORAG_SYMBOL", paintOverrides: { "text-opacity": 1 } },
+    { id: "MAGEN_OZ_LINE", paintOverrides: { "line-opacity": 1 } },
+    { id: "MAGEN_OZ_SYMBOL", paintOverrides: { "text-opacity": 1 } },
+  ],
+  title: "Introduction of the Magen Oz Corridor",
+};
+
+const ghfIntro: GazaEvent = {
+  kind: "image",
+  imgSrc: "/images/ghf-site.jpg",
+  fitBounds: { bounds: GAZA_BBOX, options: {} },
+  layerOverrides: [
+    {
+      id: "GHF_RASTER",
+      paintOverrides: {
+        "raster-opacity": 1,
+      },
+    },
+  ],
+  title: "Introduction of GHF",
+};
+
+export const phaseFive: Timeline = [
+  init,
+  gazaFragmentationPlan,
+  moragIntro,
+  magenOzIntro,
+  ghfIntro,
+];

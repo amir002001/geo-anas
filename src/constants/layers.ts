@@ -3,6 +3,9 @@ import { IMAGE_MAP } from "./images";
 import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
+  | "GHF_RASTER"
+  | "MAGEN_OZ_LINE"
+  | "MAGEN_OZ_SYMBOL"
   | "MORAG_SYMBOL"
   | "NOT_GRID_EVAC_ORDERS_FILL"
   | "EVAC_ORDERS_FILL"
@@ -559,6 +562,42 @@ export const LAYERS: LayerType[] = [
       "fill-opacity": 0,
       "fill-color": "#86B5F8",
       "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "MAGEN_OZ_LINE",
+    source: SOURCE_MAP.get("MAGEN_OZ")!.id,
+    type: "line",
+    paint: {
+      "line-width": 4,
+      "line-dasharray": [1.5, 1.5],
+      "line-opacity": 0,
+      "line-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "MAGEN_OZ_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("MAGEN_OZ")!.id,
+    paint: {
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "text-allow-overlap": true,
+      "icon-allow-overlap": true,
+      "text-field": "Magen Oz",
+      "text-size": 24,
+      "text-offset": [0, 1],
+    },
+  },
+  {
+    id: "GHF_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("GHF_IMG")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
     },
   },
 ] as const;
