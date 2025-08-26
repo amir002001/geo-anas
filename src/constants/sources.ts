@@ -33,6 +33,7 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "MORAG"
+  | "HEATHROW_COMP"
   | "E1_PLAN_IMG"
   | "GAZA_TAKEOVER_IMG"
   | "MAGEN_OZ"
@@ -387,6 +388,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [34.573584695056937, 31.624269591773167],
         [34.573586579780894, 31.194855964280698],
         [34.19384956466223, 31.194855964280677],
+      ],
+    },
+  },
+  {
+    id: "HEATHROW_COMP",
+    source: {
+      type: "image",
+      url: "/images/heathrow-comp.png",
+      coordinates: [
+        [-1.559897133489262, 52.318821907926392],
+        [0.396326493144795, 52.318860149631277],
+        [0.396326493144797, 51.064633906387733],
+        [-1.559896577392154, 51.064634605343997],
       ],
     },
   },

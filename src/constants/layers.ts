@@ -14,6 +14,7 @@ export type LayerId =
   | "MORAG_LINE"
   | "MEFALISM_SYMBOL"
   | "GAZA_FRAGMENTATION_RASTER"
+  | "HEATHROW_COMP_RASTER"
   | "MEFALSIM_LINE"
   | "PHILADELPHI_FILL"
   | "GAZA_TAKEOVER_RASTER"
@@ -625,6 +626,15 @@ export const LAYERS: LayerType[] = [
     id: "GAZA_TAKEOVER_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("GAZA_TAKEOVER_IMG")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "HEATHROW_COMP_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("HEATHROW_COMP")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },

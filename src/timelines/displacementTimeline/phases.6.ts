@@ -85,4 +85,33 @@ const gazaTakeover: GazaEvent = {
   title: "Plan for Gaza's Takeover",
 };
 
-export const phaseSix: Timeline = [init, westBankPlan, e1Plan, gazaTakeover];
+const heathrowComparison: GazaEvent = {
+  kind: "basic",
+  fitBounds: {
+    bounds: [
+      //   [-1.559897133489262, 51.06463390638773],
+      //   [0.396326493144797, 52.31886014963128],
+      [-0.07344267363210126, 51.507832025123385],
+      [-0.07344267363210126, 51.507832025123385],
+    ],
+    options: { maxZoom: 8, duration: 2000 },
+  },
+  layerOverrides: [
+    {
+      id: "HEATHROW_COMP_RASTER",
+      paintOverrides: {
+        "raster-opacity": 0.9,
+      },
+    },
+  ],
+
+  title: "Comparisons to London",
+};
+
+export const phaseSix: Timeline = [
+  init,
+  westBankPlan,
+  e1Plan,
+  gazaTakeover,
+  heathrowComparison,
+];
