@@ -64,7 +64,25 @@ const e1Plan: GazaEvent = {
     },
   ],
 
-  title: "The Plan for the West Bank",
+  title: "Proposed E1 Settlement",
 };
 
-export const phaseSix: Timeline = [init, westBankPlan, e1Plan];
+const gazaTakeover: GazaEvent = {
+  kind: "basic",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: { padding: 80 },
+  },
+  layerOverrides: [
+    {
+      id: "GAZA_TAKEOVER_RASTER",
+      paintOverrides: {
+        "raster-opacity": 0.8,
+      },
+    },
+  ],
+
+  title: "Plan for Gaza's Takeover",
+};
+
+export const phaseSix: Timeline = [init, westBankPlan, e1Plan, gazaTakeover];

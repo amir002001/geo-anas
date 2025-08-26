@@ -16,6 +16,7 @@ export type LayerId =
   | "GAZA_FRAGMENTATION_RASTER"
   | "MEFALSIM_LINE"
   | "PHILADELPHI_FILL"
+  | "GAZA_TAKEOVER_RASTER"
   | "INCIDENTS_SYMBOL"
   | "EVACUATION_ARROWS_FILL"
   | "FIRST_GRID_ARROWS_RASTER"
@@ -615,6 +616,15 @@ export const LAYERS: LayerType[] = [
     id: "E1_PLAN_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("E1_PLAN_IMG")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "GAZA_TAKEOVER_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("GAZA_TAKEOVER_IMG")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },

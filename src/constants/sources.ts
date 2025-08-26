@@ -34,6 +34,7 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 export type SourceId =
   | "MORAG"
   | "E1_PLAN_IMG"
+  | "GAZA_TAKEOVER_IMG"
   | "MAGEN_OZ"
   | "GHF_IMG"
   | "NOT_GRID_EVAC_ORDERS"
@@ -373,6 +374,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [35.369784155028711, 31.845701490924586],
         [35.369784390619202, 31.744750491382483],
         [35.216479042360675, 31.744750439847078],
+      ],
+    },
+  },
+  {
+    id: "GAZA_TAKEOVER_IMG",
+    source: {
+      type: "image",
+      url: "/images/gaza-takeover.png",
+      coordinates: [
+        [34.19373742358529, 31.624150854162252],
+        [34.573584695056937, 31.624269591773167],
+        [34.573586579780894, 31.194855964280698],
+        [34.19384956466223, 31.194855964280677],
       ],
     },
   },
