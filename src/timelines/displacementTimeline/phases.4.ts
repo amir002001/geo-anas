@@ -2,25 +2,16 @@ import { GAZA_BBOX } from "../../constants/constants";
 import type { GazaEvent, Timeline } from "../timelines";
 
 const init: GazaEvent = {
-  kind: "basic",
+  kind: "image-only",
   fitBounds: {
-    bounds: [
-      [0, 0],
-      [0, 0],
-    ],
-    options: { maxZoom: 10 },
+    bounds: GAZA_BBOX,
+    options: {},
   },
   audioOverrideSrc: "/audio/internalize.wav",
   layerOverrides: [
-    {
-      id: "WORLD_CENTER_SYMBOL",
-      paintOverrides: {
-        "text-opacity": 1,
-      },
-      layoutOverrides: { "text-field": "October 6th to January 15th" },
-    },
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
   ],
+  imgSrc: "/images/titles/36.jpg",
 
   title: "Extermination of the North",
 };

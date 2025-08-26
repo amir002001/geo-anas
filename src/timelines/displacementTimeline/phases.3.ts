@@ -4,24 +4,20 @@ import humanitarianZoneData from "../../data/may-6-humanitarian.json";
 import type { GazaEvent, ILayerOverride, Timeline } from "../timelines";
 
 const init: GazaEvent = {
-  kind: "basic",
+  kind: "image-only",
+  imgSrc: "/images/titles/32.jpg",
   fitBounds: {
-    bounds: [
-      [0, 0],
-      [0, 0],
-    ],
-    options: { maxZoom: 10 },
+    bounds: GAZA_BBOX,
+    options: {},
   },
   audioOverrideSrc: "/audio/internalize.wav",
   layerOverrides: [
     {
-      id: "WORLD_CENTER_SYMBOL",
+      id: "WHOLE_WORLD_FILL",
       paintOverrides: {
-        "text-opacity": 1,
+        "fill-opacity": 1,
       },
-      layoutOverrides: { "text-field": "May 6th to October 6th" },
     },
-    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
   ],
 
   title: "Displacement of Rafah",

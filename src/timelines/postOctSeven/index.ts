@@ -3,23 +3,16 @@ import type { GazaEvent, Timeline } from "../timelines";
 import { logicOfZionism } from "./logicOfZionism";
 
 const postOctSevenTitle: GazaEvent = {
-  kind: "basic",
+  kind: "image-only",
+  imgSrc: "/images/titles/20.jpg",
   audioOverrideSrc: "/audio/internalize.wav",
   layerOverrides: [
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
-    {
-      id: "WORLD_CENTER_SYMBOL",
-      paintOverrides: { "text-opacity": 1 },
-      layoutOverrides: { "text-field": "Post-October 7" },
-    },
   ],
   title: "Post-October 7",
   fitBounds: {
-    bounds: [
-      [0, 0],
-      [0, 0],
-    ],
-    options: { maxZoom: 10 },
+    bounds: GAZA_BBOX,
+    options: {},
   },
 };
 

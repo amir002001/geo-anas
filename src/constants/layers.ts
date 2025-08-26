@@ -18,7 +18,6 @@ export type LayerId =
   | "POPULATION_BLOCKS_LINE"
   | "ONE_KM_BUFFER_FILL"
   | "SALAH_AL_DIN_SYMBOL"
-  | "WORLD_CENTER_SYMBOL"
   | "WHOLE_WORLD_FILL"
   | "GAZA_LAND_BLOCKADE_FILL"
   | "GAZA_SEA_BLOCKADE_FILL"
@@ -386,24 +385,9 @@ export const LAYERS: LayerType[] = [
     source: SOURCE_MAP.get("WHOLE_WORLD")!.id,
     type: "fill",
     paint: {
-      "fill-color": "#EFEFEF",
+      "fill-color": "#000000",
       "fill-opacity": 0,
-      "fill-opacity-transition": { duration: 500 },
-    },
-  },
-  {
-    id: "WORLD_CENTER_SYMBOL",
-    source: SOURCE_MAP.get("WORLD_CENTER")!.id,
-    type: "symbol",
-    paint: {
-      "text-opacity": 0,
-
-      "text-opacity-transition": { duration: 500 },
-    },
-    layout: {
-      "text-field": "",
-      "text-font": ["League Spartan Bold"],
-      "text-size": 36,
+      "fill-opacity-transition": { duration: 1000 },
     },
   },
   {

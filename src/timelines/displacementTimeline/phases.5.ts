@@ -2,23 +2,14 @@ import { GAZA_BBOX } from "../../constants/constants";
 import type { GazaEvent, Timeline } from "../timelines";
 
 const init: GazaEvent = {
-  kind: "basic",
+  kind: "image-only",
+  imgSrc: "/images/titles/39.jpg",
   fitBounds: {
-    bounds: [
-      [0, 0],
-      [0, 0],
-    ],
+    bounds: GAZA_BBOX,
     options: { maxZoom: 10 },
   },
   audioOverrideSrc: "/audio/internalize.wav",
   layerOverrides: [
-    {
-      id: "WORLD_CENTER_SYMBOL",
-      paintOverrides: {
-        "text-opacity": 1,
-      },
-      layoutOverrides: { "text-field": "March 17th to August 4th" },
-    },
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
   ],
 

@@ -1,3 +1,4 @@
+import { GAZA_BBOX } from "../../constants/constants";
 import type { GazaEvent, Timeline } from "../timelines";
 import { balfour } from "./balfour";
 import { crossings } from "./crossings";
@@ -13,22 +14,15 @@ import { spatiality } from "./spatiality";
 import { water } from "./water";
 
 const intro: GazaEvent = {
-  kind: "basic",
+  kind: "image-only",
+  imgSrc: "/images/titles/1.jpg",
   audioOverrideSrc: "/audio/internalize.wav",
   layerOverrides: [
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
-    {
-      id: "WORLD_CENTER_SYMBOL",
-      paintOverrides: { "text-opacity": 1 },
-      layoutOverrides: { "text-field": "Pre-October 7" },
-    },
   ],
   title: "Pre-October 7",
   fitBounds: {
-    bounds: [
-      [0, 0],
-      [0, 0],
-    ],
+    bounds: GAZA_BBOX,
     options: { maxZoom: 10 },
   },
 };

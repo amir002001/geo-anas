@@ -25,7 +25,7 @@ import salahAlDin from "../data/salah-al-din.json";
 import schoolsAndKindergartens from "../data/schools-and-kindergartens.json";
 import waterwells from "../data/water-wells.json";
 import wwtp from "../data/wwtp.json";
-import { WHOLE_WORLD, WORLD_CENTER } from "./constants";
+import { WHOLE_WORLD } from "./constants";
 const wwtpCentroids = wwtp.features.map((feature) => centroid(feature as any));
 
 const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
@@ -41,7 +41,6 @@ export type SourceId =
   | "POPULATION_GRIDS"
   | "ONE_KM_BUFFER"
   | "EVAC_ORDERS"
-  | "WORLD_CENTER"
   | "WHOLE_WORLD"
   | "GAZA_BOUNDARY"
   | "GAZA_GOVERNATE_BOUNDARIES"
@@ -227,13 +226,6 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     id: "WHOLE_WORLD",
     source: {
       data: WHOLE_WORLD as any,
-      type: "geojson",
-    },
-  },
-  {
-    id: "WORLD_CENTER",
-    source: {
-      data: WORLD_CENTER as any,
       type: "geojson",
     },
   },

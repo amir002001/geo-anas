@@ -3,24 +3,20 @@ import { IMAGE_MAP } from "../../constants/images";
 import type { GazaEvent, Timeline } from "../timelines";
 
 const init: GazaEvent = {
-  kind: "basic",
+  kind: "image-only",
+  imgSrc: "/images/titles/30.jpg",
   fitBounds: {
-    bounds: [
-      [0, 0],
-      [0, 0],
-    ],
-    options: { maxZoom: 10 },
+    bounds: GAZA_BBOX,
+    options: {},
   },
   audioOverrideSrc: "/audio/internalize.wav",
   layerOverrides: [
     {
-      id: "WORLD_CENTER_SYMBOL",
+      id: "WHOLE_WORLD_FILL",
       paintOverrides: {
-        "text-opacity": 1,
+        "fill-opacity": 1,
       },
-      layoutOverrides: { "text-field": "December 1st to May 6th" },
     },
-    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
   ],
 
   title: "Grid Evacuation",
@@ -49,18 +45,20 @@ const evacOrder: GazaEvent = {
         "line-opacity": 1,
       },
     },
-    // {
-    //   id: "FIRST_GRID_ARROWS_RASTER",
-    //   paintOverrides: {
-    //     "raster-opacity": 1,
-    //   },
-    // },
     {
       id: "EVACUATION_ARROWS_FILL",
       paintOverrides: {
         "fill-opacity": 1,
       },
       filterOverrides: ["<", ["get", "date"], "2024-05-01"],
+    },
+    {
+      id: "NOT_GRID_EVAC_ORDERS_FILL",
+      paintOverrides: {
+        "fill-opacity": 0.6,
+        "fill-color": "#F6DC86",
+      },
+      filterOverrides: ["<", ["get", "order_date"], "2024-05-01"],
     },
   ],
   title: "Evacuation Orders",
@@ -82,6 +80,14 @@ const evacOrderZoom: GazaEvent = {
         "fill-opacity": 1,
       },
       filterOverrides: ["==", ["get", "date"], "2023-12-02"],
+    },
+    {
+      id: "NOT_GRID_EVAC_ORDERS_FILL",
+      paintOverrides: {
+        "fill-opacity": 0.6,
+        "fill-color": "#F6DC86",
+      },
+      filterOverrides: ["==", ["get", "order_date"], "2023-12-02"],
     },
     {
       id: "INCIDENTS_SYMBOL",

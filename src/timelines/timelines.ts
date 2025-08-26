@@ -5,6 +5,7 @@ import type {
   LngLatBoundsLike,
   PaintSpecification,
 } from "mapbox-gl";
+import { GAZA_BBOX } from "../constants/constants";
 import type { LayerId } from "../constants/layers";
 import { displacementTimeline } from "./displacementTimeline";
 import { postOctSeven } from "./postOctSeven";
@@ -58,24 +59,14 @@ export type GazaEvent =
 export type Timeline = GazaEvent[];
 
 const intro: GazaEvent = {
-  kind: "basic",
+  kind: "image-only",
+  imgSrc: "/images/titles/title.jpg",
   layerOverrides: [
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
-    {
-      id: "WORLD_CENTER_SYMBOL",
-      paintOverrides: { "text-opacity": 1 },
-      layoutOverrides: {
-        "text-field": "Architecture of Genocide",
-        "text-max-width": 1000,
-      },
-    },
   ],
   title: "Architecture of Genocide",
   fitBounds: {
-    bounds: [
-      [0, 0],
-      [0, 0],
-    ],
+    bounds: GAZA_BBOX,
     options: { maxZoom: 10 },
   },
 };
