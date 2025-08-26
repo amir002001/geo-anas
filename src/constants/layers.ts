@@ -4,6 +4,8 @@ import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
   | "MORAG_SYMBOL"
+  | "NOT_GRID_EVAC_ORDERS_FILL"
+  | "EVAC_ORDERS_FILL"
   | "MORAG_LINE"
   | "MEFALISM_SYMBOL"
   | "GAZA_FRAGMENTATION_RASTER"
@@ -451,16 +453,6 @@ export const LAYERS: LayerType[] = [
     },
   },
   {
-    id: "INITIAL_HUMANITARIAN_FILL",
-    type: "fill",
-    source: SOURCE_MAP.get("INITIAL_HUMANITARIAN")!.id,
-    paint: {
-      "fill-opacity": 0,
-      "fill-color": "#86B5F8",
-      "fill-opacity-transition": { duration: 500 },
-    },
-  },
-  {
     id: "EVACUATION_ARROWS_FILL",
     type: "fill",
     source: SOURCE_MAP.get("EVACUATION_ARROWS")!.id,
@@ -555,6 +547,34 @@ export const LAYERS: LayerType[] = [
       "text-field": "Morag",
       "text-size": 24,
       "text-offset": [0, 1],
+    },
+  },
+  {
+    id: "EVAC_ORDERS_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("EVAC_ORDERS")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "NOT_GRID_EVAC_ORDERS_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("NOT_GRID_EVAC_ORDERS")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "INITIAL_HUMANITARIAN_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("INITIAL_HUMANITARIAN")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-color": "#86B5F8",
+      "fill-opacity-transition": { duration: 500 },
     },
   },
 ] as const;

@@ -40,8 +40,51 @@ const initialHumanitarianZone: GazaEvent = {
     {
       id: "INITIAL_HUMANITARIAN_FILL",
       paintOverrides: {
-        "fill-opacity": 0.6,
+        "fill-opacity": 0.8,
       },
+    },
+    {
+      id: "EVAC_ORDERS_FILL",
+      paintOverrides: {
+        "fill-opacity": 0.6,
+        "fill-color": "#F6DC86",
+      },
+      filterOverrides: ["<=", ["get", "order_date"], "2024-05-06"],
+    },
+    {
+      id: "ONE_KM_BUFFER_FILL",
+      paintOverrides: {
+        "fill-opacity": 0.6,
+        "fill-color": "#F6DC86",
+      },
+    },
+    {
+      id: "NOT_GRID_EVAC_ORDERS_FILL",
+      paintOverrides: {
+        "fill-opacity": 0.6,
+        "fill-color": "#F6DC86",
+      },
+      filterOverrides: ["<=", ["get", "order_date"], "2024-05-06"],
+    },
+    {
+      id: "GAZA_GOVERNATES_POPULATION_FILL",
+      paintOverrides: {
+        "fill-color": "#F6DC86",
+        "fill-opacity": [
+          "match",
+          ["get", "name"],
+          "Gaza",
+          0.5,
+          "North Gaza",
+          0.5,
+          0,
+        ],
+      },
+    },
+    {
+      id: "EVACUATION_ARROWS_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+      filterOverrides: ["==", ["get", "date"], "2024-05-06"],
     },
   ],
   title: "Displacement and Humanitarian Zone",

@@ -3,6 +3,7 @@ import type { SourceSpecification } from "mapbox-gl";
 import crossings from "../data/crossings.json";
 import gazaDesalinationPlants from "../data/desalination-plants.json";
 import evacuationArrows from "../data/evac-arrows.json";
+import evacOrders from "../data/evac-orders.json";
 import gazaAirportBoundary from "../data/gaza-airport-boundary.json";
 import gazaBuffer from "../data/gaza-buffer.json";
 import gazaHospitalsStatus from "../data/gaza-hospital-status.json";
@@ -15,6 +16,7 @@ import initialHumanitarian from "../data/may-6-humanitarian.json";
 import mefalsim from "../data/mefalsim.json";
 import mekorotPipes from "../data/mekorot-pipes.json";
 import morag from "../data/morag.json";
+import notGridEvacOrders from "../data/not-grid-evac-orders.json";
 import oneKmBuffer from "../data/one-km-buffer.json";
 import philadelphi from "../data/philadelphi.json";
 import populationGrid from "../data/population-blocks.json";
@@ -30,6 +32,7 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "MORAG"
+  | "NOT_GRID_EVAC_ORDERS"
   | "GAZA_FRAGMENTATION"
   | "PHILADELPHI"
   | "MEFALSIM"
@@ -37,6 +40,7 @@ export type SourceId =
   | "INITIAL_HUMANITARIAN"
   | "POPULATION_GRIDS"
   | "ONE_KM_BUFFER"
+  | "EVAC_ORDERS"
   | "WORLD_CENTER"
   | "WHOLE_WORLD"
   | "GAZA_BOUNDARY"
@@ -313,6 +317,20 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: morag as any,
+    },
+  },
+  {
+    id: "EVAC_ORDERS",
+    source: {
+      type: "geojson",
+      data: evacOrders as any,
+    },
+  },
+  {
+    id: "NOT_GRID_EVAC_ORDERS",
+    source: {
+      type: "geojson",
+      data: notGridEvacOrders as any,
     },
   },
 ] as const;
