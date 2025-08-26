@@ -105,9 +105,6 @@ function App() {
             currentSlide={currentSlide}
             isMapIdle={isMapIdle}
             setCurrentSlide={setCurrentSlide}
-            opaqueTitle={["video-only", "image-only"].includes(
-              timelines[currentSlide].kind,
-            )}
           />
         </AnasMapContext.Provider>
       )}

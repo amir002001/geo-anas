@@ -40,4 +40,17 @@ const gazaFragmentationPlan: GazaEvent = {
   title: "Gaza Fragmentation Plan",
 };
 
-export const phaseFive: Timeline = [init, gazaFragmentationPlan];
+const moragIntro: GazaEvent = {
+  kind: "basic",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  layerOverrides: [
+    { id: "MORAG_LINE", paintOverrides: { "line-opacity": 1 } },
+    { id: "MORAG_SYMBOL", paintOverrides: { "text-opacity": 1 } },
+  ],
+  title: "Introduction of the Morag Corridor",
+};
+
+export const phaseFive: Timeline = [init, gazaFragmentationPlan, moragIntro];

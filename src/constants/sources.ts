@@ -14,6 +14,7 @@ import incidents from "../data/incidents.json";
 import initialHumanitarian from "../data/may-6-humanitarian.json";
 import mefalsim from "../data/mefalsim.json";
 import mekorotPipes from "../data/mekorot-pipes.json";
+import morag from "../data/morag.json";
 import oneKmBuffer from "../data/one-km-buffer.json";
 import philadelphi from "../data/philadelphi.json";
 import populationGrid from "../data/population-blocks.json";
@@ -28,6 +29,7 @@ const wwtpCentroids = wwtp.features.map((feature) => centroid(feature as any));
 const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
+  | "MORAG"
   | "GAZA_FRAGMENTATION"
   | "PHILADELPHI"
   | "MEFALSIM"
@@ -304,6 +306,13 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [34.177382179050944, 31.173210677630188],
       ],
       url: "/images/fragmentation.png",
+    },
+  },
+  {
+    id: "MORAG",
+    source: {
+      type: "geojson",
+      data: morag as any,
     },
   },
 ] as const;

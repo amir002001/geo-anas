@@ -3,6 +3,8 @@ import { IMAGE_MAP } from "./images";
 import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
+  | "MORAG_SYMBOL"
+  | "MORAG_LINE"
   | "MEFALISM_SYMBOL"
   | "GAZA_FRAGMENTATION_RASTER"
   | "MEFALSIM_LINE"
@@ -526,6 +528,33 @@ export const LAYERS: LayerType[] = [
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "MORAG_LINE",
+    source: SOURCE_MAP.get("MORAG")!.id,
+    type: "line",
+    paint: {
+      "line-width": 4,
+      "line-dasharray": [1.5, 1.5],
+      "line-opacity": 0,
+      "line-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "MORAG_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("MORAG")!.id,
+    paint: {
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "text-allow-overlap": true,
+      "icon-allow-overlap": true,
+      "text-field": "Morag",
+      "text-size": 24,
+      "text-offset": [0, 1],
     },
   },
 ] as const;
