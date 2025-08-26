@@ -62,7 +62,16 @@ export const SlideshowControls = ({
     <div
       className={clsx([className, "flex items-center gap-4 drop-shadow-2xl"])}
     >
-      <div id="counter-container">
+      <div
+        id="counter-container"
+        className={clsx([
+          timelines[currentSlide].layerOverrides.some(
+            (override) => override.id === "WHOLE_WORLD_FILL",
+          )
+            ? "text-white"
+            : "text-black",
+        ])}
+      >
         <input
           className="field-sizing-content"
           type="text"
