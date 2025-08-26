@@ -5,6 +5,7 @@ import { phaseTwo } from "./phases.2";
 import { phaseThree } from "./phases.3";
 import { phaseFour } from "./phases.4";
 import { phaseFive } from "./phases.5";
+import { phaseSix } from "./phases.6";
 
 const initial: GazaEvent = {
   kind: "image-only",
@@ -24,4 +25,5 @@ export const displacementTimeline: Timeline = [
   ...phaseThree,
   ...phaseFour,
   ...phaseFive,
+  ...phaseSix,
 ];
