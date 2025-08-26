@@ -4,6 +4,8 @@ import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
   | "GHF_RASTER"
+  | "E1_PLAN_RASTER"
+  | "WEST_BANK_PLAN_RASTER"
   | "MAGEN_OZ_LINE"
   | "MAGEN_OZ_SYMBOL"
   | "MORAG_SYMBOL"
@@ -595,6 +597,24 @@ export const LAYERS: LayerType[] = [
     id: "GHF_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("GHF_IMG")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "WEST_BANK_PLAN_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("WEST_BANK_PLAN_IMG")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "E1_PLAN_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("E1_PLAN_IMG")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },

@@ -33,6 +33,7 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "MORAG"
+  | "E1_PLAN_IMG"
   | "MAGEN_OZ"
   | "GHF_IMG"
   | "NOT_GRID_EVAC_ORDERS"
@@ -50,6 +51,7 @@ export type SourceId =
   | "GAZA_SEA_BLOCKADE"
   | "INCIDENTS"
   | "GAZA_BUFFER"
+  | "WEST_BANK_PLAN_IMG"
   | "GAZA_DESALINATION_PLANTS"
   | "GAZA_AIRPORT_BOUNDARY"
   | "GAZA_POWER"
@@ -345,6 +347,32 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [34.633446230415046, 31.59973396775332],
         [34.628490584291583, 31.203230683557873],
         [34.209033070016254, 31.20847277827793],
+      ],
+    },
+  },
+  {
+    id: "WEST_BANK_PLAN_IMG",
+    source: {
+      type: "image",
+      url: "/images/west-bank-plan.png",
+      coordinates: [
+        [34.851649501759958, 32.598047730934631],
+        [35.891047803495709, 32.598067520536446],
+        [35.891047332314727, 31.3020615747599],
+        [34.851653860184172, 31.3020615747599],
+      ],
+    },
+  },
+  {
+    id: "E1_PLAN_IMG",
+    source: {
+      type: "image",
+      url: "/images/E1_plan_area.jpg",
+      coordinates: [
+        [35.216478468108839, 31.845700784153095],
+        [35.369784155028711, 31.845701490924586],
+        [35.369784390619202, 31.744750491382483],
+        [35.216479042360675, 31.744750439847078],
       ],
     },
   },
