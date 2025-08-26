@@ -1,7 +1,7 @@
 import { GAZA_BBOX } from "../../constants/constants";
 import { IMAGE_MAP } from "../../constants/images";
 import humanitarianZoneData from "../../data/may-6-humanitarian.json";
-import type { GazaEvent, Timeline } from "../timelines";
+import type { GazaEvent, ILayerOverride, Timeline } from "../timelines";
 
 const init: GazaEvent = {
   kind: "basic",
@@ -27,60 +27,64 @@ const init: GazaEvent = {
   title: "Displacement of Rafah",
 };
 
+const commons: ILayerOverride[] = [
+  {
+    id: "POPULATION_BLOCKS_LINE",
+    paintOverrides: {
+      "line-opacity": 1,
+    },
+  },
+  {
+    id: "INITIAL_HUMANITARIAN_FILL",
+    paintOverrides: {
+      "fill-opacity": 0.8,
+    },
+  },
+  {
+    id: "EVAC_ORDERS_FILL",
+    paintOverrides: {
+      "fill-opacity": 0.6,
+      "fill-color": "#F6DC86",
+    },
+    filterOverrides: ["<=", ["get", "order_date"], "2024-05-06"],
+  },
+  {
+    id: "ONE_KM_BUFFER_FILL",
+    paintOverrides: {
+      "fill-opacity": 0.6,
+      "fill-color": "#F6DC86",
+    },
+  },
+  {
+    id: "NOT_GRID_EVAC_ORDERS_FILL",
+    paintOverrides: {
+      "fill-opacity": 0.6,
+      "fill-color": "#F6DC86",
+    },
+    filterOverrides: ["<=", ["get", "order_date"], "2024-05-06"],
+  },
+  {
+    id: "GAZA_GOVERNATES_POPULATION_FILL",
+    paintOverrides: {
+      "fill-color": "#F6DC86",
+      "fill-opacity": [
+        "match",
+        ["get", "name"],
+        "Gaza",
+        0.5,
+        "North Gaza",
+        0.5,
+        0,
+      ],
+    },
+  },
+];
+
 const initialHumanitarianZone: GazaEvent = {
   kind: "basic",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
   layerOverrides: [
-    {
-      id: "POPULATION_BLOCKS_LINE",
-      paintOverrides: {
-        "line-opacity": 1,
-      },
-    },
-    {
-      id: "INITIAL_HUMANITARIAN_FILL",
-      paintOverrides: {
-        "fill-opacity": 0.8,
-      },
-    },
-    {
-      id: "EVAC_ORDERS_FILL",
-      paintOverrides: {
-        "fill-opacity": 0.6,
-        "fill-color": "#F6DC86",
-      },
-      filterOverrides: ["<=", ["get", "order_date"], "2024-05-06"],
-    },
-    {
-      id: "ONE_KM_BUFFER_FILL",
-      paintOverrides: {
-        "fill-opacity": 0.6,
-        "fill-color": "#F6DC86",
-      },
-    },
-    {
-      id: "NOT_GRID_EVAC_ORDERS_FILL",
-      paintOverrides: {
-        "fill-opacity": 0.6,
-        "fill-color": "#F6DC86",
-      },
-      filterOverrides: ["<=", ["get", "order_date"], "2024-05-06"],
-    },
-    {
-      id: "GAZA_GOVERNATES_POPULATION_FILL",
-      paintOverrides: {
-        "fill-color": "#F6DC86",
-        "fill-opacity": [
-          "match",
-          ["get", "name"],
-          "Gaza",
-          0.5,
-          "North Gaza",
-          0.5,
-          0,
-        ],
-      },
-    },
+    ...commons,
     {
       id: "EVACUATION_ARROWS_FILL",
       paintOverrides: { "fill-opacity": 1 },
@@ -100,20 +104,7 @@ const rafahAttack: GazaEvent = {
     ],
     options: { maxZoom: 14 },
   },
-  layerOverrides: [
-    {
-      id: "POPULATION_BLOCKS_LINE",
-      paintOverrides: {
-        "line-opacity": 1,
-      },
-    },
-    {
-      id: "INITIAL_HUMANITARIAN_FILL",
-      paintOverrides: {
-        "fill-opacity": 0.6,
-      },
-    },
-  ],
+  layerOverrides: [...commons],
   title: "Displacement and Humanitarian Zone",
 };
 
