@@ -4,6 +4,7 @@ import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
   | "MEFALISM_SYMBOL"
+  | "GAZA_FRAGMENTATION_RASTER"
   | "MEFALSIM_LINE"
   | "PHILADELPHI_FILL"
   | "INCIDENTS_SYMBOL"
@@ -516,6 +517,15 @@ export const LAYERS: LayerType[] = [
       "text-field": "Mefalism",
       "text-size": 24,
       "text-offset": [0, 1],
+    },
+  },
+  {
+    id: "GAZA_FRAGMENTATION_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("GAZA_FRAGMENTATION")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
     },
   },
 ] as const;

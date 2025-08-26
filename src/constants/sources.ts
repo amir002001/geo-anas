@@ -28,6 +28,7 @@ const wwtpCentroids = wwtp.features.map((feature) => centroid(feature as any));
 const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
+  | "GAZA_FRAGMENTATION"
   | "PHILADELPHI"
   | "MEFALSIM"
   | "EVACUATION_ARROWS"
@@ -290,6 +291,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: mefalsim as any,
+    },
+  },
+  {
+    id: "GAZA_FRAGMENTATION",
+    source: {
+      type: "image",
+      coordinates: [
+        [34.177382310598333, 31.621831836854341],
+        [34.598312375148247, 31.621831836854348],
+        [34.598312412733236, 31.173210806261956],
+        [34.177382179050944, 31.173210677630188],
+      ],
+      url: "/images/fragmentation.png",
     },
   },
 ] as const;

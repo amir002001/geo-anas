@@ -44,6 +44,7 @@ export const SlideshowControls = ({
 
   const previousButtonClassName = clsx([
     commonButtonClassName,
+    "border-r",
     !isMapIdle || isFirstSlide
       ? "opacity-50 cursor-not-allowed"
       : "cursor-pointer",
@@ -51,6 +52,7 @@ export const SlideshowControls = ({
 
   const nextButtonClassName = clsx([
     commonButtonClassName,
+    "border-l",
     !isMapIdle || isLastSlide
       ? "opacity-50 cursor-not-allowed"
       : "cursor-pointer",
@@ -105,8 +107,8 @@ export const SlideshowControls = ({
             className="size-6 rotate-180 brightness-0 invert"
           ></img>
         </button>
-        <div className="flex h-full items-center bg-gray-400/30 px-3">
-          <span id="slide-title" className={clsx(["text-center text-black"])}>
+        <div className="flex h-full items-center bg-[#3a3a3a] px-3">
+          <span id="slide-title" className={clsx(["text-center text-white"])}>
             {slideTitle}
           </span>
         </div>
