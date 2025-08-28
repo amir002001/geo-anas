@@ -1,3 +1,3 @@
 import type { Timeline } from "../timelines";
 
-export const energy: Timeline = [];
+export const infraEdu: Timeline = [];

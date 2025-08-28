@@ -7,6 +7,8 @@ import type {
 } from "mapbox-gl";
 import { GAZA_BBOX } from "../constants/constants";
 import type { LayerId } from "../constants/layers";
+import { anas } from "./anas";
+import { attackOnNecessities } from "./attackOnNecessities";
 import { displacementTimeline } from "./displacementTimeline";
 import { postOctSeven } from "./postOctSeven";
 import { preOctSeven } from "./preOctSeven";
@@ -76,4 +78,6 @@ export const timelines: Timeline = [
   ...preOctSeven,
   ...postOctSeven,
   ...displacementTimeline,
+  ...attackOnNecessities,
+  ...anas,
 ];
