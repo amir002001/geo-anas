@@ -2,7 +2,6 @@ import { GAZA_BBOX } from "../../constants/constants";
 import type { GazaEvent, Timeline } from "../timelines";
 import { balfour } from "./balfour";
 import { crossings } from "./crossings";
-import { economy } from "./economy";
 import { education } from "./education";
 import { eighteenYearBlockade } from "./eighteenYearBlockade";
 import { ironFenceAroundStrip } from "./fenceAroundTheStrip";
@@ -39,6 +38,5 @@ export const preOctSeven: Timeline = [
   ...water,
   ...powerAccess,
   ...healthcare,
-  ...economy,
   ...education,
 ];
