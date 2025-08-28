@@ -4,6 +4,7 @@ import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
   | "GHF_RASTER"
+  | "INVASION_ROUTES_NOV_13_FILL"
   | "GIDEONS_CHARIOT"
   | "AFTER_CEASE_ORDERS_FILL"
   | "E1_PLAN_RASTER"
@@ -12,6 +13,7 @@ export type LayerId =
   | "MAGEN_OZ_SYMBOL"
   | "MORAG_SYMBOL"
   | "HOSPITAL_CAPACITY_RASTER"
+  | "OCT_13_HOSPITAL_RASTER"
   | "NOT_GRID_EVAC_ORDERS_FILL"
   | "CEASE_FIRE_LINES_RASTER"
   | "EVAC_ORDERS_FILL"
@@ -69,6 +71,16 @@ export const LAYERS: LayerType[] = [
     paint: {
       "fill-color": "#FF0000",
       "fill-opacity": 0,
+      "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "INVASION_ROUTES_NOV_13_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("INVASION_ROUTES_NOV_13")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-color": "#FF0000",
       "fill-opacity-transition": { duration: 500 },
     },
   },
@@ -743,6 +755,15 @@ export const LAYERS: LayerType[] = [
     id: "HOSPITAL_CAPACITY_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("HOSPITAL_CAPACITY")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "OCT_13_HOSPITAL_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("OCT_13_HOSPITAL_IMG")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },

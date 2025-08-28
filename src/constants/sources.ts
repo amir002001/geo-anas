@@ -15,6 +15,7 @@ import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
 import incidents from "../data/incidents.json";
 import afterCeaseOrders from "../data/initial-orders-after-cease.json";
+import invasionRoutesNov13 from "../data/invasion-nov-12.json";
 import magenOz from "../data/magen-oz.json";
 import initialHumanitarian from "../data/may-6-humanitarian.json";
 import mefalsim from "../data/mefalsim.json";
@@ -36,6 +37,8 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "MORAG"
+  | "INVASION_ROUTES_NOV_13"
+  | "OCT_13_HOSPITAL_IMG"
   | "CEASE_FIRE_LINES"
   | "AFTER_CEASE_ORDERS"
   | "COMPARISON_CITIES"
@@ -471,6 +474,26 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [34.604224389176366, 31.159506221979825],
         [34.201356606332368, 31.159506057771054],
       ],
+    },
+  },
+  {
+    id: "OCT_13_HOSPITAL_IMG",
+    source: {
+      type: "image",
+      url: "/images/oct-13-hospitals.png",
+      coordinates: [
+        [34.138582219068098, 31.632459951994644],
+        [34.65289154586155, 31.632684151708478],
+        [34.652891107971477, 31.191459114841106],
+        [34.13858720006759, 31.191459114841106],
+      ],
+    },
+  },
+  {
+    id: "INVASION_ROUTES_NOV_13",
+    source: {
+      type: "geojson",
+      data: invasionRoutesNov13 as any,
     },
   },
 ] as const;
