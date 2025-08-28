@@ -90,7 +90,7 @@ const bombingOfEyeHospital: GazaEvent = {
 
 const hospitalCapacity: GazaEvent = {
   kind: "basic",
-  title: "Hospital Capacity",
+  title: "Resulting Hospital Capacity",
   fitBounds: {
     bounds: GAZA_BBOX,
     options: { padding: 120 },
@@ -103,6 +103,75 @@ const hospitalCapacity: GazaEvent = {
   ],
 };
 
+const beitHanoun: GazaEvent = {
+  kind: "video",
+  videoSrc: "/videos/hanoun.mp4",
+  title: "Beit Hanoun",
+  fitBounds: {
+    bounds: [
+      [34.53745365, 31.53938984],
+      [34.53745365, 31.53938984],
+    ],
+    options: { maxZoom: 14 },
+  },
+  layerOverrides: [
+    {
+      id: "INCIDENTS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+      filterOverrides: ["==", ["get", "Public_ID"], "31009-74237"],
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("bad-rocket"),
+      },
+    },
+  ],
+};
+
+const muhammadAlDurra: GazaEvent = {
+  kind: "image",
+  imgSrc: "/images/white-phosphor.webp",
+  title: "Muhammad Al-Durra",
+  fitBounds: {
+    bounds: [
+      [34.4805535675483, 31.5143897000453],
+      [34.4805535675483, 31.5143897000453],
+    ],
+    options: { maxZoom: 14 },
+  },
+  layerOverrides: [
+    {
+      id: "INCIDENTS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+      filterOverrides: ["==", ["get", "Public_ID"], "31013-47741"],
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("bad-rocket"),
+      },
+    },
+  ],
+};
+
+const alKarama: GazaEvent = {
+  title: "Al-Karama",
+  fitBounds: {
+    bounds: [
+      [34.4705534895871, 31.5427897523383],
+      [34.4705534895871, 31.5427897523383],
+    ],
+    options: { maxZoom: 14 },
+  },
+  imgSrc: "/images/al-karama.jpg",
+  kind: "image",
+  layerOverrides: [
+    {
+      id: "INCIDENTS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+      filterOverrides: ["==", ["get", "Public_ID"], "31017-39971"],
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("bad-rocket"),
+      },
+    },
+  ],
+};
+
 export const healthcare: Timeline = [
   intro,
   attackOnHospitals,
@@ -110,4 +179,7 @@ export const healthcare: Timeline = [
   stageOne,
   bombingOfEyeHospital,
   hospitalCapacity,
+  beitHanoun,
+  muhammadAlDurra,
+  alKarama,
 ];

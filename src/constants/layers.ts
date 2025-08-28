@@ -105,8 +105,9 @@ export const LAYERS: LayerType[] = [
     layout: {
       "icon-image": IMAGE_MAP.get("power"),
       "text-field": "Gaza Power Plant GPGC",
-      "text-font": ["Open Sans Bold"],
       "text-offset": [0, 3],
+      "icon-allow-overlap": true,
+      "text-allow-overlap": true,
     },
   },
   {
