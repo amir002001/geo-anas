@@ -23,6 +23,25 @@ const gazaPowerPlantDestroyed: GazaEvent = {
   ],
 };
 
+const powerBreakdown: GazaEvent = {
+  kind: "image-only",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: {
+        "fill-opacity": 1,
+      },
+    },
+  ],
+
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  imgSrc: "/images/energy-power-breakdown.jpg",
+  title: "Power Breakdown",
+};
+
 const meltingPlasticForFuel: GazaEvent = {
   fitBounds: {
     bounds: GAZA_BBOX,
@@ -69,6 +88,7 @@ const solarPanelDestroyed: GazaEvent = {
 
 export const energy: Timeline = [
   gazaPowerPlantDestroyed,
+  powerBreakdown,
   meltingPlasticForFuel,
   rubbleAsFuel,
   phoneChargingStations,
