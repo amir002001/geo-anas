@@ -12,6 +12,7 @@ export type LayerId =
   | "MAGEN_OZ_SYMBOL"
   | "MORAG_SYMBOL"
   | "NOT_GRID_EVAC_ORDERS_FILL"
+  | "CEASE_FIRE_LINES_RASTER"
   | "EVAC_ORDERS_FILL"
   | "MORAG_LINE"
   | "MEFALISM_SYMBOL"
@@ -724,6 +725,15 @@ export const LAYERS: LayerType[] = [
       "fill-opacity": 0,
       "fill-color": "#FF0000",
       "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "CEASE_FIRE_LINES_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("CEASE_FIRE_LINES")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
     },
   },
 ] as const;

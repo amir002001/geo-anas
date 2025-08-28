@@ -16,6 +16,23 @@ const init: GazaEvent = {
   title: "Extermination of the North",
 };
 
+const ceaseFireLines: GazaEvent = {
+  kind: "basic",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: { bearing: 39, padding: 80 },
+  },
+  layerOverrides: [
+    {
+      id: "CEASE_FIRE_LINES_RASTER",
+      paintOverrides: {
+        "raster-opacity": 1,
+      },
+    },
+  ],
+  title: "Cease Fire Lines",
+};
+
 const mefalsimCorrdior: GazaEvent = {
   kind: "basic",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
@@ -60,4 +77,9 @@ const roundingUp: GazaEvent = {
   videoSrc: "/videos/round-up.mp4",
 };
 
-export const phaseFour: Timeline = [init, mefalsimCorrdior, roundingUp];
+export const phaseFour: Timeline = [
+  init,
+  ceaseFireLines,
+  mefalsimCorrdior,
+  roundingUp,
+];

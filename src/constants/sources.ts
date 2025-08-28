@@ -36,6 +36,7 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "MORAG"
+  | "CEASE_FIRE_LINES"
   | "AFTER_CEASE_ORDERS"
   | "COMPARISON_CITIES"
   | "WORLDWIDE_GAZAS"
@@ -443,6 +444,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: afterCeaseOrders as any,
+    },
+  },
+  {
+    id: "CEASE_FIRE_LINES",
+    source: {
+      type: "image",
+      coordinates: [
+        [34.372213428099833, 31.778721282443485],
+        [34.785593035685295, 31.492023270994665],
+        [34.364661576019074, 31.050733426373046],
+        [33.951563969636211, 31.338442088094553],
+      ],
+      url: "/images/ceasefire-lines.png",
     },
   },
 ] as const;
