@@ -49,6 +49,10 @@ export type LayerId =
   | "GAZA_GOVERNATES_POPULATION_FILL"
   | "GAZA_GOVERNATES_POPULATION_SYMBOL"
   | "GAZA_GOVERNATES_NAME_SYMBOL"
+  | "COMPARISON_CITIES_FILL"
+  | "WORLDWIDE_GAZAS_FILL"
+  | "COMPARISON_CITIES_SYMBOL"
+  | "GAZA_SPATIALITY_SYMBOL"
   | "KHAN_YOUNIS_FARMS_COORDINATES";
 
 type LayerType = Omit<LayerSpecification, "id"> & { id: LayerId };
@@ -638,6 +642,67 @@ export const LAYERS: LayerType[] = [
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "COMPARISON_CITIES_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("COMPARISON_CITIES")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-color": "#FF0000",
+      "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "COMPARISON_CITIES_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("COMPARISON_CITIES")!.id,
+    paint: {
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
+    },
+    layout: {
+      "text-field": [
+        "format",
+        "area: ",
+        {},
+        ["get", "sqkm"],
+        { "font-scale": 1.1 },
+        " km²\n",
+        "population density: ",
+        {},
+        ["get", "population_density"],
+        { "font-scale": 1.1 },
+        " people/km²",
+      ],
+      "text-size": 36,
+    },
+  },
+  {
+    id: "WORLDWIDE_GAZAS_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("WORLDWIDE_GAZAS")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-color": "#7B7B7B",
+      "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "GAZA_SPATIALITY_SYMBOL",
+    type: "symbol",
+    source: SOURCE_MAP.get("GAZA_BOUNDARY")!.id,
+    paint: {
+      "text-opacity": 0,
+      "text-opacity-transition": { duration: 500 },
+      "text-color": "#303030",
+    },
+    layout: {
+      "symbol-placement": "point",
+      "text-field": "area: 365 km²\npopulation density: 5,967 people/km²",
+      "text-size": 36,
+      "text-offset": [-4, -4],
     },
   },
 ] as const;

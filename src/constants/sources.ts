@@ -6,6 +6,8 @@ import evacuationArrows from "../data/evac-arrows.json";
 import evacOrders from "../data/evac-orders.json";
 import gazaAirportBoundary from "../data/gaza-airport-boundary.json";
 import gazaBuffer from "../data/gaza-buffer.json";
+import comparisonCities from "../data/gaza-comparison-equivs.json";
+import worldwideGazas from "../data/gaza-comparisons.json";
 import gazaHospitalsStatus from "../data/gaza-hospital-status.json";
 import gazaGovernates from "../data/gaza-state-boundaries.json";
 import gazaBoundary from "../data/gaza-strip-boundary.json";
@@ -33,6 +35,8 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "MORAG"
+  | "COMPARISON_CITIES"
+  | "WORLDWIDE_GAZAS"
   | "HEATHROW_COMP"
   | "E1_PLAN_IMG"
   | "GAZA_TAKEOVER_IMG"
@@ -402,6 +406,20 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [0.396326493144797, 51.064633906387733],
         [-1.559896577392154, 51.064634605343997],
       ],
+    },
+  },
+  {
+    id: "COMPARISON_CITIES",
+    source: {
+      type: "geojson",
+      data: comparisonCities as any,
+    },
+  },
+  {
+    id: "WORLDWIDE_GAZAS",
+    source: {
+      type: "geojson",
+      data: worldwideGazas as any,
     },
   },
 ] as const;

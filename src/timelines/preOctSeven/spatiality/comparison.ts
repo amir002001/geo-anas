@@ -1,43 +1,104 @@
+import { GAZA_BBOX } from "../../../constants/constants";
 import type { GazaEvent } from "../../timelines";
 
-const newYork: GazaEvent = {
-  kind: "image",
-  layerOverrides: [],
-  title: "Comparison to New York",
+const populationDensity: GazaEvent = {
   fitBounds: {
-    bounds: [
-      [-74.22392511800241, 40.48898151525042],
-      [-73.58154782338924, 41.13135880986359],
-    ],
-    options: { duration: 3000 },
+    bounds: GAZA_BBOX,
+    options: { maxZoom: 9 },
   },
-  imgSrc: "/images/nyc.jpg",
+  kind: "basic",
+  title: "Density of Gaza",
+  layerOverrides: [
+    {
+      id: "GAZA_LAND_BLOCKADE_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+    {
+      id: "GAZA_SPATIALITY_SYMBOL",
+      paintOverrides: { "text-opacity": 1 },
+    },
+  ],
 };
-const detroit: GazaEvent = {
-  kind: "image",
-  layerOverrides: [],
-  title: "Comparison to Detroit",
-  fitBounds: {
-    bounds: [
-      [-83.23182146823217, 42.18178769703899],
-      [-82.92309062238544, 42.4905185428857],
-    ],
-    options: { duration: 3000 },
-  },
-  imgSrc: "/images/detroit.jpg",
-};
+
 const toronto: GazaEvent = {
-  kind: "image",
-  layerOverrides: [],
+  kind: "basic",
+  layerOverrides: [
+    {
+      id: "COMPARISON_CITIES_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+    {
+      id: "COMPARISON_CITIES_SYMBOL",
+      paintOverrides: { "text-opacity": 1 },
+      layoutOverrides: { "text-offset": [-1, -5] },
+    },
+    {
+      id: "WORLDWIDE_GAZAS_FILL",
+      paintOverrides: { "fill-opacity": 0.4 },
+    },
+  ],
   title: "Comparison to Toronto",
   fitBounds: {
     bounds: [
-      [-79.60949566368198, 43.467500152163055],
-      [-79.33554830104502, 43.741447514800015],
+      [-79.6392832, 43.57960820000001],
+      [-79.11321929999998, 43.8554425],
     ],
-    options: { duration: 3000 },
+    options: { duration: 3000, maxZoom: 9 },
   },
-  imgSrc: "/images/toronto.jpg",
 };
 
-export const comparisons = [toronto, newYork, detroit];
+const washington: GazaEvent = {
+  kind: "basic",
+  layerOverrides: [
+    {
+      id: "COMPARISON_CITIES_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+    {
+      id: "COMPARISON_CITIES_SYMBOL",
+      paintOverrides: { "text-opacity": 1 },
+      layoutOverrides: { "text-offset": [-3, -5] },
+    },
+    {
+      id: "WORLDWIDE_GAZAS_FILL",
+      paintOverrides: { "fill-opacity": 0.4 },
+    },
+  ],
+  title: "Comparison to Washington D.C.",
+  fitBounds: {
+    bounds: [
+      [-77.1197949, 38.7916303],
+      [-76.909366, 38.995968],
+    ],
+    options: { duration: 3000, maxZoom: 9 },
+  },
+};
+
+const montreal: GazaEvent = {
+  kind: "basic",
+  layerOverrides: [
+    {
+      id: "COMPARISON_CITIES_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+    {
+      id: "COMPARISON_CITIES_SYMBOL",
+      paintOverrides: { "text-opacity": 1 },
+      layoutOverrides: { "text-offset": [-3, -5] },
+    },
+    {
+      id: "WORLDWIDE_GAZAS_FILL",
+      paintOverrides: { "fill-opacity": 0.4 },
+    },
+  ],
+  title: "Comparison to Montreal",
+  fitBounds: {
+    bounds: [
+      [-73.9958013, 45.3984821],
+      [-73.47429519999999, 45.7047897],
+    ],
+    options: { duration: 3000, maxZoom: 9 },
+  },
+};
+
+export const comparisons = [populationDensity, toronto, montreal, washington];
