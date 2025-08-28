@@ -4,6 +4,7 @@ import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
   | "GHF_RASTER"
+  | "AFTER_CEASE_ORDERS_FILL"
   | "E1_PLAN_RASTER"
   | "WEST_BANK_PLAN_RASTER"
   | "MAGEN_OZ_LINE"
@@ -703,6 +704,16 @@ export const LAYERS: LayerType[] = [
       "text-field": "area: 365 km²\npopulation density: 5,967 people/km²",
       "text-size": 36,
       "text-offset": [-4, -4],
+    },
+  },
+  {
+    id: "AFTER_CEASE_ORDERS_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("AFTER_CEASE_ORDERS")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-color": "#FF0000",
+      "fill-opacity-transition": { duration: 500 },
     },
   },
 ] as const;

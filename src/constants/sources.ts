@@ -14,6 +14,7 @@ import gazaBoundary from "../data/gaza-strip-boundary.json";
 import gazaSeaBlockade from "../data/gaza-strip-sea-blockade.json";
 import hiribyaBoundary from "../data/hiribaya.json";
 import incidents from "../data/incidents.json";
+import afterCeaseOrders from "../data/initial-orders-after-cease.json";
 import magenOz from "../data/magen-oz.json";
 import initialHumanitarian from "../data/may-6-humanitarian.json";
 import mefalsim from "../data/mefalsim.json";
@@ -35,6 +36,7 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "MORAG"
+  | "AFTER_CEASE_ORDERS"
   | "COMPARISON_CITIES"
   | "WORLDWIDE_GAZAS"
   | "HEATHROW_COMP"
@@ -420,6 +422,13 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: worldwideGazas as any,
+    },
+  },
+  {
+    id: "AFTER_CEASE_ORDERS",
+    source: {
+      type: "geojson",
+      data: afterCeaseOrders as any,
     },
   },
 ] as const;
