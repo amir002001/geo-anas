@@ -40,6 +40,7 @@ export type SourceId =
   | "AFTER_CEASE_ORDERS"
   | "COMPARISON_CITIES"
   | "WORLDWIDE_GAZAS"
+  | "HOSPITAL_CAPACITY"
   | "HEATHROW_COMP"
   | "E1_PLAN_IMG"
   | "GAZA_TAKEOVER_IMG"
@@ -457,6 +458,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [33.951563969636211, 31.338442088094553],
       ],
       url: "/images/ceasefire-lines.png",
+    },
+  },
+  {
+    id: "HOSPITAL_CAPACITY",
+    source: {
+      type: "image",
+      url: "/images/hospital-capacity.png",
+      coordinates: [
+        [34.201353978969692, 31.652743813533235],
+        [34.604224361808228, 31.65274556509349],
+        [34.604224389176366, 31.159506221979825],
+        [34.201356606332368, 31.159506057771054],
+      ],
     },
   },
 ] as const;

@@ -11,6 +11,7 @@ export type LayerId =
   | "MAGEN_OZ_LINE"
   | "MAGEN_OZ_SYMBOL"
   | "MORAG_SYMBOL"
+  | "HOSPITAL_CAPACITY_RASTER"
   | "NOT_GRID_EVAC_ORDERS_FILL"
   | "CEASE_FIRE_LINES_RASTER"
   | "EVAC_ORDERS_FILL"
@@ -461,6 +462,16 @@ export const LAYERS: LayerType[] = [
     },
   },
   {
+    id: "INITIAL_HUMANITARIAN_FILL",
+    type: "fill",
+    source: SOURCE_MAP.get("INITIAL_HUMANITARIAN")!.id,
+    paint: {
+      "fill-opacity": 0,
+      "fill-color": "#86B5F8",
+      "fill-opacity-transition": { duration: 500 },
+    },
+  },
+  {
     id: "INCIDENTS_SYMBOL",
     type: "symbol",
     source: SOURCE_MAP.get("INCIDENTS")!.id,
@@ -472,6 +483,7 @@ export const LAYERS: LayerType[] = [
       "icon-image": "cross",
       "icon-size": 0.5,
       "icon-allow-overlap": true,
+      "text-allow-overlap": true,
     },
   },
   {
@@ -562,16 +574,6 @@ export const LAYERS: LayerType[] = [
     source: SOURCE_MAP.get("NOT_GRID_EVAC_ORDERS")!.id,
     paint: {
       "fill-opacity": 0,
-      "fill-opacity-transition": { duration: 500 },
-    },
-  },
-  {
-    id: "INITIAL_HUMANITARIAN_FILL",
-    type: "fill",
-    source: SOURCE_MAP.get("INITIAL_HUMANITARIAN")!.id,
-    paint: {
-      "fill-opacity": 0,
-      "fill-color": "#86B5F8",
       "fill-opacity-transition": { duration: 500 },
     },
   },
@@ -731,6 +733,15 @@ export const LAYERS: LayerType[] = [
     id: "CEASE_FIRE_LINES_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("CEASE_FIRE_LINES")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "HOSPITAL_CAPACITY_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("HOSPITAL_CAPACITY")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },
