@@ -3,6 +3,7 @@ import { IMAGE_MAP } from "./images";
 import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
+  | "NASSER_INVASION_RASTER"
   | "GHF_RASTER"
   | "INVASION_ROUTES_NOV_13_FILL"
   | "GIDEONS_CHARIOT"
@@ -764,6 +765,15 @@ export const LAYERS: LayerType[] = [
     id: "OCT_13_HOSPITAL_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("OCT_13_HOSPITAL_IMG")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "NASSER_INVASION_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("NASSER_INVASION")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },

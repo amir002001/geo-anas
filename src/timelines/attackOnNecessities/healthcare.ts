@@ -421,6 +421,204 @@ const list: GazaEvent = {
   videoSrc: "/videos/list.mp4",
 };
 
+const alShifa: GazaEvent = {
+  title: "Al-Shifa Hospital",
+  fitBounds: {
+    bounds: [
+      [34.4431513343082, 31.5242793470932],
+      [34.4431513343082, 31.5242793470932],
+    ],
+    options: { maxZoom: 14 },
+  },
+  kind: "video",
+  videoSrc: "/videos/alshifahealth.mp4",
+  layerOverrides: [
+    {
+      id: "GAZA_HOSPITALS_STATUS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+      filterOverrides: ["==", ["get", "name"], "Al-Shifa Medical Complex"],
+    },
+  ],
+};
+
+const alShifaContd: GazaEvent = {
+  title: "Al-Shifa Hospital Continued",
+  fitBounds: {
+    bounds: [
+      [34.4431513343082, 31.5242793470932],
+      [34.4431513343082, 31.5242793470932],
+    ],
+    options: { maxZoom: 14 },
+  },
+  kind: "image",
+  imgSrc: "/images/shifa-truck.jpeg",
+  layerOverrides: [
+    {
+      id: "GAZA_HOSPITALS_STATUS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+      filterOverrides: ["==", ["get", "name"], "Al-Shifa Medical Complex"],
+    },
+  ],
+};
+
+const alShifaTruckInside: GazaEvent = {
+  title: "Al-Shifa Hospital Continued",
+  fitBounds: {
+    bounds: [
+      [34.4431513343082, 31.5242793470932],
+      [34.4431513343082, 31.5242793470932],
+    ],
+    options: { maxZoom: 14 },
+  },
+  kind: "image-only",
+  imgSrc: "/images/alshifa-truck-inside.jpeg",
+  layerOverrides: [
+    {
+      id: "GAZA_HOSPITALS_STATUS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+      filterOverrides: ["==", ["get", "name"], "Al-Shifa Medical Complex"],
+    },
+  ],
+};
+
+const shifaBomb: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "video-only",
+  title: "Bombing of Al-Shifa",
+  videoSrc: "/videos/alshifa-bomb.mp4",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+};
+
+const shifaAfter: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "video-only",
+  title: "Aftermath at Al-Shifa",
+  videoSrc: "/videos/alshifa-aftermath.mp4",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+};
+
+const prematureBabies: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  title: "Premature Babies",
+  imgSrc: "/images/premature-babies.jpg",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+};
+
+const stageThree: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  title: "Ceasefire",
+  imgSrc: "images/titles/healthcare-3.jpg",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+};
+
+const indonesian: GazaEvent = {
+  fitBounds: {
+    bounds: [
+      [34.5093535915469, 31.5349897895014],
+      [34.5093535915469, 31.5349897895014],
+    ],
+    options: { maxZoom: 14 },
+  },
+  kind: "image",
+  title: "Indonesian Hospital",
+  imgSrc: "/images/indonesian.jpeg",
+  layerOverrides: [
+    {
+      id: "INCIDENTS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+      filterOverrides: ["==", ["get", "Public_ID"], "31124-77291"],
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("tank"),
+      },
+    },
+  ],
+};
+
+const stageFour: GazaEvent = {
+  title: "Ground Invasion of the South",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  imgSrc: "/images/titles/healthcare-4.jpg",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+};
+
+const hospitalsNextTo: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  title: "Kamal Adwan and Al-Awda",
+  imgSrc: "/images/kamal-and-adwa.jpg",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+};
+
+const nasserInvasion: GazaEvent = {
+  title: "Nasser Invasion",
+  fitBounds: {
+    bounds: [
+      [34.263836054110975, 31.324517901387676],
+      [34.32832974392797, 31.379755182613692],
+    ],
+    options: { padding: 120 },
+  },
+  kind: "image",
+  imgSrc: "/images/nasser-deaths.jpg",
+  layerOverrides: [
+    {
+      id: "NASSER_INVASION_RASTER",
+      paintOverrides: { "raster-opacity": 1 },
+    },
+  ],
+};
+
 export const healthcare: Timeline = [
   intro,
   attackOnHospitals,
@@ -444,4 +642,15 @@ export const healthcare: Timeline = [
   alRantisi,
   curtains,
   list,
+  alShifa,
+  alShifaContd,
+  alShifaTruckInside,
+  shifaBomb,
+  shifaAfter,
+  prematureBabies,
+  stageThree,
+  indonesian,
+  stageFour,
+  hospitalsNextTo,
+  nasserInvasion,
 ];

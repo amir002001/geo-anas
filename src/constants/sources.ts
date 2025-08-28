@@ -36,6 +36,7 @@ const wwtpCentroids = wwtp.features.map((feature) => centroid(feature as any));
 const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
+  | "NASSER_INVASION"
   | "MORAG"
   | "INVASION_ROUTES_NOV_13"
   | "OCT_13_HOSPITAL_IMG"
@@ -494,6 +495,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "geojson",
       data: invasionRoutesNov13 as any,
+    },
+  },
+  {
+    id: "NASSER_INVASION",
+    source: {
+      type: "image",
+      coordinates: [
+        [34.263836054110975, 31.379755178765041],
+        [34.328329743927924, 31.379755182613692],
+        [34.328329743927974, 31.324517977932913],
+        [34.263836148739131, 31.324517901387676],
+      ],
+      url: "/images/nasser-invasion.png",
     },
   },
 ] as const;
