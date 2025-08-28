@@ -60,7 +60,8 @@ const magenOzIntro: GazaEvent = {
 };
 
 const gideonsChariot: GazaEvent = {
-  kind: "basic",
+  kind: "image",
+  imgSrc: "/images/gideons-chariot-girl-escapes-fire.jpg",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
   layerOverrides: [
     {
