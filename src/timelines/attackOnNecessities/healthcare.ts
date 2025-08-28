@@ -2,6 +2,20 @@ import { GAZA_BBOX } from "../../constants/constants";
 import { IMAGE_MAP } from "../../constants/images";
 import type { GazaEvent, Timeline } from "../timelines";
 
+const intro: GazaEvent = {
+  kind: "image-only",
+  imgSrc: "/images/titles/healthcare.png",
+  audioOverrideSrc: "/audio/internalize.wav",
+  layerOverrides: [
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+  ],
+  title: "Attack on Healthcare",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+};
+
 const attackOnHospitals: GazaEvent = {
   kind: "image-only",
   imgSrc: "/images/hospital-press-conf.jpg",
@@ -35,4 +49,8 @@ const destroyedHospitals: GazaEvent = {
   ],
 };
 
-export const healthcare: Timeline = [attackOnHospitals, destroyedHospitals];
+export const healthcare: Timeline = [
+  intro,
+  attackOnHospitals,
+  destroyedHospitals,
+];
