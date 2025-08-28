@@ -4,6 +4,7 @@ import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
   | "GHF_RASTER"
+  | "GIDEONS_CHARIOT"
   | "AFTER_CEASE_ORDERS_FILL"
   | "E1_PLAN_RASTER"
   | "WEST_BANK_PLAN_RASTER"
@@ -604,6 +605,15 @@ export const LAYERS: LayerType[] = [
     id: "GHF_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("GHF_IMG")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "GIDEONS_CHARIOT",
+    type: "raster",
+    source: SOURCE_MAP.get("GIDEONS_CHARIOT_IMG")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },

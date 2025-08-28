@@ -59,6 +59,20 @@ const magenOzIntro: GazaEvent = {
   title: "Introduction of the Magen Oz Corridor",
 };
 
+const gideonsChariot: GazaEvent = {
+  kind: "basic",
+  fitBounds: { bounds: GAZA_BBOX, options: {} },
+  layerOverrides: [
+    {
+      id: "GIDEONS_CHARIOT",
+      paintOverrides: {
+        "raster-opacity": 1,
+      },
+    },
+  ],
+  title: "Gideon's Chariot",
+};
+
 const ghfIntro: GazaEvent = {
   kind: "image",
   imgSrc: "/images/ghf-site.jpg",
@@ -79,5 +93,6 @@ export const phaseFive: Timeline = [
   gazaFragmentationPlan,
   moragIntro,
   magenOzIntro,
+  gideonsChariot,
   ghfIntro,
 ];

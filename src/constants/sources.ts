@@ -44,6 +44,7 @@ export type SourceId =
   | "GAZA_TAKEOVER_IMG"
   | "MAGEN_OZ"
   | "GHF_IMG"
+  | "GIDEONS_CHARIOT_IMG"
   | "NOT_GRID_EVAC_ORDERS"
   | "GAZA_FRAGMENTATION"
   | "PHILADELPHI"
@@ -350,6 +351,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
     source: {
       type: "image",
       url: "/images/ghf-raster.png",
+      coordinates: [
+        [34.213989599599117, 31.604974442788741],
+        [34.633446230415046, 31.59973396775332],
+        [34.628490584291583, 31.203230683557873],
+        [34.209033070016254, 31.20847277827793],
+      ],
+    },
+  },
+  {
+    id: "GIDEONS_CHARIOT_IMG",
+    source: {
+      type: "image",
+      url: "/images/gideons-chariot.png",
       coordinates: [
         [34.213989599599117, 31.604974442788741],
         [34.633446230415046, 31.59973396775332],
