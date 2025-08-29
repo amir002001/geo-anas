@@ -70,17 +70,6 @@ const aidDrops: GazaEvent = {
   title: "Aid Drops",
 };
 
-const aidMurder: GazaEvent = {
-  kind: "video-only",
-  fitBounds: {
-    bounds: GAZA_BBOX,
-    options: {},
-  },
-  layerOverrides: [],
-  title: "Murderous Aid Drops",
-  videoSrc: "/videos/aid-murder.mp4",
-};
-
 const aidOnTentsAndStructures: GazaEvent = {
   kind: "image-only",
   fitBounds: {
@@ -92,12 +81,35 @@ const aidOnTentsAndStructures: GazaEvent = {
   imgSrc: "/images/aid-on-tents.webp",
 };
 
+const aidInPopulated: GazaEvent = {
+  kind: "video-only",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  videoSrc: "/videos/populated-aid.mp4",
+  title: "Aid Drops in Populated Areas",
+  layerOverrides: [],
+};
+
+const aidMurder: GazaEvent = {
+  kind: "video-only",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  layerOverrides: [],
+  title: "Murderous Aid Drops",
+  videoSrc: "/videos/aid-murder.mp4",
+};
+
 export const aid: Timeline = [
   init,
   aidBombing,
   lahiaBakery,
   aidMethods,
   aidDrops,
-  aidMurder,
   aidOnTentsAndStructures,
+  aidInPopulated,
+  aidMurder,
 ];
