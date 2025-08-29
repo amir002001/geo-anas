@@ -26,7 +26,7 @@ export const SlideshowControls = ({
 
   useEffect(() => {
     console.log(currentIndex);
-    slideHandler(anasMap, currentIndex);
+    if (currentIndex % 2 === 0) slideHandler(anasMap, currentIndex);
     setInputValue(String(Math.floor(currentIndex / 2) + 1));
   }, [currentIndex]);
 

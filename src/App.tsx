@@ -94,7 +94,12 @@ function App() {
       {
         <Visual
           className="absolute"
-          isVisualVisible={isVisualVisible && currentIndex % 2 === 1}
+          isVisualVisible={
+            isVisualVisible &&
+            (currentIndex % 2 === 1 ||
+              timelines[currentSlide].kind === "image-only" ||
+              timelines[currentSlide].kind === "video-only")
+          }
           event={timelines[currentSlide]}
         />
       }
