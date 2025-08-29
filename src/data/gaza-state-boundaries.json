@@ -12,6 +12,7 @@
             "type": "Feature",
             "properties": {
                 "population": 700000,
+                "journalists_killed": 76,
                 "name": "Gaza"
             },
             "geometry": {
@@ -3044,7 +3045,8 @@
             "type": "Feature",
             "properties": {
                 "population": 300000,
-                "name": "Deir al-Balah"
+                "name": "Deir al-Balah",
+                "journalists_killed": 28
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -5556,7 +5558,8 @@
             "type": "Feature",
             "properties": {
                 "population": 400000,
-                "name": "Khan Yunis"
+                "name": "Khan Yunis",
+                "journalists_killed": 28
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -7088,7 +7091,8 @@
             "type": "Feature",
             "properties": {
                 "population": 400000,
-                "name": "North Gaza"
+                "name": "North Gaza",
+                "journalists_killed": 22
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -8296,7 +8300,8 @@
             "type": "Feature",
             "properties": {
                 "population": 250000,
-                "name": "Rafah"
+                "name": "Rafah",
+                "journalists_killed": 5
             },
             "geometry": {
                 "type": "MultiPolygon",
