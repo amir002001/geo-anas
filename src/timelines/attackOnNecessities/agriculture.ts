@@ -22,8 +22,11 @@ const immediateDestPermaDecimation: GazaEvent = {
     options: {},
   },
   title: "Immediate Destruction and Permanent Decimation",
-  kind: "basic",
-  layerOverrides: [],
+  kind: "image-only",
+  layerOverrides: [
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+  ],
+  imgSrc: "/images/immediate-dest.jpg",
 };
 
 const agricultureOverBufferZoneAndInvasion: GazaEvent = {
@@ -33,27 +36,46 @@ const agricultureOverBufferZoneAndInvasion: GazaEvent = {
   },
   title: "TODO",
   kind: "basic",
-  layerOverrides: [],
+  layerOverrides: [
+    {
+      id: "ONE_KM_BUFFER_FILL",
+      paintOverrides: { "fill-opacity": 0.5 },
+    },
+    {
+      id: "GIDEONS_CHARIOT",
+      paintOverrides: { "raster-opacity": 0.5 },
+    },
+    {
+      id: "AGRICULTURE_DESTRUCTION_RASTER",
+      paintOverrides: { "raster-opacity": 1 },
+    },
+  ],
 };
 
 const beitLahiaFarm: GazaEvent = {
   fitBounds: {
-    bounds: GAZA_BBOX,
-    options: {},
+    bounds: [
+      [34.505492, 31.544595],
+      [34.505492, 31.544595],
+    ],
+    options: { maxZoom: 14 },
   },
   title: "TODO",
-  kind: "basic",
+  kind: "image",
+  imgSrc: "/images/agri-compare-beit.jpg",
   layerOverrides: [],
 };
 
 const destroyedGreenHouses: GazaEvent = {
   fitBounds: {
     bounds: GAZA_BBOX,
-    options: {},
+    options: { padding: 140 },
   },
   title: "TODO",
   kind: "basic",
-  layerOverrides: [],
+  layerOverrides: [
+    { id: "GREENHOUSES_RASTER", paintOverrides: { "raster-opacity": 1 } },
+  ],
 };
 
 const whitePhosphorous: GazaEvent = {
@@ -62,7 +84,8 @@ const whitePhosphorous: GazaEvent = {
     options: {},
   },
   title: "TODO",
-  kind: "basic",
+  kind: "image-only",
+  imgSrc: "/images/phosphorous.jpg",
   layerOverrides: [],
 };
 
@@ -72,7 +95,8 @@ const trashPiled: GazaEvent = {
     options: {},
   },
   title: "TODO",
-  kind: "basic",
+  kind: "image-only",
+  imgSrc: "/images/trash-pile.jpg",
   layerOverrides: [],
 };
 
