@@ -15,6 +15,48 @@ const targetingMedia: GazaEvent = {
   title: "Attack on Journalists (243 till now)",
 };
 
+const khan: GazaEvent = {
+  fitBounds: {
+    bounds: [
+      [34.29720199941994, 31.322829237875112],
+      [34.29720199941994, 31.322829237875112],
+    ],
+    options: { maxZoom: 12 },
+  },
+  title: "Samer Abu Daqqa",
+  imgSrc: "/images/samer-abu-daqqa.webp",
+  kind: "image",
+  layerOverrides: [],
+};
+
+const wael: GazaEvent = {
+  fitBounds: {
+    bounds: [
+      [34.29720199941994, 31.322829237875112],
+      [34.29720199941994, 31.322829237875112],
+    ],
+    options: { maxZoom: 12 },
+  },
+  title: "Wael al-Dahdouh",
+  imgSrc: "/images/wael-al-dahdouh.webp",
+  kind: "image",
+  layerOverrides: [],
+};
+
+const shati: GazaEvent = {
+  fitBounds: {
+    bounds: [
+      [34.45418394030819, 31.53793978452787],
+      [34.45418394030819, 31.53793978452787],
+    ],
+    options: { maxZoom: 12 },
+  },
+  title: "Ismail Al Ghoul and Rami Al Refee",
+  imgSrc: "/images/shati.png",
+  kind: "image",
+  layerOverrides: [],
+};
+
 const tripleStrike: GazaEvent = {
   fitBounds: {
     bounds: [
@@ -81,8 +123,20 @@ const attackOnJournalists: GazaEvent = {
   title: "Attack on Journalists (243 till now)",
 };
 
+const salah: GazaEvent = {
+  kind: "image-only",
+  title: "Protect Saleh Al Jafarawi",
+  fitBounds: { bounds: GAZA_BBOX, options: {} },
+  imgSrc: "/images/saleh-al-jafarawi.webp",
+  layerOverrides: [],
+};
+
 export const journalists: Timeline = [
   targetingMedia,
+  khan,
+  wael,
+  shati,
+  salah,
   tripleStrike,
   allJournalists,
   attackOnJournalists,
