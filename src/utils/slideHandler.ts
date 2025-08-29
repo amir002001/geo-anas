@@ -1,7 +1,8 @@
 import { LAYERS } from "../constants/layers";
 import { timelines, type ILayerOverride } from "../timelines/timelines";
 
-export const slideHandler = (map: mapboxgl.Map, currentSlide: number) => {
+export const slideHandler = (map: mapboxgl.Map, currentIndex: number) => {
+  const currentSlide = Math.floor(currentIndex / 2);
   const nextLayerIds = new Map(
     timelines[currentSlide].layerOverrides.map((layer) => [layer.id, layer]),
   );

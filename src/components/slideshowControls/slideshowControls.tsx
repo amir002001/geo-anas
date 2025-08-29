@@ -9,23 +9,26 @@ import {
 import { slideHandler } from "../../utils/slideHandler";
 interface ISlideshowControlsProps {
   className?: string;
-  currentSlide: number;
-  setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
+  currentIndex: number;
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
   isMapIdle: boolean;
 }
 
 export const SlideshowControls = ({
   className,
-  currentSlide,
-  setCurrentSlide,
+  currentIndex,
+  setCurrentIndex,
   isMapIdle,
 }: ISlideshowControlsProps) => {
   const { anasMap } = useAnasMapContext();
 
+  const currentSlide = Math.floor(currentIndex / 2);
+
   useEffect(() => {
-    slideHandler(anasMap, currentSlide);
-    setInputValue(String(currentSlide + 1));
-  }, [currentSlide]);
+    console.log(currentIndex);
+    slideHandler(anasMap, currentIndex);
+    setInputValue(String(Math.floor(currentIndex / 2) + 1));
+  }, [currentIndex]);
 
   const slideTitle = timelines[currentSlide].title;
   const isLastSlide = currentSlide === timelines.length - 1;
@@ -65,7 +68,7 @@ export const SlideshowControls = ({
       <div
         id="counter-container"
         className={clsx([
-          timelines[currentSlide].layerOverrides.some(
+          timelines[currentIndex].layerOverrides.some(
             (override) => override.id === "WHOLE_WORLD_FILL",
           )
             ? "text-white"
@@ -82,13 +85,13 @@ export const SlideshowControls = ({
             const val = parseInt(inputValue, 10);
             if (!isNaN(val) && val >= 1 && val <= timelines.length) {
               handleSlideChangeByIndex(
-                val - 1,
+                val * 2 - 1,
                 anasMap,
-                setCurrentSlide,
+                setCurrentIndex,
                 timelines.length,
               );
             } else {
-              setInputValue(String(currentSlide + 1)); // reset to current if invalid
+              setInputValue(String(currentIndex + 1)); // reset to current if invalid
             }
           }}
           disabled={!isMapIdle}
@@ -106,7 +109,7 @@ export const SlideshowControls = ({
             handleSlideChange(
               "prev",
               anasMap,
-              setCurrentSlide,
+              setCurrentIndex,
               timelines.length,
             )
           }
@@ -128,7 +131,7 @@ export const SlideshowControls = ({
             handleSlideChange(
               "next",
               anasMap,
-              setCurrentSlide,
+              setCurrentIndex,
               timelines.length,
             )
           }

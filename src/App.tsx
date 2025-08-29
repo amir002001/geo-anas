@@ -13,13 +13,15 @@ import { loadAllImages } from "./utils/loadAllImages";
 import { loadAllLayers } from "./utils/loadAllLayers";
 
 function App() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isMapIdle, setIsMapIdle] = useState(false);
   const [isVisualVisible, setIsVisualVisible] = useState(true);
   const slideChangeRef = useRef(new Audio("/audio/slide.wav"));
   const idleRef = useRef(true);
   const mapRef = useRef<mapboxgl.Map>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  const currentSlide = Math.floor(currentIndex / 2);
 
   useEffect(() => {
     mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
@@ -66,11 +68,10 @@ function App() {
     });
 
     document.addEventListener("keydown", (e) => {
-      console.log(e.key);
       if (e.key === "ArrowRight") {
-        handleSlideChange("next", map, setCurrentSlide, timelines.length);
+        handleSlideChange("next", map, setCurrentIndex, timelines.length);
       } else if (e.key === "ArrowLeft") {
-        handleSlideChange("prev", map, setCurrentSlide, timelines.length);
+        handleSlideChange("prev", map, setCurrentIndex, timelines.length);
       } else if (e.key === " ") {
         setIsVisualVisible((prev) => !prev);
       }
@@ -93,7 +94,7 @@ function App() {
       {
         <Visual
           className="absolute"
-          isVisualVisible={isVisualVisible}
+          isVisualVisible={isVisualVisible && currentIndex % 2 === 1}
           event={timelines[currentSlide]}
         />
       }
@@ -101,10 +102,10 @@ function App() {
       {mapRef.current !== null && (
         <AnasMapContext.Provider value={{ anasMap: mapRef.current }}>
           <SlideshowControls
-            className="absolute right-8 bottom-8 z-10"
-            currentSlide={currentSlide}
+            className="absolute right-3 bottom-3 z-10"
+            currentIndex={currentIndex}
             isMapIdle={isMapIdle}
-            setCurrentSlide={setCurrentSlide}
+            setCurrentIndex={setCurrentIndex}
           />
         </AnasMapContext.Provider>
       )}
