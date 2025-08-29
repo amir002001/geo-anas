@@ -19,6 +19,26 @@ const intro: GazaEvent = {
   },
 };
 
+const allHospitals: GazaEvent = {
+  kind: "basic",
+  title: "All Hospitals Bombed",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  layerOverrides: [
+    {
+      id: "GAZA_HOSPITALS_STATUS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("hospital"),
+        "icon-size": 0.5,
+      },
+      filterOverrides: [],
+    },
+  ],
+};
+
 const attackOnHospitals: GazaEvent = {
   kind: "image-only",
   imgSrc: "/images/hospital-press-conf.jpg",
@@ -787,6 +807,7 @@ const alAhli: GazaEvent = {
 
 export const healthcare: Timeline = [
   intro,
+  allHospitals,
   attackOnHospitals,
   destroyedHospitals,
   stageOne,
