@@ -24,7 +24,7 @@ const init: GazaEvent = {
     },
   ],
 
-  title: "August 8th to Present",
+  title: "Implementation: August 8th to Present",
 };
 
 const initialOrders: GazaEvent = {

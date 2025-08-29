@@ -13,7 +13,7 @@ const init: GazaEvent = {
   ],
   imgSrc: "/images/titles/36.jpg",
 
-  title: "Extermination of the North",
+  title: "Takeover of the North",
 };
 
 const ceaseFireLines: GazaEvent = {

@@ -13,7 +13,7 @@ const init: GazaEvent = {
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
   ],
 
-  title: "Extermination of the Strip",
+  title: "Annhilation: Laying the Foundation",
 };
 
 const gazaFragmentationPlan: GazaEvent = {
