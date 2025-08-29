@@ -37,6 +37,7 @@ const wwtpPointFeatureCollection = featureCollection(wwtpCentroids);
 
 export type SourceId =
   | "NASSER_INVASION"
+  | "AGRICULTURE_DESTRUCTION_IMG"
   | "MORAG"
   | "INVASION_ROUTES_NOV_13"
   | "OCT_13_HOSPITAL_IMG"
@@ -508,6 +509,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [34.263836148739131, 31.324517901387676],
       ],
       url: "/images/nasser-invasion.png",
+    },
+  },
+  {
+    id: "AGRICULTURE_DESTRUCTION_IMG",
+    source: {
+      type: "image",
+      url: "/images/agriculture-destruction.png",
+      coordinates: [
+        [34.181668787008533, 31.612334284985671],
+        [34.58062884020007, 31.61233423024942],
+        [34.580628511782514, 31.201824717053753],
+        [34.181677380601094, 31.201828220174299],
+      ],
     },
   },
 ] as const;

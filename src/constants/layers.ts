@@ -4,6 +4,7 @@ import { SOURCE_MAP } from "./sources";
 
 export type LayerId =
   | "NASSER_INVASION_RASTER"
+  | "AGRICULTURE_DESTRUCTION_RASTER"
   | "GHF_RASTER"
   | "INVASION_ROUTES_NOV_13_FILL"
   | "GIDEONS_CHARIOT"
@@ -773,6 +774,15 @@ export const LAYERS: LayerType[] = [
     id: "NASSER_INVASION_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("NASSER_INVASION")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
+    id: "AGRICULTURE_DESTRUCTION_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("AGRICULTURE_DESTRUCTION_IMG")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },
