@@ -7,7 +7,6 @@ import type {
 } from "mapbox-gl";
 import { GAZA_BBOX } from "../constants/constants";
 import type { LayerId } from "../constants/layers";
-import { anas } from "./anas";
 import { attackOnNecessities } from "./attackOnNecessities";
 import { displacementTimeline } from "./displacementTimeline";
 import { postOctSeven } from "./postOctSeven";
@@ -99,11 +98,40 @@ const theAres: GazaEvent = {
 
 const weBack: GazaEvent = {
   kind: "video-only",
-  videoSrc: "/videos/we-back.mp4",
+  videoSrc: "/videos/we-be-back.mp4",
   layerOverrides: [
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
   ],
   title: "We Back",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: { maxZoom: 10 },
+  },
+};
+
+const anasMyFriend: GazaEvent = {
+  kind: "image-only",
+  imgSrc: "/images/anas-my-friend.jpg",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+  title: "Anas my friend",
+};
+
+const childrenPlaying: GazaEvent = {
+  kind: "video-only",
+  videoSrc: "/videos/children-playing.mp4",
+  layerOverrides: [
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+  ],
+  title: "children playing",
   fitBounds: {
     bounds: GAZA_BBOX,
     options: { maxZoom: 10 },
@@ -118,6 +146,7 @@ export const timelines: Timeline = [
   ...postOctSeven,
   ...displacementTimeline,
   ...attackOnNecessities,
-  ...anas,
   weBack,
+  anasMyFriend,
+  childrenPlaying,
 ];
