@@ -68,7 +68,7 @@ export const SlideshowControls = ({
       <div
         id="counter-container"
         className={clsx([
-          timelines[currentIndex].layerOverrides.some(
+          timelines[currentSlide].layerOverrides.some(
             (override) => override.id === "WHOLE_WORLD_FILL",
           )
             ? "text-white"
