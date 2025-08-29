@@ -9,7 +9,7 @@ const WEST_BANK_BBOX: LngLatBoundsLike = [
 
 const init: GazaEvent = {
   kind: "image-only",
-  imgSrc: "/images/titles/annihilation.jpg",
+  imgSrc: "/images/titles/annhilation-implementation.jpg",
   fitBounds: {
     bounds: GAZA_BBOX,
     options: {},
@@ -24,7 +24,27 @@ const init: GazaEvent = {
     },
   ],
 
-  title: "Implementation: August 8th to Present",
+  title: "Annhilation Implementation: August 8th to Present",
+};
+
+const smotrichQuote: GazaEvent = {
+  kind: "image-only",
+  imgSrc: "/images/titles/annhilation-implementation-quote.jpg",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  audioOverrideSrc: "/audio/internalize.wav",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: {
+        "fill-opacity": 1,
+      },
+    },
+  ],
+
+  title: "Smotrich Quote",
 };
 
 const initialOrders: GazaEvent = {
@@ -128,6 +148,7 @@ const heathrowComparison: GazaEvent = {
 
 export const phaseSix: Timeline = [
   init,
+  smotrichQuote,
   initialOrders,
   westBankPlan,
   e1Plan,
