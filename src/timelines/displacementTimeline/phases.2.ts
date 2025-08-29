@@ -94,7 +94,7 @@ const evacOrderZoom: GazaEvent = {
       paintOverrides: {
         "icon-opacity": 1,
       },
-      layoutOverrides: { "icon-image": IMAGE_MAP.get("bad-rocket") },
+      layoutOverrides: { "icon-image": IMAGE_MAP.get("red-dot") },
       filterOverrides: [
         "any",
         ["==", ["get", "Public_ID"], "31204-83772"],

@@ -84,7 +84,7 @@ const bombingOfEyeHospital: GazaEvent = {
       paintOverrides: { "icon-opacity": 1 },
       filterOverrides: ["==", ["get", "Public_ID"], "31009-64406"],
       layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("bad-rocket"),
+        "icon-image": IMAGE_MAP.get("red-dot"),
       },
     },
   ],
@@ -123,7 +123,7 @@ const beitHanoun: GazaEvent = {
       paintOverrides: { "icon-opacity": 1 },
       filterOverrides: ["==", ["get", "Public_ID"], "31009-74237"],
       layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("bad-rocket"),
+        "icon-image": IMAGE_MAP.get("red-dot"),
       },
     },
   ],
@@ -146,7 +146,7 @@ const muhammadAlDurra: GazaEvent = {
       paintOverrides: { "icon-opacity": 1 },
       filterOverrides: ["==", ["get", "Public_ID"], "31013-47741"],
       layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("bad-rocket"),
+        "icon-image": IMAGE_MAP.get("red-dot"),
       },
     },
   ],
@@ -169,7 +169,7 @@ const alKarama: GazaEvent = {
       paintOverrides: { "icon-opacity": 1 },
       filterOverrides: ["==", ["get", "Public_ID"], "31017-39971"],
       layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("bad-rocket"),
+        "icon-image": IMAGE_MAP.get("red-dot"),
       },
     },
   ],
@@ -234,7 +234,7 @@ const allHospitalsAttacked: GazaEvent = {
         ["==", ["get", "Public_ID"], "31009-64406"],
       ],
       layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("bad-rocket"),
+        "icon-image": IMAGE_MAP.get("red-dot"),
       },
     },
   ],
@@ -690,7 +690,7 @@ const kamalAdwanSecond: GazaEvent = {
       paintOverrides: { "icon-opacity": 1 },
       filterOverrides: ["==", ["get", "Public_ID"], "31023-07191"],
       layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("bad-rocket"),
+        "icon-image": IMAGE_MAP.get("red-dot"),
       },
     },
   ],
