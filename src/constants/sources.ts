@@ -41,6 +41,7 @@ export type SourceId =
   | "MORAG"
   | "INVASION_ROUTES_NOV_13"
   | "OCT_13_HOSPITAL_IMG"
+  | "GREENHOUSES"
   | "CEASE_FIRE_LINES"
   | "AFTER_CEASE_ORDERS"
   | "COMPARISON_CITIES"
@@ -521,6 +522,19 @@ export const SOURCES: { id: SourceId; source: SourceSpecification }[] = [
         [34.58062884020007, 31.61233423024942],
         [34.580628511782514, 31.201824717053753],
         [34.181677380601094, 31.201828220174299],
+      ],
+    },
+  },
+  {
+    id: "GREENHOUSES",
+    source: {
+      type: "image",
+      url: "/images/greenhouses.png",
+      coordinates: [
+        [34.171257348553745, 31.627772646679659],
+        [34.609417293224084, 31.627772646679642],
+        [34.60941727954004, 31.17578602207708],
+        [34.171257228818213, 31.175786020366573],
       ],
     },
   },

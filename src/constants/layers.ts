@@ -8,6 +8,7 @@ export type LayerId =
   | "GHF_RASTER"
   | "INVASION_ROUTES_NOV_13_FILL"
   | "GIDEONS_CHARIOT"
+  | "GREENHOUSES_RASTER"
   | "AFTER_CEASE_ORDERS_FILL"
   | "E1_PLAN_RASTER"
   | "WEST_BANK_PLAN_RASTER"
@@ -87,6 +88,15 @@ export const LAYERS: LayerType[] = [
     },
   },
   {
+    id: "AGRICULTURE_DESTRUCTION_RASTER",
+    type: "raster",
+    source: SOURCE_MAP.get("AGRICULTURE_DESTRUCTION_IMG")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
+    },
+  },
+  {
     id: "GAZA_SEA_BLOCKADE_FILL",
     source: SOURCE_MAP.get("GAZA_SEA_BLOCKADE")!.id,
     type: "fill",
@@ -122,6 +132,15 @@ export const LAYERS: LayerType[] = [
       "text-offset": [0, 3],
       "icon-allow-overlap": true,
       "text-allow-overlap": true,
+    },
+  },
+  {
+    id: "GIDEONS_CHARIOT",
+    type: "raster",
+    source: SOURCE_MAP.get("GIDEONS_CHARIOT_IMG")!.id,
+    paint: {
+      "raster-opacity": 0,
+      "raster-opacity-transition": { duration: 500 },
     },
   },
   {
@@ -629,15 +648,6 @@ export const LAYERS: LayerType[] = [
     },
   },
   {
-    id: "GIDEONS_CHARIOT",
-    type: "raster",
-    source: SOURCE_MAP.get("GIDEONS_CHARIOT_IMG")!.id,
-    paint: {
-      "raster-opacity": 0,
-      "raster-opacity-transition": { duration: 500 },
-    },
-  },
-  {
     id: "WEST_BANK_PLAN_RASTER",
     type: "raster",
     source: SOURCE_MAP.get("WEST_BANK_PLAN_IMG")!.id,
@@ -780,9 +790,9 @@ export const LAYERS: LayerType[] = [
     },
   },
   {
-    id: "AGRICULTURE_DESTRUCTION_RASTER",
+    id: "GREENHOUSES_RASTER",
     type: "raster",
-    source: SOURCE_MAP.get("AGRICULTURE_DESTRUCTION_IMG")!.id,
+    source: SOURCE_MAP.get("GREENHOUSES")!.id,
     paint: {
       "raster-opacity": 0,
       "raster-opacity-transition": { duration: 500 },
