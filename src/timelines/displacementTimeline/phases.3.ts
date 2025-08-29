@@ -149,7 +149,7 @@ const attackOnHumanitarianZone: GazaEvent = {
         "icon-opacity": 1,
       },
       layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("bad-rocket"),
+        "icon-image": IMAGE_MAP.get("red-dot"),
         "icon-size": 1,
       },
       filterOverrides: ["==", ["get", "Public_ID"], "40524-35109"],
@@ -182,7 +182,7 @@ const attackOnHumanitarianZoneTwo: GazaEvent = {
         "icon-opacity": 1,
       },
       layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("bad-rocket"),
+        "icon-image": IMAGE_MAP.get("red-dot"),
         "icon-size": 1,
       },
       filterOverrides: ["==", ["get", "Public_ID"], "40606-20351"],
@@ -212,7 +212,7 @@ const attackOnHumanitarianZoneOverview: GazaEvent = {
         "icon-opacity": 1,
       },
       layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("bad-rocket"),
+        "icon-image": IMAGE_MAP.get("red-dot"),
         "icon-size": 0.5,
       },
       filterOverrides: [
