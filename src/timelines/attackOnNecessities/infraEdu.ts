@@ -99,10 +99,10 @@ const beitLahiaDamage: GazaEvent = {
       options: {},
     },
     layerOverrides: [
-        // {
-        // id: "SALAH_AL_DIN_LINE",
-        // paintOverrides: { "fill-opacity": 1 },
-        // },
+        {
+        id: "SALAH_AL_DIN_LINE",
+        paintOverrides: { "line-opacity": 1 },
+        },
       ],
   };
 
@@ -112,7 +112,7 @@ const beitLahiaDamage: GazaEvent = {
     title: "Craters by 2000lb General Dynamics MK84 bombs near hospitals",
     fitBounds: {
       bounds: GAZA_BBOX,
-      options: {},
+      options: {maxZoom: 0.1},
     },
     layerOverrides: [
     ],
