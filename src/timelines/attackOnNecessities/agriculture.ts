@@ -61,7 +61,19 @@ const beitLahiaFarm: GazaEvent = {
     options: { maxZoom: 14 },
   },
   title: "TODO",
-  kind: "image",
+  kind: "basic",
+  layerOverrides: [],
+};
+const beitLahiaFarm2: GazaEvent = {
+  fitBounds: {
+    bounds: [
+      [34.505492, 31.544595],
+      [34.505492, 31.544595],
+    ],
+    options: { maxZoom: 14 },
+  },
+  title: "TODO",
+  kind: "image-only",
   imgSrc: "/images/agri-compare-beit.jpg",
   layerOverrides: [],
 };
@@ -105,6 +117,7 @@ export const agriculture: Timeline = [
   immediateDestPermaDecimation,
   agricultureOverBufferZoneAndInvasion,
   beitLahiaFarm,
+  beitLahiaFarm2,
   destroyedGreenHouses,
   whitePhosphorous,
   trashPiled,

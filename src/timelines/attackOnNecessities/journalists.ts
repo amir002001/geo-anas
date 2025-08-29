@@ -110,19 +110,6 @@ const allJournalists: GazaEvent = {
   ],
 };
 
-const attackOnJournalists: GazaEvent = {
-  fitBounds: {
-    bounds: GAZA_BBOX,
-    options: {},
-  },
-  imgSrc: "/images/journalists.png",
-  kind: "image-only",
-  layerOverrides: [
-    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
-  ],
-  title: "Attack on Journalists (243 till now)",
-};
-
 const salah: GazaEvent = {
   kind: "image-only",
   title: "Protect Saleh Al Jafarawi",
@@ -139,5 +126,4 @@ export const journalists: Timeline = [
   salah,
   tripleStrike,
   allJournalists,
-  attackOnJournalists,
 ];

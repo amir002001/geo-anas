@@ -52,26 +52,6 @@ const attackOnHospitals: GazaEvent = {
   },
 };
 
-const destroyedHospitals: GazaEvent = {
-  kind: "image",
-  imgSrc: "/images/shifa-destroyed.jpg",
-  title: "All Hospitals Bombed",
-  fitBounds: {
-    bounds: GAZA_BBOX,
-    options: {},
-  },
-  layerOverrides: [
-    {
-      id: "GAZA_HOSPITALS_STATUS_SYMBOL",
-      paintOverrides: { "icon-opacity": 1 },
-      layoutOverrides: {
-        "icon-image": IMAGE_MAP.get("hospital-destroyed"),
-        "icon-size": 1,
-      },
-    },
-  ],
-};
-
 const stageOne: GazaEvent = {
   kind: "image-only",
   imgSrc: "/images/titles/healthcare-1.jpg",
@@ -809,7 +789,6 @@ export const healthcare: Timeline = [
   intro,
   allHospitals,
   attackOnHospitals,
-  destroyedHospitals,
   stageOne,
   bombingOfEyeHospital,
   hospitalCapacity,
