@@ -17,6 +17,22 @@ const intro: GazaEvent = {
   ],
 };
 
+const imperialismQuote: GazaEvent = {
+  kind: "image-only",
+  title: "Ghassan Kanafani",
+  imgSrc: "/images/imperialism-quote.jpg",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+};
+
 const gazaTakeover: GazaEvent = {
   kind: "image-only",
   title: "Gaza Takeover",
@@ -53,6 +69,7 @@ const gallantSpeech: GazaEvent = {
 
 export const logicOfZionism: Timeline = [
   intro,
+  imperialismQuote,
   gazaTakeover,
   realEstateSales,
   gallantSpeech,
