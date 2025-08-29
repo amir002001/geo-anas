@@ -74,31 +74,5 @@ const washington: GazaEvent = {
   },
 };
 
-const montreal: GazaEvent = {
-  kind: "basic",
-  layerOverrides: [
-    {
-      id: "COMPARISON_CITIES_FILL",
-      paintOverrides: { "fill-opacity": 1 },
-    },
-    {
-      id: "COMPARISON_CITIES_SYMBOL",
-      paintOverrides: { "text-opacity": 1 },
-      layoutOverrides: { "text-offset": [-3, -5] },
-    },
-    {
-      id: "WORLDWIDE_GAZAS_FILL",
-      paintOverrides: { "fill-opacity": 0.4 },
-    },
-  ],
-  title: "Comparison to Montreal",
-  fitBounds: {
-    bounds: [
-      [-73.9958013, 45.3984821],
-      [-73.47429519999999, 45.7047897],
-    ],
-    options: { duration: 3000, maxZoom: 9 },
-  },
-};
 
-export const comparisons = [populationDensity, toronto, montreal, washington];
+export const comparisons = [populationDensity, toronto, washington];
