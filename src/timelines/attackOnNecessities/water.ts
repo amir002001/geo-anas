@@ -1,4 +1,5 @@
 import { GAZA_BBOX } from "../../constants/constants";
+import { IMAGE_MAP } from "../../constants/images";
 import type { GazaEvent, Timeline } from "../timelines";
 
 const waterPipes: GazaEvent = {
@@ -8,6 +9,24 @@ const waterPipes: GazaEvent = {
   fitBounds: { bounds: GAZA_BBOX, options: {} },
   layerOverrides: [
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+  ],
+};
+
+const mekorotBroken: GazaEvent = {
+  kind: "image",
+  title: "Water Pipes",
+  imgSrc: "/images/water/80.jpg",
+  fitBounds: { bounds: GAZA_BBOX, options: {} },
+  layerOverrides: [
+    {
+      id: "MEKOROT_PIPES_SYMBOL",
+      paintOverrides: {
+        "icon-opacity": 1,
+      },
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("broken-pipe"),
+      },
+    },
   ],
 };
 
@@ -21,20 +40,54 @@ const desalinationPlants: GazaEvent = {
   ],
 };
 
-const explosion: GazaEvent = {
-  kind: "image-only",
-  title: "Explosion",
-  imgSrc: "/images/water/82.jpg",
+const brokenDesalinationPlants: GazaEvent = {
+  kind: "image",
+  title: "Out of Order Desalination Plants",
+  imgSrc: "/images/water/81.jpg",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
   layerOverrides: [
-    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+    {
+      id: "GAZA_DESALINATION_PLANTS_SYMBOL",
+      paintOverrides: {
+        "icon-opacity": 1,
+      },
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("broken-factory"),
+        "icon-size": 0.5,
+      },
+    },
   ],
 };
 
 const IDFDrinking: GazaEvent = {
-  kind: "image-only",
+  kind: "image",
   title: "IDF Drinking",
   imgSrc: "/images/water/83.jpg",
+  fitBounds: {
+    bounds: [
+      [34.26542324022958, 31.294908176330257],
+      [34.26542324022958, 31.294908176330257],
+    ],
+    options: { maxZoom: 18 },
+  },
+  layerOverrides: [
+    {
+      id: "GAZA_DESALINATION_PLANTS_SYMBOL",
+      paintOverrides: {
+        "icon-opacity": 1,
+      },
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("broken-factory"),
+        "icon-size": 1.5,
+      },
+    },
+  ],
+};
+
+const explosion: GazaEvent = {
+  kind: "image-only",
+  title: "Explosion",
+  imgSrc: "/images/water/82.jpg",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
   layerOverrides: [
     { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
@@ -52,12 +105,25 @@ const waterWells: GazaEvent = {
 };
 
 const satelliteImage: GazaEvent = {
-  kind: "image-only",
-  title: "Satellite Image",
+  kind: "image",
+  title: "Broken Wells",
   imgSrc: "/images/water/85.jpg",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
   layerOverrides: [
-    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+    {
+      id: "WATER_WELLS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1, "text-opacity": 1 },
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("broken-pipe"),
+      },
+    },
+    {
+      id: "WATER_WELLS_CIRCLE",
+      paintOverrides: {
+        "circle-opacity": 0.5,
+        "circle-color": "#ff0000",
+      },
+    },
   ],
 };
 
@@ -92,20 +158,30 @@ const waterWreckage: GazaEvent = {
 };
 
 const murkyWater: GazaEvent = {
-  kind: "image-only",
-  title: "Murky Water",
+  kind: "image",
+  title: "Out of Order Wastewater Treatment Plants",
   imgSrc: "/images/water/89.jpg",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
   layerOverrides: [
-    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+    {
+      id: "WWTP_SYMBOL",
+      paintOverrides: {
+        "icon-opacity": 1,
+      },
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("broken-factory"),
+      },
+    },
   ],
 };
 
 export const water: Timeline = [
   waterPipes,
+  mekorotBroken,
   desalinationPlants,
-  explosion,
+  brokenDesalinationPlants,
   IDFDrinking,
+  explosion,
   waterWells,
   satelliteImage,
   tunnel,
