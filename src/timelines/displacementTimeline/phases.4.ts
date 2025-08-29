@@ -54,7 +54,7 @@ const mefalsimCorrdior: GazaEvent = {
 };
 
 const roundingUp: GazaEvent = {
-  kind: "video",
+  kind: "video-only",
   title: "Rounding Up Civilians",
   fitBounds: {
     bounds: [
@@ -73,6 +73,7 @@ const roundingUp: GazaEvent = {
         "text-opacity": 1,
       },
     },
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
   ],
   videoSrc: "/videos/round-up.mp4",
 };
