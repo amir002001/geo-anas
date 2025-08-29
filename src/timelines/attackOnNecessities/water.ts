@@ -13,9 +13,8 @@ const waterPipes: GazaEvent = {
 };
 
 const mekorotBroken: GazaEvent = {
-  kind: "image",
+  kind: "basic",
   title: "Water Pipes",
-  imgSrc: "/images/water/80.jpg",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
   layerOverrides: [
     {
@@ -41,9 +40,8 @@ const desalinationPlants: GazaEvent = {
 };
 
 const brokenDesalinationPlants: GazaEvent = {
-  kind: "image",
+  kind: "basic",
   title: "Out of Order Desalination Plants",
-  imgSrc: "/images/water/81.jpg",
   fitBounds: { bounds: GAZA_BBOX, options: {} },
   layerOverrides: [
     {
@@ -60,13 +58,12 @@ const brokenDesalinationPlants: GazaEvent = {
 };
 
 const IDFDrinking: GazaEvent = {
-  kind: "image",
+  kind: "basic",
   title: "IDF Drinking",
-  imgSrc: "/images/water/83.jpg",
   fitBounds: {
     bounds: [
-      [34.26542324022958, 31.294908176330257],
-      [34.26542324022958, 31.294908176330257],
+      [34.468882278512226, 31.561740033242426],
+      [34.468882278512226, 31.561740033242426],
     ],
     options: { maxZoom: 18 },
   },

@@ -209,8 +209,14 @@ const drHammam: GazaEvent = {
 const hospitalStatus2 = structuredClone(hospitalStatus);
 hospitalStatus2.title = "Operations in the Dark";
 Object.assign(hospitalStatus2, {
-  kind: "video",
+  kind: "video-only",
   videoSrc: "/videos/dark-op.mp4",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
 });
 
 const allHospitalsAttacked: GazaEvent = {
@@ -488,7 +494,7 @@ const shifaBomb: GazaEvent = {
   },
   kind: "video-only",
   title: "Bombing of Al-Shifa",
-  videoSrc: "/videos/alshifa-bomb.mp4",
+  videoSrc: "/videos/hosp-morn.mp4",
   layerOverrides: [
     {
       id: "WHOLE_WORLD_FILL",
@@ -805,8 +811,8 @@ export const healthcare: Timeline = [
   alShifa,
   alShifaContd,
   alShifaTruckInside,
-  shifaBomb,
   shifaAfter,
+  shifaBomb,
   prematureBabies,
   stageThree,
   indonesian,
