@@ -16,6 +16,24 @@ const init: GazaEvent = {
   title: "Annhilation: Laying the Foundation",
 };
 
+const initialOrders: GazaEvent = {
+  kind: "basic",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  layerOverrides: [
+    {
+      id: "AFTER_CEASE_ORDERS_FILL",
+      paintOverrides: {
+        "fill-opacity": 0.8,
+      },
+    },
+  ],
+
+  title: "Initial Orders",
+};
+
 const gazaFragmentationPlan: GazaEvent = {
   kind: "basic",
   fitBounds: {
@@ -91,6 +109,7 @@ const ghfIntro: GazaEvent = {
 
 export const phaseFive: Timeline = [
   init,
+  initialOrders,
   gazaFragmentationPlan,
   moragIntro,
   magenOzIntro,
