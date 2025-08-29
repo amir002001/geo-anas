@@ -213,7 +213,7 @@ const attackOnHumanitarianZoneOverview: GazaEvent = {
       },
       layoutOverrides: {
         "icon-image": IMAGE_MAP.get("red-dot"),
-        "icon-size": 0.5,
+        "icon-size": 0.2,
       },
       filterOverrides: [
         "all",

@@ -14,7 +14,9 @@ const initial: GazaEvent = {
     bounds: GAZA_BBOX,
     options: {},
   },
-  layerOverrides: [],
+  layerOverrides: [
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+  ],
   title: "Displacement Timeline",
 };
 
