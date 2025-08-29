@@ -9,7 +9,7 @@ import { phaseSix } from "./phases.6";
 
 const initial: GazaEvent = {
   kind: "image-only",
-  imgSrc: "/images/displacement-timeline.png",
+  imgSrc: "/images/displacement-timeline.jpg",
   fitBounds: {
     bounds: GAZA_BBOX,
     options: {},
