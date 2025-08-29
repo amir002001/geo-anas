@@ -619,6 +619,141 @@ const nasserInvasion: GazaEvent = {
   ],
 };
 
+const stageFive: GazaEvent = {
+  title: "Ground Invasion of Rafah",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  imgSrc: "/images/titles/healthcare-5.jpg",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+};
+
+const womanMourning: GazaEvent = {
+  title: "TODO",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  imgSrc: "/images/woman-mourning.jpg",
+  layerOverrides: [],
+};
+
+const stageSix: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  imgSrc: "/images/titles/healthcare-6.jpg",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+  title: "Takeover of the North",
+};
+
+const jabaliaBombing: GazaEvent = {
+  title: "TODO 2",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  imgSrc: "/images/jabalia-bombing.webp",
+  layerOverrides: [],
+};
+
+const kamalAdwanSecond: GazaEvent = {
+  fitBounds: {
+    bounds: [
+      [34.5012854400996, 31.5384211723648],
+      [34.5012854400996, 31.5384211723648],
+    ],
+    options: { maxZoom: 14, duration: 1500 },
+  },
+  kind: "video",
+  title: "Targeting Kamal Adwan Hospital",
+  videoSrc: "/videos/kamal-adwan-2.mp4",
+  layerOverrides: [
+    {
+      id: "INCIDENTS_SYMBOL",
+      paintOverrides: { "icon-opacity": 1 },
+      filterOverrides: ["==", ["get", "Public_ID"], "31023-07191"],
+      layoutOverrides: {
+        "icon-image": IMAGE_MAP.get("bad-rocket"),
+      },
+    },
+  ],
+};
+
+const walkDownTanks: GazaEvent = {
+  title: "TODO",
+  fitBounds: {
+    bounds: [
+      [34.5012854400996, 31.5384211723648],
+      [34.5012854400996, 31.5384211723648],
+    ],
+    options: { maxZoom: 14, duration: 1500 },
+  },
+  kind: "video-only",
+  videoSrc: "/videos/walkdown-tanks.mp4",
+  layerOverrides: [],
+};
+
+const hoassam: GazaEvent = {
+  title: "TODO",
+  layerOverrides: [],
+  fitBounds: {
+    bounds: [
+      [34.5012854400996, 31.5384211723648],
+      [34.5012854400996, 31.5384211723648],
+    ],
+    options: { maxZoom: 14 },
+  },
+  kind: "image-only",
+  imgSrc: "/images/hossamabusafiya.jpg",
+};
+
+const tankWithRubble: GazaEvent = {
+  title: "TODO",
+  layerOverrides: [],
+  fitBounds: {
+    bounds: [
+      [34.5012854400996, 31.5384211723648],
+      [34.5012854400996, 31.5384211723648],
+    ],
+    options: { maxZoom: 14 },
+  },
+  kind: "video-only",
+  videoSrc: "/videos/tank-with-rubble.mp4",
+};
+
+const stageSeven: GazaEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  imgSrc: "/images/titles/healthcare-7.jpg",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+  title: "Final Siege",
+};
+
 export const healthcare: Timeline = [
   intro,
   attackOnHospitals,
@@ -653,4 +788,13 @@ export const healthcare: Timeline = [
   stageFour,
   hospitalsNextTo,
   nasserInvasion,
+  stageFive,
+  womanMourning,
+  stageSix,
+  jabaliaBombing,
+  kamalAdwanSecond,
+  walkDownTanks,
+  hoassam,
+  tankWithRubble,
+  stageSeven,
 ];
