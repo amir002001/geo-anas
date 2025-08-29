@@ -40,7 +40,7 @@ const gazaDisplacement: GazaEvent = {
 
 export const postOctSeven: Timeline = [
   postOctSevenTitle,
+  ...logicOfZionism,
   fourtyEight,
   gazaDisplacement,
-  ...logicOfZionism,
 ];
