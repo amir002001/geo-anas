@@ -135,13 +135,17 @@ const tunnel: GazaEvent = {
 };
 
 const waterSatellite: GazaEvent = {
-  kind: "image-only",
+  kind: "image",
   title: "Water Satellite",
   imgSrc: "/images/water/87.jpg",
-  fitBounds: { bounds: GAZA_BBOX, options: {} },
-  layerOverrides: [
-    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
-  ],
+  fitBounds: {
+    bounds: [
+      [34.35245989879181, 31.43396253596855],
+      [34.35245989879181, 31.43396253596855],
+    ],
+    options: { maxZoom: 14 },
+  },
+  layerOverrides: [],
 };
 
 const waterWreckage: GazaEvent = {
