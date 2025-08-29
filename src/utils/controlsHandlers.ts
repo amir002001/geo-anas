@@ -34,5 +34,5 @@ export const handleSlideChangeByIndex = (
     return;
   }
 
-  setCurrentIndex(index * 2);
+  setCurrentIndex(index * 2 - 1);
 };

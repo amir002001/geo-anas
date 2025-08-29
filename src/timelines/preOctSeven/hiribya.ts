@@ -32,4 +32,17 @@ const hiribyaAfter: GazaEvent = {
   imgSrc: "/images/kibbutz.jpg",
 };
 
-export const hiribya = [hiribyaBefore, hiribyaAfter];
+const kibbutzQuote: GazaEvent = {
+  fitBounds: { bounds: HIRIBAYA_BBOX, options: {} },
+  title: "Kibbutz - Quote",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+  kind: "image-only",
+  imgSrc: "/images/kibbutz-quote.jpg",
+};
+
+export const hiribya = [hiribyaBefore, hiribyaAfter, kibbutzQuote];
