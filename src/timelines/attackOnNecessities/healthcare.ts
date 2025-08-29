@@ -494,7 +494,7 @@ const shifaBomb: GazaEvent = {
   },
   kind: "video-only",
   title: "Bombing of Al-Shifa",
-  videoSrc: "/videos/hosp-morn.mp4",
+  videoSrc: "/videos/hosp-morning.mp4",
   layerOverrides: [
     {
       id: "WHOLE_WORLD_FILL",
