@@ -738,6 +738,20 @@ const tankWithRubble: GazaEvent = {
   videoSrc: "/videos/tank-with-rubble.mp4",
 };
 
+const tweet: GazaEvent = {
+  title: "TODO",
+  fitBounds: {
+    bounds: [
+      [34.5012854400996, 31.5384211723648],
+      [34.5012854400996, 31.5384211723648],
+    ],
+    options: { maxZoom: 14 },
+  },
+  imgSrc: "/images/tweet.png",
+  kind: "image-only",
+  layerOverrides: [],
+};
+
 const stageSeven: GazaEvent = {
   fitBounds: {
     bounds: GAZA_BBOX,
@@ -752,6 +766,17 @@ const stageSeven: GazaEvent = {
     },
   ],
   title: "Final Siege",
+};
+
+const alAhli: GazaEvent = {
+  title: "TODO",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  kind: "image-only",
+  imgSrc: "/images/al-ahli.jpg",
+  layerOverrides: [],
 };
 
 export const healthcare: Timeline = [
@@ -796,5 +821,7 @@ export const healthcare: Timeline = [
   walkDownTanks,
   hoassam,
   tankWithRubble,
+  tweet,
   stageSeven,
+  alAhli,
 ];
