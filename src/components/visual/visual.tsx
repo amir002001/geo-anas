@@ -33,7 +33,7 @@ export const Visual = ({ className, isVisualVisible, event }: IVisualProps) => {
       ) : null}
       {event.kind === "video" || event.kind === "video-only" ? (
         <video
-          src={event.videoSrc}
+          src={isVisualVisible ? event.videoSrc : ""}
           autoPlay
           className="max-h-full max-w-full object-cover"
         />
