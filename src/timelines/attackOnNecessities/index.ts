@@ -10,8 +10,8 @@ import { water } from "./water";
 
 export const attackOnNecessities: Timeline = [
   ...infraEdu,
-  ...healthcare,
   ...energy,
+  ...healthcare,
   ...water,
   ...agriculture,
   ...aid,
