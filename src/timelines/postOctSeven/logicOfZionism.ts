@@ -1,6 +1,22 @@
 import { GAZA_BBOX } from "../../constants/constants";
 import type { GazaEvent, Timeline } from "../timelines";
 
+const intro: GazaEvent = {
+  kind: "image-only",
+  title: "Logic of Zionism",
+  imgSrc: "/images/titles/logic-of-zion.jpg",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
+};
+
 const gazaTakeover: GazaEvent = {
   kind: "image-only",
   title: "Gaza Takeover",
@@ -36,6 +52,7 @@ const gallantSpeech: GazaEvent = {
 };
 
 export const logicOfZionism: Timeline = [
+  intro,
   gazaTakeover,
   realEstateSales,
   gallantSpeech,

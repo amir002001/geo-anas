@@ -91,7 +91,7 @@ function App() {
         ref={mapContainerRef}
         className="h-screen w-screen"
       />
-      {
+      {isVisualVisible && (
         <Visual
           className="absolute"
           isVisualVisible={
@@ -102,7 +102,7 @@ function App() {
           }
           event={timelines[currentSlide]}
         />
-      }
+      )}
 
       {mapRef.current !== null && (
         <AnasMapContext.Provider value={{ anasMap: mapRef.current }}>

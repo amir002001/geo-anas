@@ -26,7 +26,7 @@ export const Visual = ({ className, isVisualVisible, event }: IVisualProps) => {
     >
       {event.kind === "image" || event.kind === "image-only" ? (
         <img
-          src={event.imgSrc}
+          src={isVisualVisible ? event.imgSrc : ""}
           alt="Visual"
           className="h-full w-full object-cover"
         />

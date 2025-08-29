@@ -72,9 +72,35 @@ const intro: GazaEvent = {
     options: { maxZoom: 10 },
   },
 };
+const whatAre: GazaEvent = {
+  kind: "image-only",
+  imgSrc: "/images/what-areas.jpg",
+  layerOverrides: [
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+  ],
+  title: "Architecture of Genocide",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: { maxZoom: 10 },
+  },
+};
+const theAres: GazaEvent = {
+  kind: "image-only",
+  imgSrc: "/images/the-ares.jpg",
+  layerOverrides: [
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+  ],
+  title: "Architecture of Genocide",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: { maxZoom: 10 },
+  },
+};
 
 export const timelines: Timeline = [
   intro,
+  whatAre,
+  theAres,
   ...preOctSeven,
   ...postOctSeven,
   ...displacementTimeline,

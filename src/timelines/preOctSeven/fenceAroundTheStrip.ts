@@ -14,4 +14,17 @@ const ironFenceEvent: ImageEvent = {
   imgSrc: "/images/iron-wall.jpg",
 };
 
-export const ironFenceAroundStrip = [ironFenceEvent];
+const ironFenceEvent2: ImageEvent = {
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: {},
+  },
+  title: "Iron Fence Around the Strip",
+  layerOverrides: [
+    { id: "GAZA_BUFFER_FILL", paintOverrides: { "fill-opacity": 0.5 } },
+  ],
+  kind: "image",
+  imgSrc: "/images/fence-with-wires.jpg",
+};
+
+export const ironFenceAroundStrip = [ironFenceEvent, ironFenceEvent2];
