@@ -30,7 +30,7 @@ export const SlideshowControls = ({
     setInputValue(String(Math.floor(currentIndex / 2) + 1));
   }, [currentIndex]);
 
-  const slideTitle = timelines[currentSlide].title;
+  //   const slideTitle = timelines[currentSlide].title;
   const isLastSlide = currentSlide === timelines.length - 1;
   const isFirstSlide = currentSlide === 0;
 
@@ -85,7 +85,7 @@ export const SlideshowControls = ({
             const val = parseInt(inputValue, 10);
             if (!isNaN(val) && val >= 1 && val <= timelines.length) {
               handleSlideChangeByIndex(
-                val * 2 - 1,
+                val,
                 anasMap,
                 setCurrentIndex,
                 timelines.length,
@@ -119,11 +119,11 @@ export const SlideshowControls = ({
             className="size-6 rotate-180 brightness-0 invert"
           ></img>
         </button>
-        <div className="flex h-full items-center bg-[#3a3a3a] px-3">
+        {/* <div className="flex h-full items-center bg-[#3a3a3a] px-3">
           <span id="slide-title" className={clsx(["text-center text-white"])}>
             {slideTitle}
           </span>
-        </div>
+        </div> */}
         <button
           className={nextButtonClassName}
           disabled={isLastSlide || !isMapIdle}

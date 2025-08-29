@@ -97,6 +97,19 @@ const theAres: GazaEvent = {
   },
 };
 
+const weBack: GazaEvent = {
+  kind: "video-only",
+  videoSrc: "/videos/we-back.mp4",
+  layerOverrides: [
+    { id: "WHOLE_WORLD_FILL", paintOverrides: { "fill-opacity": 1 } },
+  ],
+  title: "We Back",
+  fitBounds: {
+    bounds: GAZA_BBOX,
+    options: { maxZoom: 10 },
+  },
+};
+
 export const timelines: Timeline = [
   intro,
   whatAre,
@@ -106,4 +119,5 @@ export const timelines: Timeline = [
   ...displacementTimeline,
   ...attackOnNecessities,
   ...anas,
+  weBack,
 ];

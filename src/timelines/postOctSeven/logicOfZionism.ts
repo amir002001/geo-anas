@@ -33,36 +33,19 @@ const imperialismQuote: GazaEvent = {
   ],
 };
 
-const gazaTakeover: GazaEvent = {
-  kind: "image-only",
-  title: "Gaza Takeover",
-  imgSrc: "/images/gaza-takeover.jpg",
-  fitBounds: {
-    bounds: GAZA_BBOX,
-    options: {},
-  },
-  layerOverrides: [],
-};
-
-const realEstateSales: GazaEvent = {
-  kind: "image-only",
-  title: "Real Estate Sales",
-  imgSrc: "/images/israel-sales.png",
-  fitBounds: {
-    bounds: GAZA_BBOX,
-    options: {},
-  },
-  layerOverrides: [],
-};
-
 const gallantSpeech: GazaEvent = {
-  kind: "video-only",
+  kind: "image-only",
   fitBounds: {
     bounds: GAZA_BBOX,
     options: {},
   },
-  videoSrc: "/videos/yoav-gallant.mp4",
-  layerOverrides: [],
+  imgSrc: "/images/gallant-quote.jpg",
+  layerOverrides: [
+    {
+      id: "WHOLE_WORLD_FILL",
+      paintOverrides: { "fill-opacity": 1 },
+    },
+  ],
 
   title: "Yoav Gallant - October 9th",
 };
@@ -70,7 +53,5 @@ const gallantSpeech: GazaEvent = {
 export const logicOfZionism: Timeline = [
   intro,
   imperialismQuote,
-  gazaTakeover,
-  realEstateSales,
   gallantSpeech,
 ];
