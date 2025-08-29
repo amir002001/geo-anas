@@ -47,24 +47,6 @@ const smotrichQuote: GazaEvent = {
   title: "Smotrich Quote",
 };
 
-const initialOrders: GazaEvent = {
-  kind: "basic",
-  fitBounds: {
-    bounds: GAZA_BBOX,
-    options: {},
-  },
-  layerOverrides: [
-    {
-      id: "AFTER_CEASE_ORDERS_FILL",
-      paintOverrides: {
-        "fill-opacity": 0.8,
-      },
-    },
-  ],
-
-  title: "Initial Orders",
-};
-
 const westBankPlan: GazaEvent = {
   kind: "basic",
   fitBounds: {
@@ -149,7 +131,6 @@ const heathrowComparison: GazaEvent = {
 export const phaseSix: Timeline = [
   init,
   smotrichQuote,
-  initialOrders,
   westBankPlan,
   e1Plan,
   gazaTakeover,
